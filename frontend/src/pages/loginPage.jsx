@@ -1,10 +1,10 @@
 import React from "react";
-
-function login(){
+import { Login } from "../features/auth/components/login";
+function LoginPage(){
     return(
         <div>
-          <h1>Welcome to Login Page</h1>
+           <Login/>
         </div>
     )
 }
-export default login;
+export default LoginPage;

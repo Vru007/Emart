@@ -5,8 +5,8 @@ function homePage(){
  
     return(
         <div>
-      <Navbar>
-         <ProductList/>
+       <Navbar>
+       <ProductList/>
        </Navbar>
        </div>
     )
