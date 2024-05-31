@@ -7,6 +7,7 @@ import LoginPage from './pages/loginPage';
 import SignupPage from './pages/signupPage';
 import  CartPage  from './features/cart/cart';
 import CheckoutPage from './pages/checkoutPage';
+import ProductDetailPage from './pages/productDetails';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path:"/checkout",
     element:(<CheckoutPage/>)
+  },
+  {
+    path:"/details",
+    element:(<ProductDetailPage/>)
   }
 ]);
 function App() {
