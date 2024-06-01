@@ -8,12 +8,27 @@ export function fetchAllProducts() {
   })
 }
 
-export function fetchProductsByFilters(filter) {
-   
+export function fetchProductsByFilters(filter,sort,pagination) {
+  //filter={"category":["laptops","samrtphones"]}
+  //sort={_sort:"price",_order:"desc"}
+  //pagination={_page:1,_limit=10};
   let string='';
   for(let key in filter){
-    string+=`${key}=${filter[key]}`;
+    const categoryValues=filter[key];
+    if(categoryValues.length>0){
+    const lastcategoryvalue=categoryValues[categoryValues.length-1];
+    string+=`${key}=${lastcategoryvalue}&`;
+    }
   }
+
+    for(let key in sort){
+      
+      string+=`${key}=${sort[key]}&`; 
+    }
+    for(let key in pagination){
+        string+=`${key}=${pagination[key]}&`;
+    }
+  
   return new Promise(async (resolve)=>{
     const response=await fetch('http://localhost:3000/products?'+string);
     const data=await response.json();
@@ -21,11 +36,3 @@ export function fetchProductsByFilters(filter) {
   })
 }
 
-export function fetchFromSorting(option) {
-  const string=`http://localhost:3000/products?_sort=${option.sorts}&_order=${option.order}`;
-  return new Promise(async (resolve)=>{
-    const response=await fetch(`http://localhost:3000/products?_sort=${option.sorts}&_order=${option.order}`);
-    const data=await response.json();
-    resolve({data});
-  })
-}
