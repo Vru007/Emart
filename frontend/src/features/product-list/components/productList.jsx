@@ -31,6 +31,11 @@ import {
   fetchAllProductsAsync,
   selectAllProducts,
   fetchProductsByfilterAsync,
+  selectTotalItems,
+  selectAllCategories,
+  fetchAllCategoriesAsync,
+  fetchAllBrandsAsync,
+  selectAllBrands,
 } from "../productListsSlice";
 const sortOptions = [
   { name: "Best Rating", sorts: "rating", order: "desc", current: false },
@@ -45,160 +50,33 @@ function classNames(...classes) {
 }
 
 export function ProductList() {
-  const [sections,setSections] = useState([
-    {
-      id: "brand",
-      name: "brand",
-      options: [
-        { value: "Essence", label: "Essence", checked: false },
-        { value: "Glamour Beauty", label: "Glamour Beauty", checked: false },
-        { value: "Velvet Touch", label: "Velvet Touch", checked: false },
-        { value: "Chic Cosmetics", label: "Chic Cosmetics", checked: false },
-        { value: "Nail Couture", label: "Nail Couture", checked: false },
-        { value: "Calvin Klein", label: "Calvin Klein", checked: false },
-        { value: "Chanel", label: "Chanel", checked: false },
-        { value: "Dior", label: "Dior", checked: false },
-        {
-          value: "Dolce & Gabbana",
-          label: "Dolce & Gabbana",
-          checked: false,
-        },
-        { value: "Gucci", label: "Gucci", checked: false },
-        {
-          value: "Annibale Colombo",
-          label: "Annibale Colombo",
-          checked: false,
-        },
-        { value: "Furniture Co.", label: "Furniture Co.", checked: false },
-        { value: "Knoll", label: "Knoll", checked: false },
-        { value: "Bath Trends", label: "Bath Trends", checked: false },
-        { value: "Apple", label: "Apple", checked: false },
-        { value: "Asus", label: "Asus", checked: false },
-        { value: "Huawei", label: "Huawei", checked: false },
-        { value: "Lenovo", label: "Lenovo", checked: false },
-        { value: "Dell", label: "Dell", checked: false },
-        { value: "Fashion Trends", label: "Fashion Trends", checked: false },
-        { value: "Gigabyte", label: "Gigabyte", checked: false },
-        { value: "Classic Wear", label: "Classic Wear", checked: false },
-        { value: "Casual Comfort", label: "Casual Comfort", checked: false },
-        { value: "Urban Chic", label: "Urban Chic", checked: false },
-        { value: "Nike", label: "Nike", checked: false },
-        { value: "Puma", label: "Puma", checked: false },
-        { value: "Off White", label: "Off White", checked: false },
-        {
-          value: "Fashion Timepieces",
-          label: "Fashion Timepieces",
-          checked: false,
-        },
-        { value: "Longines", label: "Longines", checked: false },
-        { value: "Rolex", label: "Rolex", checked: false },
-        { value: "Amazon", label: "Amazon", checked: false },
-        { value: "Beats", label: "Beats", checked: false },
-        { value: "TechGear", label: "TechGear", checked: false },
-        { value: "GadgetMaster", label: "GadgetMaster", checked: false },
-        { value: "SnapTech", label: "SnapTech", checked: false },
-        { value: "ProVision", label: "ProVision", checked: false },
-        { value: "Generic Motors", label: "Generic Motors", checked: false },
-        { value: "Kawasaki", label: "Kawasaki", checked: false },
-        { value: "MotoGP", label: "MotoGP", checked: false },
-        { value: "ScootMaster", label: "ScootMaster", checked: false },
-        { value: "SpeedMaster", label: "SpeedMaster", checked: false },
-        { value: "Attitude", label: "Attitude", checked: false },
-        { value: "Olay", label: "Olay", checked: false },
-        { value: "Vaseline", label: "Vaseline", checked: false },
-        { value: "Oppo", label: "Oppo", checked: false },
-        { value: "Realme", label: "Realme", checked: false },
-        { value: "Samsung", label: "Samsung", checked: false },
-        { value: "Vivo", label: "Vivo", checked: false },
-        { value: "Fashion Shades", label: "Fashion Shades", checked: false },
-        { value: "Fashion Fun", label: "Fashion Fun", checked: false },
-        { value: "Chrysler", label: "Chrysler", checked: false },
-        { value: "Dodge", label: "Dodge", checked: false },
-        { value: "Fashionista", label: "Fashionista", checked: false },
-        { value: "Heshe", label: "Heshe", checked: false },
-        { value: "Prada", label: "Prada", checked: false },
-        {
-          value: "Elegance Collection",
-          label: "Elegance Collection",
-          checked: false,
-        },
-        { value: "Comfort Trends", label: "Comfort Trends", checked: false },
-        { value: "Fashion Diva", label: "Fashion Diva", checked: false },
-        { value: "Pampi", label: "Pampi", checked: false },
-        {
-          value: "Fashion Express",
-          label: "Fashion Express",
-          checked: false,
-        },
-        { value: "IWC", label: "IWC", checked: false },
-        { value: "Fashion Gold", label: "Fashion Gold", checked: false },
-        { value: "Fashion Co.", label: "Fashion Co.", checked: false },
-      ],
-    },
-    {
-      id: "category",
-      name: "Category",
-      options: [
-        { value: "beauty", label: "beauty", checked: false },
-        { value: "fragrances", label: "fragrances", checked: false },
-        { value: "furniture", label: "furniture", checked: false },
-        { value: "groceries", label: "groceries", checked: false },
-        {
-          value: "home-decoration",
-          label: "home decoration",
-          checked: false,
-        },
-        {
-          value: "kitchen-accessories",
-          label: "kitchen accessories",
-          checked: false,
-        },
-        { value: "laptops", label: "laptops", checked: false },
-        { value: "mens-shirts", label: "mens shirts", checked: false },
-        { value: "mens-shoes", label: "mens shoes", checked: false },
-        { value: "mens-watches", label: "mens watches", checked: false },
-        {
-          value: "mobile-accessories",
-          label: "mobile accessories",
-          checked: false,
-        },
-        { value: "motorcycle", label: "motorcycle", checked: false },
-        { value: "skin-care", label: "skin care", checked: false },
-        { value: "smartphones", label: "smartphones", checked: false },
-        {
-          value: "sports-accessories",
-          label: "sports accessories",
-          checked: false,
-        },
-        { value: "sunglasses", label: "sunglasses", checked: false },
-        { value: "tablets", label: "tablets", checked: false },
-        { value: "tops", label: "tops", checked: false },
-        { value: "vehicle", label: "vehicle", checked: false },
-        { value: "womens-bags", label: "womens bags", checked: false },
-        { value: "womens-dresses", label: "womens dresses", checked: false },
-        {
-          value: "womens-jewellery",
-          label: "womens jewellery",
-          checked: false,
-        },
-        { value: "womens-shoes", label: "womens shoes", checked: false },
-        { value: "womens-watches", label: "womens watches", checked: false },
-      ],
-    },
-  ]);
+
+  
   const dispatch = useDispatch();
+  const categories=useSelector(selectAllCategories);
+  const brands=useSelector(selectAllBrands);
   
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [filter, setFilters] = useState({});
   const products = useSelector(selectAllProducts);
-
+  const totalItems=useSelector(selectTotalItems);
   const [sort,setSort]=useState({});
   
   const [page,setPage]=useState(1);
   const limit=9;
-  const totalItems=100;
   
-  
+  const sections = [
+    {
+      id: "brand",
+      name: "brand",
+      options: brands
+    },
+    {
+      id: "category",
+      name: "Category",
+      options:categories
+    },
+  ];
   const handleFilter = async (e, section, option) => {
     console.log(section.id,option.value);
 
@@ -226,12 +104,14 @@ export function ProductList() {
       }
 
     setFilters(newFilter);
-    console.log(newFilter);
+    setPage(1);
+    // console.log(newFilter);
     // dispatch(fetchProductsByfilterAsync(newFilter));
   };
   const handleSort = (e, option) => {
     const newFilter = { _sort: option.sorts, _order: option.order };
     setSort(newFilter);
+    setPage(1);
     // dispatch(fetchProductsByfilterAsync(newFilter));
     
   };
@@ -246,7 +126,11 @@ export function ProductList() {
     dispatch(fetchProductsByfilterAsync({filter,sort,pagination}));
     // console.log(products);
   }, [dispatch,filter,sort,page]);
-
+ 
+  useEffect(()=>{
+    dispatch(fetchAllCategoriesAsync());
+    dispatch(fetchAllBrandsAsync());
+  },[]);
   return (
     <div className="bg-white">
       <div>
@@ -597,7 +481,7 @@ export function ProductList() {
 
                     <div onClick={()=>handlePage(index+1)}
                   
-                    className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ${index+1===page ? 'bg-indigo-600 text-white':'text-gray-900'}  ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0`}
+                    className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ${index+1===page ? 'bg-indigo-600 text-white':'text-gray-900'}  ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0`}
                     >
                     {index+1<Math.ceil(totalItems/limit)?index+1:Math.ceil(totalItems/limit)}
                   </div>

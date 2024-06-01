@@ -7,6 +7,22 @@ export function fetchAllProducts() {
     resolve({data});
   })
 }
+export function fetchAllCategories() {
+   
+  return new Promise(async (resolve)=>{
+    const response=await fetch('http://localhost:3000/categories');
+    const data=await response.json();
+    resolve({data});
+  })
+}
+export function fetchAllBrands() {
+   
+  return new Promise(async (resolve)=>{
+    const response=await fetch('http://localhost:3000/brands');
+    const data=await response.json();
+    resolve({data});
+  })
+}
 
 export function fetchProductsByFilters(filter,sort,pagination) {
   //filter={"category":["laptops","samrtphones"]}
@@ -32,7 +48,8 @@ export function fetchProductsByFilters(filter,sort,pagination) {
   return new Promise(async (resolve)=>{
     const response=await fetch('http://localhost:3000/products?'+string);
     const data=await response.json();
-    resolve({data});
+    const totalItems= await response.headers.get('X-Total-Count');
+    resolve({data:{products:data,totalItems:totalItems}});
   })
 }
 
