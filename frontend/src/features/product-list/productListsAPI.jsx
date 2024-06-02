@@ -23,7 +23,7 @@ export function fetchAllBrands() {
     resolve({data});
   })
 }
-
+ 
 export function fetchProductsByFilters(filter,sort,pagination) {
   //filter={"category":["laptops","samrtphones"]}
   //sort={_sort:"price",_order:"desc"}
@@ -53,3 +53,19 @@ export function fetchProductsByFilters(filter,sort,pagination) {
   })
 }
 
+export function fetchProductById(id) {
+   
+  return new Promise(async (resolve)=>{
+    const response=await fetch('http://localhost:3000/products/'+id);
+    const data=await response.json();
+    resolve({data});
+  })
+}
+export function fetchProductByIdNull() {
+   
+  return new Promise(async (resolve)=>{
+    
+    const data=null;
+    resolve({data});
+  })
+}
