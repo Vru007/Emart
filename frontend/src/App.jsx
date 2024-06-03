@@ -14,7 +14,7 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-
+import Protected from './features/auth/components/Protected';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,15 +30,15 @@ const router = createBrowserRouter([
   },
   {
     path:"/cart",
-    element:(<CartPage/>)
+    element:(<Protected><CartPage/></Protected>)
   },
   {
     path:"/checkout",
-    element:(<CheckoutPage/>)
+    element:(<Protected><CheckoutPage/></Protected>)
   },
   {
     path:"/details/:id",
-    element:(<ProductDetailPage/>)
+    element:(<Protected><ProductDetailPage/></Protected>)
   }
 ]);
 function App() {
