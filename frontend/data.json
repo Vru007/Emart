@@ -9602,6 +9602,76 @@
     }
   ],
   "users": [
-   
+    {
+      "email": "test1@gmail.com",
+      "password": "Test@pass1234",
+      "id": 1
+    }
+  ],
+  "cart": [
+    {
+      "id": 123,
+      "title": "iPhone 13 Pro",
+      "description": "The iPhone 13 Pro is a cutting-edge smartphone with a powerful camera system, high-performance chip, and stunning display. It offers advanced features for users who demand top-notch technology.",
+      "category": "smartphones",
+      "price": 1099.99,
+      "discountPercentage": 18.3,
+      "rating": 3.42,
+      "stock": 26,
+      "tags": [
+        "smartphones",
+        "apple"
+      ],
+      "brand": "Apple",
+      "sku": "YGQKHPGK",
+      "weight": 8,
+      "dimensions": {
+        "width": 22.39,
+        "height": 9.77,
+        "depth": 19.6
+      },
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2 weeks",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Highly impressed!",
+          "date": "2024-05-23T08:56:21.625Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        },
+        {
+          "rating": 4,
+          "comment": "Great product!",
+          "date": "2024-05-23T08:56:21.625Z",
+          "reviewerName": "Ryan Graham",
+          "reviewerEmail": "ryan.graham@x.dummyjson.com"
+        },
+        {
+          "rating": 2,
+          "comment": "Poor quality!",
+          "date": "2024-05-23T08:56:21.625Z",
+          "reviewerName": "Mason Wright",
+          "reviewerEmail": "mason.wright@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "7 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.625Z",
+        "updatedAt": "2024-05-23T08:56:21.625Z",
+        "barcode": "2986724589988",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/1.png",
+        "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/2.png",
+        "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/thumbnail.png",
+      "quantity": 1,
+      "user": 1
+    }
   ]
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 // import './index.css';
@@ -7,6 +7,7 @@ import LoginPage from './pages/loginPage';
 import SignupPage from './pages/signupPage';
 import  CartPage  from './features/cart/cart';
 import CheckoutPage from './pages/checkoutPage';
+import { useDispatch } from 'react-redux';
 import ProductDetailPage from './pages/productDetails';
 import {
   createBrowserRouter,
@@ -15,6 +16,9 @@ import {
   Link,
 } from "react-router-dom";
 import Protected from './features/auth/components/Protected';
+import { fetchItemsByUserIdAsync } from './features/cart/cartListSlice';
+import { selectUserInfo } from './features/auth/authSlice';
+import { useSelector } from 'react-redux';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,8 +46,14 @@ const router = createBrowserRouter([
   }
 ]);
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [count, setCount] = useState(0);
+  const user = useSelector(selectUserInfo);
+  const dispatch =useDispatch();
+  useEffect(()=>{
+    if(user){
+    dispatch(fetchItemsByUserIdAsync(user.id));
+    }
+  },[dispatch,user])
   return (
     <>
     <div className='App'>

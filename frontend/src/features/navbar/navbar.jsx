@@ -1,5 +1,7 @@
 import React, { Children } from "react";
 import { Fragment } from 'react'
+import { useSelector } from "react-redux";
+import { selectItems } from "../cart/cartListSlice";
 import {
   Disclosure,
   DisclosureButton,
@@ -33,6 +35,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 export function Navbar({children}){
+
+   const item=useSelector(selectItems);
+  //  const numberofItems=item.length;
+   console.log("number of items: ",item.length);
+
     return(
 
     <div className="min-h-full">
@@ -83,7 +90,7 @@ export function Navbar({children}){
                         </button>
                         </Link>
                         <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 -mt-5 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/100">
-                        4
+                        {item.length}
                       </span>              
 
                       {/* Profile dropdown */}
@@ -176,7 +183,7 @@ export function Navbar({children}){
                     </button>
                     </Link>
                     <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 -mt-5 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/100">
-                        4
+                        {item.length}
                       </span>  
                   </div>
                   <div className="mt-3 space-y-1 px-2">
