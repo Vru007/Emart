@@ -2,41 +2,21 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectItems, updateItemsAsync,deleteItemFromCartAsync } from './cartListSlice';
 // import styles from './Counter.module.css';
-
+import { Navigate } from 'react-router-dom';
 import { Fragment} from 'react'
 import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from '@headlessui/react'
 import { XMarkIcon,PlusIcon,MinusIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom';
-const products = [
-  {
-    id: 1,
-    name: 'Throwback Hip Bag',
-    href: '#',
-    color: 'Salmon',
-    price: '$90.00',
-    quantity: 1,
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-    imageAlt: 'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-  },
-  {
-    id: 2,
-    name: 'Medium Stuff Satchel',
-    href: '#',
-    color: 'Blue',
-    price: '$32.00',
-    quantity: 1,
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
-    imageAlt:
-      'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
-  },
-  // More products...
-]
+
 
 export default function CartPage() {
   const products=useSelector(selectItems);
+  if(!products.length){
+    <Navigate to="/" replace={true}></Navigate>
+  }
   const [open, setOpen] = useState(true)
  const totalAmount=products.reduce((amount,item)=>item.price*item.quantity +amount,0);
- const totalItems=products.reduce((total,item)=>item.quantity+total);
+//  const totalItems=products.reduce((total,item)=>item.quantity+total);
 const dispatch=useDispatch();
  const handleQuantity=(e,product)=>{
      dispatch(updateItemsAsync({...product,quantity:product.quantity+1}))
@@ -53,7 +33,8 @@ const dispatch=useDispatch();
   dispatch(deleteItemFromCartAsync(itemId));
  }
   return (
-    
+    <>
+    {!products.length && <Navigate to="/" replace={true}></Navigate>}
     <div  className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
         <div className="flex items-start justify-between">
@@ -136,7 +117,7 @@ const dispatch=useDispatch();
       </div>
     </div>
     </div>
-  
+    </>
   )
 }
 

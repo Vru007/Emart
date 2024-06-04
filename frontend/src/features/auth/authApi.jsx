@@ -8,7 +8,7 @@ export function createUser(userData) {
         headers:{'content-type':'application/json'}
       });
       const data=await response.json();
-      console.log(data);
+      // console.log(data);
       resolve({data});
     })
   }
@@ -36,5 +36,20 @@ export function createUser(userData) {
         reject({message:'User not found'});
       }
       
+    })
+  }
+
+  export function updateUser(update) {
+   
+    // console.log("user data in api: ",userData);
+    return new Promise(async (resolve)=>{
+      const response=await fetch('http://localhost:3000/users/'+update.id,{
+        method:'PATCH',
+        body:JSON.stringify(update),
+        headers:{'content-type':'application/json'}
+      });
+      const data=await response.json();
+      // console.log(data);
+      resolve({data});
     })
   }

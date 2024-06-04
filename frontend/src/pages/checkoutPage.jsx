@@ -3,35 +3,13 @@ import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectItems } from "../features/cart/cartListSlice";
-const products = [
-  {
-    id: 1,
-    name: "Throwback Hip Bag",
-    href: "#",
-    color: "Salmon",
-    price: "$90.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-    imageAlt:
-      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
-  },
-  {
-    id: 2,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "$32.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
-  },
-  // More products...
-];
+import { Navigate } from "react-router-dom";
+import { deleteItemFromCartAsync} from "../features/cart/cartListSlice";
+import { useDispatch } from "react-redux";
+import { useState ,useEffect } from "react";
 const addresses = [
   {
+    id:1,
     name: "home",
     first_name: "John",
     last_name: "Smith",
@@ -43,6 +21,7 @@ const addresses = [
     zip: 384002,
   },
   {
+    id:1,
     name: "work",
     first_name: "amber",
     last_name: "Smith",
@@ -54,18 +33,74 @@ const addresses = [
     zip: 384002,
   },
 ];
+import { useForm } from "react-hook-form";
+import { selectUserInfo, updateUserAsync } from "../features/auth/authSlice";
+import { createOrderAsync } from "../features/order/orderSlice.jsx";
 export default function CheckoutPage() {
+  const [selectedAddress,setSelectedAddress]=useState(null);
+  const [PaymentMethod,setPaymentMethod] =useState(null);
+
+  const dispatch=useDispatch();
   const products=useSelector(selectItems);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm();
+  if(!products.length)(
+    <Navigate to="/"></Navigate>
+  )
+ 
+  const user=useSelector(selectUserInfo);
   const totalAmount=products.reduce((amount,item)=>item.price*item.quantity +amount,0);
+  const totalItems=products.reduce((total,item)=>item.quantity+total,0);
+  const handleRemove=(e,itemId)=>{
+    // console.log("remove: ",itemId);
+    dispatch(deleteItemFromCartAsync(itemId));
+   }
+  
+   const handleAddresses=(e)=>{
+    // console.log(e.target.value);
+    setSelectedAddress(user.addresses[e.target.value]);
+   }
+   const handlePayment=(e)=>{
+    // console.log(e.target.value);
+    setPaymentMethod(e.target.value);
+   }
+  //  useEffect(()=>{
+  //     // console.log(selectedAddress);
+  //  },[selectedAddress]);
+
+  //  useEffect(()=>{
+  //   // console.log("inside useEffect:",PaymentMethod);
+  //  },[PaymentMethod]);
+ const handleOrder=(e)=>{
+  if(selectedAddress!==null && PaymentMethod!==null){
+  const order={products,user,PaymentMethod,selectedAddress,totalAmount,totalItems}
+  dispatch(
+  createOrderAsync(order))
+  }
+  //TODO: REdirect after succes o order
+  //Clear cart after sucessful order
+  // on server change the stock available in inventory
+ }
   return (
+    <>
+    {!products.length && <Navigate to="/" replace={true}></Navigate>}
     <div className="mt-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
         <div className="lg:col-span-3">
-          <form>
+          <form onSubmit={handleSubmit((data)=>{
+            
+            dispatch(
+            updateUserAsync({...user,addresses:[...user.addresses,data]}));
+            reset();
+          })}>
             <div className="space-y-12">
               <div className="border-b border-gray-900/10 pb-5">
                 <h2 className="text-base font-semibold leading-7 text-gray-900">
-                  address Information
+                  Address Information
                 </h2>
 
                 <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -79,9 +114,9 @@ export default function CheckoutPage() {
                     <div className="mt-2">
                       <input
                         type="text"
-                        name="address-type"
+                        {...register("addressType",{required: "address-Type is required",})}
                         id="address-type"
-                        autoComplete="given-name"
+                        placeholder="like home, office, hostel......"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                       />
                     </div>
@@ -91,36 +126,21 @@ export default function CheckoutPage() {
                       htmlFor="first-name"
                       className="block text-sm font-medium leading-6 text-gray-900"
                     >
-                      First name
+                      Name
                     </label>
                     <div className="mt-2">
                       <input
                         type="text"
-                        name="first-name"
-                        id="first-name"
-                        autoComplete="given-name"
+                        {...register("Name", { required: "Name is required" })} 
+                        placeholder="Name"
+                        id="Name"
+                       
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                       />
                     </div>
                   </div>
 
-                  <div className="sm:col-span-3">
-                    <label
-                      htmlFor="last-name"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
-                      Last name
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        type="text"
-                        name="last-name"
-                        id="last-name"
-                        autoComplete="family-name"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
+                  
 
                   <div className="sm:col-span-4">
                     <label
@@ -132,16 +152,16 @@ export default function CheckoutPage() {
                     <div className="mt-2">
                       <input
                         id="email"
-                        name="email"
+                        {...register("Email", { required: "Email is required" })} 
                         type="email"
-                        autoComplete="email"
+                        
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                       />
                     </div>
                   </div>
                   <div className="sm:col-span-4">
                     <label
-                      htmlFor="number"
+                      
                       className="block text-sm font-medium leading-6 text-gray-900"
                     >
                       Phone Number
@@ -149,9 +169,8 @@ export default function CheckoutPage() {
                     <div className="mt-2">
                       <input
                         id="phone"
-                        name="number"
-                        type="number"
-                        autoComplete="number"
+                        {...register("Number", { required:"Phone number is required"})} 
+                        type="tel"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                       />
                     </div>
@@ -167,9 +186,9 @@ export default function CheckoutPage() {
                     <div className="mt-2">
                       <input
                         type="text"
-                        name="street-address"
-                        id="street-address"
-                        autoComplete="street-address"
+                        {...register("street", { required: "Street is required" })} 
+                        id="street"
+                        
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                       />
                     </div>
@@ -185,9 +204,9 @@ export default function CheckoutPage() {
                     <div className="mt-2">
                       <input
                         type="text"
-                        name="city"
+                        {...register("city", { required: "City is required" })} 
                         id="city"
-                        autoComplete="address-level2"
+                        
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                       />
                     </div>
@@ -203,9 +222,9 @@ export default function CheckoutPage() {
                     <div className="mt-2">
                       <input
                         type="text"
-                        name="region"
-                        id="region"
-                        autoComplete="address-level1"
+                        {...register("state", { required: "State/Provience is required" })}
+                        id="state"
+                        
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                       />
                     </div>
@@ -222,8 +241,8 @@ export default function CheckoutPage() {
                       <input
                         type="text"
                         name="postal-code"
-                        id="postal-code"
-                        autoComplete="postal-code"
+                        {...register("postalcode", { required: "Postal Code is required" })}
+                        
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                       />
                     </div>
@@ -249,21 +268,22 @@ export default function CheckoutPage() {
                   Select from the saved addresses
                 </h2>
                 <ul role="list" className="divide-y divide-gray-100">
-                  {addresses.map((address) => (
-                    <li key={address.email} className="flex gap-x-6 py-5">
+                  {user.addresses.map((address,index) => (
+                    <li key={index} className="flex gap-x-6 py-5">
                       <input
-                        id="UPI"
+                        onClick={(e)=>handleAddresses(e)}
                         name="address"
                         type="radio"
+                        value={index}
                         className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                       />
                       <div className="flex min-w-0 gap-x-4">
                         <div className="min-w-0 flex-auto">
                           <p className="text-sm font-semibold leading-6 text-gray-900">
-                            {address.name}
+                            {address.addressType}
                           </p>
                           <p className="mt-1 truncate text-xs leading-5 text-gray-500">
-                            {address.address}
+                            {address.street}
                           </p>
                         </div>
                       </div>
@@ -283,6 +303,8 @@ export default function CheckoutPage() {
                           id="Cash"
                           name="payments"
                           type="radio"
+                          value="cash"
+                          onClick={(e)=>handlePayment(e)}
                           className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                         />
                         <label
@@ -297,6 +319,8 @@ export default function CheckoutPage() {
                           id="UPI"
                           name="payments"
                           type="radio"
+                          value="UPI"
+                          onClick={(e)=>handlePayment(e)}
                           className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                         />
                         <label
@@ -311,6 +335,8 @@ export default function CheckoutPage() {
                           id="Card"
                           name="payments"
                           type="radio"
+                          value="card"
+                          onClick={(e)=>handlePayment(e)}
                           className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                         />
                         <label
@@ -364,7 +390,8 @@ export default function CheckoutPage() {
                               </p>
 
                               <div className="flex">
-                                <button
+                                <button 
+                                onClick={(e)=>handleRemove(e,product.id)}
                                   type="button"
                                   className="font-medium text-indigo-600 hover:text-indigo-500"
                                 >
@@ -389,13 +416,13 @@ export default function CheckoutPage() {
                   Shipping and taxes calculated at checkout.
                 </p>
                 <div className="mt-6">
-                  <Link
-                    to="/checkout"
+                  <div
+                  onClick={handleOrder}
                     href="#"
                     className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                   >
                     Pay and Order
-                  </Link>
+                  </div>
                 </div>
                 <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                   <p>
@@ -418,5 +445,7 @@ export default function CheckoutPage() {
         </div>
       </div>
     </div>
+    </>
   );
+  
 }

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { createUser,checkUser } from './authApi';
-
+import { updateUser } from './authApi';
 const initialState = {
   loggedUser: null,
   status: 'idle',
@@ -27,6 +27,16 @@ export const checkUserAsync = createAsyncThunk(
   async (loginInfo) => {
     // console.log("userData",userData);
     const response = await checkUser(loginInfo);
+    // The value we return becomes the `fulfilled` action payload
+    // console.log("returen response: ",response.data);
+    return response.data;
+  }
+);
+export const updateUserAsync = createAsyncThunk(
+  'user/updateUser',
+  async (update) => {
+    // console.log("userData",userData);
+    const response = await updateUser(update);
     // The value we return becomes the `fulfilled` action payload
     // console.log("returen response: ",response.data);
     return response.data;
@@ -67,7 +77,14 @@ export const counterSlice = createSlice({
       .addCase(checkUserAsync.rejected, (state, action) => {
         state.status = 'idle';
         state.error = action.error;
-      });
+      })
+      .addCase(updateUserAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.loggedUser = action.payload;
+      })
+      .addCase(updateUserAsync.pending, (state) => {
+        state.status = 'loading';
+      })
   },
 });
 

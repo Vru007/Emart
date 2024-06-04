@@ -43,9 +43,11 @@ export default function ProductDetail() {
   const user=useSelector(selectUserInfo)
  const handleCart=(e)=>{
   e.preventDefault();
-  console.log("clicked cart");
-  console.log('user: ',user.id);
-  dispatch(addToCartAsync({...product,quantity:1,user:user.id}))
+  //when same product is put in cart by different users then because of same 
+  //product id id clashing takes place hence we will remove the id and the system will give its own id to the cart items
+  const newItem={...product,quantity:1,user:user.id}
+  delete newItem['id'];
+  dispatch(addToCartAsync(newItem))
  }
 
 
