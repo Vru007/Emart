@@ -11,3 +11,11 @@ export function createOrder(order) {
     resolve({data});
   })
 }
+
+export function fetchOrder(orderId){
+  return new Promise(async(resolve)=>{
+    const response =await fetch('http://localhost:3000/orders?user.id='+orderId)
+    const data=await response.json();
+    resolve({data});
+  })
+}

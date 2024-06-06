@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-
+import { resetCart } from './cartListApi';
 import { addToCart, fetchItemsByUserId} from './cartListApi';
 import { updateItems,deleteItemFromCart } from './cartListApi';
 const initialState = {
@@ -43,6 +43,15 @@ export const deleteItemFromCartAsync=createAsyncThunk(
   async (itemId)=>{
     const response =await deleteItemFromCart(itemId);
 
+    return response.data;
+  }
+)
+export const resetCartAsync=createAsyncThunk(
+  'cart/resetCart',
+  async (userId)=>{
+    console.log("before: ");
+    const response =await resetCart(userId);
+    console.log("inside reset async:");
     return response.data;
   }
 )
@@ -94,6 +103,14 @@ export const counterSlice = createSlice({
         state.status = 'idle';
         const index=state.items.findIndex(item=>item.id===action.payload.id);
         state.items.splice(index, 1);
+        // state.items=action.payload;
+      })
+      .addCase(resetCartAsync.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(resetCartAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.items=[];
         // state.items=action.payload;
       });
   },

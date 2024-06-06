@@ -26,9 +26,9 @@ const navigation = [
 
 ]
 const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
+  { name: 'Your Profile', link: '/*'},
+  { name: 'My-Orders', link:'/allorders' },
+  { name: 'Sign out', link:'/*' },
 ]
 
 function classNames(...classes) {
@@ -114,15 +114,15 @@ export function Navbar({children}){
                             {userNavigation.map((item) => (
                               <MenuItem key={item.name}>
                                 {({ focus }) => (
-                                  <a
-                                    href={item.href}
+                                  <Link
+                                    to={item.link}
                                     className={classNames(
                                       focus ? 'bg-gray-100' : '',
                                       'block px-4 py-2 text-sm text-gray-700'
                                     )}
                                   >
                                     {item.name}
-                                  </a>
+                                  </Link>
                                 )}
                               </MenuItem>
                             ))}
@@ -188,13 +188,15 @@ export function Navbar({children}){
                   </div>
                   <div className="mt-3 space-y-1 px-2">
                     {userNavigation.map((item) => (
-                      <DisclosureButton
+                      <DisclosureButton>
+                      <Link to ={item.link}
                         key={item.name}
                         as="a"
-                        href={item.href}
+                        
                         className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
                       >
                         {item.name}
+                        </Link>
                       </DisclosureButton>
                     ))}
                   </div>

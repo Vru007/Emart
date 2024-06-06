@@ -7,6 +7,9 @@ import LoginPage from './pages/loginPage';
 import SignupPage from './pages/signupPage';
 import  CartPage  from './features/cart/cart';
 import CheckoutPage from './pages/checkoutPage';
+import AllOrders from './features/user/components/UserOrders';
+import NotFound from './pages/404';
+import SuccessOrder from './pages/SuccessOrders';
 import { useDispatch } from 'react-redux';
 import ProductDetailPage from './pages/productDetails';
 import {
@@ -43,6 +46,20 @@ const router = createBrowserRouter([
   {
     path:"/details/:id",
     element:(<Protected><ProductDetailPage/></Protected>)
+  },
+  {
+    path:"/ordersummary",
+    element:(<Protected><SuccessOrder/></Protected>)
+  },
+  {
+    path:"/allorders",
+    element:(<Protected><AllOrders/></Protected>)
+  },
+  
+  {
+
+    path:"*",
+    element:(<NotFound></NotFound>)
   }
 ]);
 function App() {

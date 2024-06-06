@@ -1,12 +1,14 @@
 import React from "react";
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectItems } from "../features/cart/cartListSlice";
 import { Navigate } from "react-router-dom";
 import { deleteItemFromCartAsync} from "../features/cart/cartListSlice";
 import { useDispatch } from "react-redux";
 import { useState ,useEffect } from "react";
+
+// import { Navigate } from "react-router-dom";
 const addresses = [
   {
     id:1,
@@ -39,7 +41,7 @@ import { createOrderAsync } from "../features/order/orderSlice.jsx";
 export default function CheckoutPage() {
   const [selectedAddress,setSelectedAddress]=useState(null);
   const [PaymentMethod,setPaymentMethod] =useState(null);
-
+  const navigate=useNavigate();
   const dispatch=useDispatch();
   const products=useSelector(selectItems);
   const {
@@ -49,7 +51,7 @@ export default function CheckoutPage() {
     reset
   } = useForm();
   if(!products.length)(
-    <Navigate to="/"></Navigate>
+    navigate('/')
   )
  
   const user=useSelector(selectUserInfo);
@@ -77,11 +79,12 @@ export default function CheckoutPage() {
   //  },[PaymentMethod]);
  const handleOrder=(e)=>{
   if(selectedAddress!==null && PaymentMethod!==null){
-  const order={products,user,PaymentMethod,selectedAddress,totalAmount,totalItems}
+  const order={products,user,PaymentMethod,selectedAddress,totalAmount,totalItems,status:'Order-Received'}
   dispatch(
   createOrderAsync(order))
+  navigate('/ordersummary')
   }
-  //TODO: REdirect after succes o order
+  //TODO: REdirect after succes o order (done)
   //Clear cart after sucessful order
   // on server change the stock available in inventory
  }
@@ -417,7 +420,7 @@ export default function CheckoutPage() {
                 </p>
                 <div className="mt-6">
                   <div
-                  onClick={handleOrder}
+                  onClick={(e)=>handleOrder(e)}
                     href="#"
                     className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                   >

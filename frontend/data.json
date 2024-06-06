@@ -9649,135 +9649,660 @@
   ],
   "cart": [
     {
-      "title": "Apple MacBook Pro 14 Inch Space Grey",
-      "description": "The MacBook Pro 14 Inch in Space Grey is a powerful and sleek laptop, featuring Apple's M1 Pro chip for exceptional performance and a stunning Retina display.",
-      "category": "laptops",
-      "price": 1999.99,
-      "discountPercentage": 9.25,
-      "rating": 3.13,
-      "stock": 39,
+      "title": "Spice Rack",
+      "description": "The Spice Rack is a convenient organizer for your spices and seasonings. Keep your kitchen essentials within reach and neatly arranged with this stylish spice rack.",
+      "category": "kitchen-accessories",
+      "price": 19.99,
+      "discountPercentage": 13.78,
+      "rating": 4.05,
+      "stock": 24,
       "tags": [
-        "laptops",
-        "apple"
+        "kitchen tools",
+        "organization"
       ],
-      "brand": "Apple",
-      "sku": "QDKO6NRJ",
-      "weight": 4,
+      "sku": "WFKJQQRD",
+      "weight": 8,
       "dimensions": {
-        "width": 12.38,
-        "height": 21.55,
-        "depth": 27.95
+        "width": 20.73,
+        "height": 6.81,
+        "depth": 24.14
       },
-      "warrantyInformation": "1 month warranty",
-      "shippingInformation": "Ships in 1 week",
+      "warrantyInformation": "Lifetime warranty",
+      "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
       "reviews": [
         {
-          "rating": 5,
-          "comment": "Would buy again!",
+          "rating": 4,
+          "comment": "Fast shipping!",
           "date": "2024-05-23T08:56:21.622Z",
-          "reviewerName": "Hunter Gordon",
-          "reviewerEmail": "hunter.gordon@x.dummyjson.com"
+          "reviewerName": "Elena Baker",
+          "reviewerEmail": "elena.baker@x.dummyjson.com"
         },
         {
           "rating": 5,
-          "comment": "Would buy again!",
+          "comment": "Great product!",
           "date": "2024-05-23T08:56:21.622Z",
-          "reviewerName": "Emma Wilson",
-          "reviewerEmail": "emma.wilson@x.dummyjson.com"
+          "reviewerName": "Elijah Cruz",
+          "reviewerEmail": "elijah.cruz@x.dummyjson.com"
         },
         {
           "rating": 5,
-          "comment": "Very pleased!",
+          "comment": "Very happy with my purchase!",
           "date": "2024-05-23T08:56:21.622Z",
-          "reviewerName": "David Martinez",
-          "reviewerEmail": "david.martinez@x.dummyjson.com"
+          "reviewerName": "Penelope King",
+          "reviewerEmail": "penelope.king@x.dummyjson.com"
         }
       ],
-      "returnPolicy": "30 days return policy",
-      "minimumOrderQuantity": 1,
+      "returnPolicy": "No return policy",
+      "minimumOrderQuantity": 15,
       "meta": {
         "createdAt": "2024-05-23T08:56:21.622Z",
         "updatedAt": "2024-05-23T08:56:21.622Z",
-        "barcode": "3883623063065",
+        "barcode": "9714959799802",
         "qrCode": "https://dummyjson.com/public/qr-code.png"
       },
       "images": [
-        "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/1.png",
-        "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/2.png",
-        "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/3.png"
+        "https://cdn.dummyjson.com/products/images/kitchen-accessories/Spice%20Rack/1.png"
       ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png",
+      "thumbnail": "https://cdn.dummyjson.com/products/images/kitchen-accessories/Spice%20Rack/thumbnail.png",
       "quantity": 1,
       "user": 1,
-      "id": 1
-    },
-    {
-      "title": "Annibale Colombo Bed",
-      "description": "The Annibale Colombo Bed is a luxurious and elegant bed frame, crafted with high-quality materials for a comfortable and stylish bedroom.",
-      "category": "furniture",
-      "price": 1899.99,
-      "discountPercentage": 0.29,
-      "rating": 4.14,
-      "stock": 47,
-      "tags": [
-        "furniture",
-        "beds"
-      ],
-      "brand": "Annibale Colombo",
-      "sku": "4KMDTZWF",
-      "weight": 3,
-      "dimensions": {
-        "width": 28.75,
-        "height": 26.88,
-        "depth": 24.47
-      },
-      "warrantyInformation": "2 year warranty",
-      "shippingInformation": "Ships overnight",
-      "availabilityStatus": "In Stock",
-      "reviews": [
-        {
-          "rating": 4,
-          "comment": "Great value for money!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Julian Newton",
-          "reviewerEmail": "julian.newton@x.dummyjson.com"
-        },
-        {
-          "rating": 5,
-          "comment": "Would buy again!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Madison Collins",
-          "reviewerEmail": "madison.collins@x.dummyjson.com"
-        },
-        {
-          "rating": 4,
-          "comment": "Would buy again!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Clara Berry",
-          "reviewerEmail": "clara.berry@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "7 days return policy",
-      "minimumOrderQuantity": 1,
-      "meta": {
-        "createdAt": "2024-05-23T08:56:21.620Z",
-        "updatedAt": "2024-05-23T08:56:21.620Z",
-        "barcode": "7113807059215",
-        "qrCode": "https://dummyjson.com/public/qr-code.png"
-      },
-      "images": [
-        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/1.png",
-        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/2.png",
-        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/3.png"
-      ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/thumbnail.png",
-      "quantity": 1,
-      "user": 2,
       "id": 2
     }
   ],
   "orders": [
+    {
+      "products": [
+        {
+          "title": "House Showpiece Plant",
+          "description": "The House Showpiece Plant is an artificial plant that brings a touch of nature to your home without the need for maintenance. It adds greenery and style to any space.",
+          "category": "home-decoration",
+          "price": 39.99,
+          "discountPercentage": 19.45,
+          "rating": 3.61,
+          "stock": 89,
+          "tags": [
+            "home decor",
+            "artificial plants"
+          ],
+          "sku": "LLNHNIFU",
+          "weight": 9,
+          "dimensions": {
+            "width": 27.15,
+            "height": 14.43,
+            "depth": 10.05
+          },
+          "warrantyInformation": "5 year warranty",
+          "shippingInformation": "Ships in 1 week",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Great value for money!",
+              "date": "2024-05-23T08:56:21.621Z",
+              "reviewerName": "Olivia Anderson",
+              "reviewerEmail": "olivia.anderson@x.dummyjson.com"
+            },
+            {
+              "rating": 2,
+              "comment": "Very unhappy with my purchase!",
+              "date": "2024-05-23T08:56:21.621Z",
+              "reviewerName": "Grace Perry",
+              "reviewerEmail": "grace.perry@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Highly recommended!",
+              "date": "2024-05-23T08:56:21.621Z",
+              "reviewerName": "Emma Wilson",
+              "reviewerEmail": "emma.wilson@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "7 days return policy",
+          "minimumOrderQuantity": 7,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.621Z",
+            "updatedAt": "2024-05-23T08:56:21.621Z",
+            "barcode": "1895440764997",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/1.png",
+            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/2.png",
+            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/thumbnail.png",
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "user": {
+        "email": "test1@gmail.com",
+        "password": "Test@pass1234",
+        "addresses": [
+          {
+            "addressType": "home",
+            "Name": "Vrushik",
+            "Email": "test1@gmail.com",
+            "Number": "8469786095",
+            "street": "12-Amikunj Society",
+            "city": "Mehsana",
+            "state": "Gujarat",
+            "postalcode": "384002"
+          },
+          {
+            "addressType": "hostel",
+            "Name": "Kota",
+            "Email": "kota@gmail.com",
+            "Number": "84697812345",
+            "street": "IIIT-kota",
+            "city": "Ranpur",
+            "state": "Rajasthan",
+            "postalcode": "31005"
+          }
+        ],
+        "id": 1
+      },
+      "PaymentMethod": "UPI",
+      "selectedAddress": {
+        "addressType": "home",
+        "Name": "Vrushik",
+        "Email": "test1@gmail.com",
+        "Number": "8469786095",
+        "street": "12-Amikunj Society",
+        "city": "Mehsana",
+        "state": "Gujarat",
+        "postalcode": "384002"
+      },
+      "totalAmount": 39.99,
+      "totalItems": 1,
+      "status": "Order-Placed",
+      "id": 1
+    },
+    {
+      "products": [
+        {
+          "title": "Asus Zenbook Pro Dual Screen Laptop",
+          "description": "The Asus Zenbook Pro Dual Screen Laptop is a high-performance device with dual screens, providing productivity and versatility for creative professionals.",
+          "category": "laptops",
+          "price": 1799.99,
+          "discountPercentage": 9.21,
+          "rating": 3.14,
+          "stock": 38,
+          "tags": [
+            "laptops"
+          ],
+          "brand": "Asus",
+          "sku": "4A9KFMBG",
+          "weight": 8,
+          "dimensions": {
+            "width": 19.67,
+            "height": 11.05,
+            "depth": 14.32
+          },
+          "warrantyInformation": "No warranty",
+          "shippingInformation": "Ships in 3-5 business days",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Very satisfied!",
+              "date": "2024-05-23T08:56:21.622Z",
+              "reviewerName": "Jack Ward",
+              "reviewerEmail": "jack.ward@x.dummyjson.com"
+            },
+            {
+              "rating": 1,
+              "comment": "Very disappointed!",
+              "date": "2024-05-23T08:56:21.622Z",
+              "reviewerName": "Ava Harris",
+              "reviewerEmail": "ava.harris@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Great value for money!",
+              "date": "2024-05-23T08:56:21.622Z",
+              "reviewerName": "Brayden Fleming",
+              "reviewerEmail": "brayden.fleming@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "No return policy",
+          "minimumOrderQuantity": 1,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.622Z",
+            "updatedAt": "2024-05-23T08:56:21.622Z",
+            "barcode": "2899455033799",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/1.png",
+            "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/2.png",
+            "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/thumbnail.png",
+          "quantity": 1,
+          "user": 2,
+          "id": 1
+        }
+      ],
+      "user": {
+        "email": "test2@gmail.com",
+        "password": "Test@pass1234",
+        "id": 2,
+        "addresses": [
+          {
+            "addressType": "home",
+            "Name": "test2",
+            "Email": "test2@gmail.com",
+            "Number": "123456789",
+            "street": "test-streent Gift City",
+            "city": "Ahmedabad",
+            "state": "Gujarat",
+            "postalcode": "951357"
+          }
+        ]
+      },
+      "PaymentMethod": "UPI",
+      "selectedAddress": {
+        "addressType": "home",
+        "Name": "test2",
+        "Email": "test2@gmail.com",
+        "Number": "123456789",
+        "street": "test-streent Gift City",
+        "city": "Ahmedabad",
+        "state": "Gujarat",
+        "postalcode": "951357"
+      },
+      "totalAmount": 1799.99,
+      "totalItems": 1,
+      "status": "Order-Placed",
+      "id": 2
+    },
+    {
+      "products": [
+        {
+          "title": "House Showpiece Plant",
+          "description": "The House Showpiece Plant is an artificial plant that brings a touch of nature to your home without the need for maintenance. It adds greenery and style to any space.",
+          "category": "home-decoration",
+          "price": 39.99,
+          "discountPercentage": 19.45,
+          "rating": 3.61,
+          "stock": 89,
+          "tags": [
+            "home decor",
+            "artificial plants"
+          ],
+          "sku": "LLNHNIFU",
+          "weight": 9,
+          "dimensions": {
+            "width": 27.15,
+            "height": 14.43,
+            "depth": 10.05
+          },
+          "warrantyInformation": "5 year warranty",
+          "shippingInformation": "Ships in 1 week",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Great value for money!",
+              "date": "2024-05-23T08:56:21.621Z",
+              "reviewerName": "Olivia Anderson",
+              "reviewerEmail": "olivia.anderson@x.dummyjson.com"
+            },
+            {
+              "rating": 2,
+              "comment": "Very unhappy with my purchase!",
+              "date": "2024-05-23T08:56:21.621Z",
+              "reviewerName": "Grace Perry",
+              "reviewerEmail": "grace.perry@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Highly recommended!",
+              "date": "2024-05-23T08:56:21.621Z",
+              "reviewerName": "Emma Wilson",
+              "reviewerEmail": "emma.wilson@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "7 days return policy",
+          "minimumOrderQuantity": 7,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.621Z",
+            "updatedAt": "2024-05-23T08:56:21.621Z",
+            "barcode": "1895440764997",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/1.png",
+            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/2.png",
+            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/thumbnail.png",
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        },
+        {
+          "title": "Nike Baseball Cleats",
+          "description": "Nike Baseball Cleats are designed for maximum traction and performance on the baseball field. They provide stability and support for players during games and practices.",
+          "category": "mens-shoes",
+          "price": 79.99,
+          "discountPercentage": 11.4,
+          "rating": 4.01,
+          "stock": 14,
+          "tags": [
+            "footwear",
+            "sports cleats"
+          ],
+          "brand": "Nike",
+          "sku": "81LRTRP5",
+          "weight": 7,
+          "dimensions": {
+            "width": 14.83,
+            "height": 19.16,
+            "depth": 28.98
+          },
+          "warrantyInformation": "No warranty",
+          "shippingInformation": "Ships overnight",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Very happy with my purchase!",
+              "date": "2024-05-23T08:56:21.623Z",
+              "reviewerName": "William Gonzalez",
+              "reviewerEmail": "william.gonzalez@x.dummyjson.com"
+            },
+            {
+              "rating": 2,
+              "comment": "Not worth the price!",
+              "date": "2024-05-23T08:56:21.623Z",
+              "reviewerName": "Sophia Brown",
+              "reviewerEmail": "sophia.brown@x.dummyjson.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Very satisfied!",
+              "date": "2024-05-23T08:56:21.623Z",
+              "reviewerName": "Gabriel Mitchell",
+              "reviewerEmail": "gabriel.mitchell@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "7 days return policy",
+          "minimumOrderQuantity": 3,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.623Z",
+            "updatedAt": "2024-05-23T08:56:21.623Z",
+            "barcode": "0517654748946",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/1.png",
+            "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/2.png",
+            "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/3.png",
+            "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/4.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/thumbnail.png",
+          "quantity": 1,
+          "user": 1,
+          "id": 2
+        }
+      ],
+      "user": {
+        "email": "test1@gmail.com",
+        "password": "Test@pass1234",
+        "addresses": [
+          {
+            "addressType": "home",
+            "Name": "Vrushik",
+            "Email": "test1@gmail.com",
+            "Number": "8469786095",
+            "street": "12-Amikunj Society",
+            "city": "Mehsana",
+            "state": "Gujarat",
+            "postalcode": "384002"
+          },
+          {
+            "addressType": "hostel",
+            "Name": "Kota",
+            "Email": "kota@gmail.com",
+            "Number": "84697812345",
+            "street": "IIIT-kota",
+            "city": "Ranpur",
+            "state": "Rajasthan",
+            "postalcode": "31005"
+          }
+        ],
+        "id": 1
+      },
+      "PaymentMethod": "cash",
+      "selectedAddress": {
+        "addressType": "home",
+        "Name": "Vrushik",
+        "Email": "test1@gmail.com",
+        "Number": "8469786095",
+        "street": "12-Amikunj Society",
+        "city": "Mehsana",
+        "state": "Gujarat",
+        "postalcode": "384002"
+      },
+      "totalAmount": 119.97999999999999,
+      "totalItems": 2,
+      "status": "Order-Received",
+      "id": 3
+    },
+    {
+      "products": [
+        {
+          "title": "Annibale Colombo Sofa",
+          "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
+          "category": "furniture",
+          "price": 2499.99,
+          "discountPercentage": 18.54,
+          "rating": 3.08,
+          "stock": 16,
+          "tags": [
+            "furniture",
+            "sofas"
+          ],
+          "brand": "Annibale Colombo",
+          "sku": "LUU95CQP",
+          "weight": 3,
+          "dimensions": {
+            "width": 20.97,
+            "height": 19.11,
+            "depth": 25.81
+          },
+          "warrantyInformation": "1 month warranty",
+          "shippingInformation": "Ships overnight",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Very satisfied!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Tyler Davis",
+              "reviewerEmail": "tyler.davis@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Excellent quality!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Hannah Robinson",
+              "reviewerEmail": "hannah.robinson@x.dummyjson.com"
+            },
+            {
+              "rating": 3,
+              "comment": "Waste of money!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Madison Collins",
+              "reviewerEmail": "madison.collins@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "7 days return policy",
+          "minimumOrderQuantity": 1,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.620Z",
+            "updatedAt": "2024-05-23T08:56:21.620Z",
+            "barcode": "0426785817074",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/1.png",
+            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/2.png",
+            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png",
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "user": {
+        "email": "test1@gmail.com",
+        "password": "Test@pass1234",
+        "addresses": [
+          {
+            "addressType": "home",
+            "Name": "Vrushik",
+            "Email": "test1@gmail.com",
+            "Number": "8469786095",
+            "street": "12-Amikunj Society",
+            "city": "Mehsana",
+            "state": "Gujarat",
+            "postalcode": "384002"
+          },
+          {
+            "addressType": "hostel",
+            "Name": "Kota",
+            "Email": "kota@gmail.com",
+            "Number": "84697812345",
+            "street": "IIIT-kota",
+            "city": "Ranpur",
+            "state": "Rajasthan",
+            "postalcode": "31005"
+          }
+        ],
+        "id": 1
+      },
+      "PaymentMethod": "UPI",
+      "selectedAddress": {
+        "addressType": "hostel",
+        "Name": "Kota",
+        "Email": "kota@gmail.com",
+        "Number": "84697812345",
+        "street": "IIIT-kota",
+        "city": "Ranpur",
+        "state": "Rajasthan",
+        "postalcode": "31005"
+      },
+      "totalAmount": 2499.99,
+      "totalItems": 1,
+      "status": "Order-Received",
+      "id": 4
+    },
+    {
+      "products": [
+        {
+          "title": "iPhone 13 Pro",
+          "description": "The iPhone 13 Pro is a cutting-edge smartphone with a powerful camera system, high-performance chip, and stunning display. It offers advanced features for users who demand top-notch technology.",
+          "category": "smartphones",
+          "price": 1099.99,
+          "discountPercentage": 18.3,
+          "rating": 3.42,
+          "stock": 26,
+          "tags": [
+            "smartphones",
+            "apple"
+          ],
+          "brand": "Apple",
+          "sku": "YGQKHPGK",
+          "weight": 8,
+          "dimensions": {
+            "width": 22.39,
+            "height": 9.77,
+            "depth": 19.6
+          },
+          "warrantyInformation": "1 year warranty",
+          "shippingInformation": "Ships in 2 weeks",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Highly impressed!",
+              "date": "2024-05-23T08:56:21.625Z",
+              "reviewerName": "Aria Roberts",
+              "reviewerEmail": "aria.roberts@x.dummyjson.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Great product!",
+              "date": "2024-05-23T08:56:21.625Z",
+              "reviewerName": "Ryan Graham",
+              "reviewerEmail": "ryan.graham@x.dummyjson.com"
+            },
+            {
+              "rating": 2,
+              "comment": "Poor quality!",
+              "date": "2024-05-23T08:56:21.625Z",
+              "reviewerName": "Mason Wright",
+              "reviewerEmail": "mason.wright@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "7 days return policy",
+          "minimumOrderQuantity": 1,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.625Z",
+            "updatedAt": "2024-05-23T08:56:21.625Z",
+            "barcode": "2986724589988",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/1.png",
+            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/2.png",
+            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/thumbnail.png",
+          "quantity": 1,
+          "user": 2,
+          "id": 1
+        }
+      ],
+      "user": {
+        "email": "test2@gmail.com",
+        "password": "Test@pass1234",
+        "id": 2,
+        "addresses": [
+          {
+            "addressType": "home",
+            "Name": "test2",
+            "Email": "test2@gmail.com",
+            "Number": "123456789",
+            "street": "test-streent Gift City",
+            "city": "Ahmedabad",
+            "state": "Gujarat",
+            "postalcode": "951357"
+          }
+        ]
+      },
+      "PaymentMethod": "cash",
+      "selectedAddress": {
+        "addressType": "home",
+        "Name": "test2",
+        "Email": "test2@gmail.com",
+        "Number": "123456789",
+        "street": "test-streent Gift City",
+        "city": "Ahmedabad",
+        "state": "Gujarat",
+        "postalcode": "951357"
+      },
+      "totalAmount": 1099.99,
+      "totalItems": 1,
+      "status": "Order-Received",
+      "id": 5
+    },
     {
       "products": [
         {
@@ -9842,7 +10367,7 @@
           "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/thumbnail.png",
           "quantity": 1,
           "user": 2,
-          "id": 2
+          "id": 1
         }
       ],
       "user": {
@@ -9875,73 +10400,74 @@
       },
       "totalAmount": 1899.99,
       "totalItems": 1,
-      "id": 1
+      "status": "Order-Received",
+      "id": 6
     },
     {
       "products": [
         {
-          "title": "Annibale Colombo Bed",
-          "description": "The Annibale Colombo Bed is a luxurious and elegant bed frame, crafted with high-quality materials for a comfortable and stylish bedroom.",
+          "title": "Knoll Saarinen Executive Conference Chair",
+          "description": "The Knoll Saarinen Executive Conference Chair is a modern and ergonomic chair, perfect for your office or conference room with its timeless design.",
           "category": "furniture",
-          "price": 1899.99,
-          "discountPercentage": 0.29,
-          "rating": 4.14,
+          "price": 499.99,
+          "discountPercentage": 15.23,
+          "rating": 4.11,
           "stock": 47,
           "tags": [
             "furniture",
-            "beds"
+            "office chairs"
           ],
-          "brand": "Annibale Colombo",
-          "sku": "4KMDTZWF",
+          "brand": "Knoll",
+          "sku": "RKHVJ4FE",
           "weight": 3,
           "dimensions": {
-            "width": 28.75,
-            "height": 26.88,
-            "depth": 24.47
+            "width": 16.59,
+            "height": 21.46,
+            "depth": 29.07
           },
-          "warrantyInformation": "2 year warranty",
-          "shippingInformation": "Ships overnight",
+          "warrantyInformation": "Lifetime warranty",
+          "shippingInformation": "Ships in 3-5 business days",
           "availabilityStatus": "In Stock",
           "reviews": [
             {
               "rating": 4,
-              "comment": "Great value for money!",
+              "comment": "Very happy with my purchase!",
               "date": "2024-05-23T08:56:21.620Z",
-              "reviewerName": "Julian Newton",
-              "reviewerEmail": "julian.newton@x.dummyjson.com"
-            },
-            {
-              "rating": 5,
-              "comment": "Would buy again!",
-              "date": "2024-05-23T08:56:21.620Z",
-              "reviewerName": "Madison Collins",
-              "reviewerEmail": "madison.collins@x.dummyjson.com"
+              "reviewerName": "Leah Gutierrez",
+              "reviewerEmail": "leah.gutierrez@x.dummyjson.com"
             },
             {
               "rating": 4,
               "comment": "Would buy again!",
               "date": "2024-05-23T08:56:21.620Z",
-              "reviewerName": "Clara Berry",
-              "reviewerEmail": "clara.berry@x.dummyjson.com"
+              "reviewerName": "Nolan Gonzalez",
+              "reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+            },
+            {
+              "rating": 2,
+              "comment": "Waste of money!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Stella Morris",
+              "reviewerEmail": "stella.morris@x.dummyjson.com"
             }
           ],
-          "returnPolicy": "7 days return policy",
-          "minimumOrderQuantity": 1,
+          "returnPolicy": "30 days return policy",
+          "minimumOrderQuantity": 5,
           "meta": {
             "createdAt": "2024-05-23T08:56:21.620Z",
             "updatedAt": "2024-05-23T08:56:21.620Z",
-            "barcode": "7113807059215",
+            "barcode": "0726316339746",
             "qrCode": "https://dummyjson.com/public/qr-code.png"
           },
           "images": [
-            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/1.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/2.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/3.png"
+            "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/1.png",
+            "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/2.png",
+            "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/3.png"
           ],
-          "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/thumbnail.png",
+          "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/thumbnail.png",
           "quantity": 1,
           "user": 2,
-          "id": 2
+          "id": 3
         }
       ],
       "user": {
@@ -9972,9 +10498,10 @@
         "state": "Gujarat",
         "postalcode": "951357"
       },
-      "totalAmount": 1899.99,
+      "totalAmount": 499.99,
       "totalItems": 1,
-      "id": 2
+      "status": "Order-Received",
+      "id": 7
     }
   ]
 }

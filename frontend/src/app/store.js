@@ -11,11 +11,13 @@ import productReducer from'../features/product-list/productListsSlice';
 import authReducer from'../features/auth/authSlice';
 import cartReducer from'../features/cart/cartListSlice';
 import orderReducer from'../features/order/orderSlice';
+import userReducer from'../features/user/userSlice';
 export const store = configureStore({
   reducer: {
     product:productReducer,
     auth:authReducer,
     cart:cartReducer,
     order:orderReducer,
+    user:userReducer
   },
 });
