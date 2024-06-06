@@ -3,7 +3,8 @@ import { fetchOrders } from './userAPI';
 const initialState = {
   value: 0,
   status: 'idle',
-  orders:[]
+  orders:[],
+  edit:null,
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -21,6 +22,7 @@ export const fetchOrderAsync = createAsyncThunk(
   }
 );
 
+
 export const counterSlice = createSlice({
   name: 'user',
   initialState,
@@ -32,6 +34,9 @@ export const counterSlice = createSlice({
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
       state.value += 1;
+    },
+    resetEdit:(state)=>{
+      state.edit=null;
     }
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,
@@ -45,12 +50,14 @@ export const counterSlice = createSlice({
       .addCase(fetchOrderAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         state.orders = action.payload;
-      });
+      })
+      
+      
   },
 });
 
-
+// export const { resetOrder}= counterSlice.actions;
 export const selectAllOrders =(state)=>state.user.orders;
-// export const selectCount = (state) => state.counter.value;
+export const selectEditAddress = (state) => state.user.edit;
 
 export default counterSlice.reducer;

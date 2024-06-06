@@ -9607,17 +9607,7 @@
       "password": "Test@pass1234",
       "addresses": [
         {
-          "addressType": "home",
-          "Name": "Vrushik",
-          "Email": "test1@gmail.com",
-          "Number": "8469786095",
-          "street": "12-Amikunj Society",
-          "city": "Mehsana",
-          "state": "Gujarat",
-          "postalcode": "384002"
-        },
-        {
-          "addressType": "hostel",
+          "addressType": "hostel-6",
           "Name": "Kota",
           "Email": "kota@gmail.com",
           "Number": "84697812345",
