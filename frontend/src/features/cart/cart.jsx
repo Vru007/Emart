@@ -8,7 +8,7 @@ import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from '@
 import { XMarkIcon,PlusIcon,MinusIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom';
 
-
+//Todo: handle same products into cart from different orders 
 export default function CartPage() {
   const products=useSelector(selectItems);
   if(!products.length){

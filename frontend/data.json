@@ -9605,6 +9605,7 @@
     {
       "email": "test1@gmail.com",
       "password": "Test@pass1234",
+      "role": "user",
       "addresses": [
         {
           "addressType": "hostel-6",
@@ -9623,6 +9624,7 @@
       "email": "test2@gmail.com",
       "password": "Test@pass1234",
       "id": 2,
+      "role": "user",
       "addresses": [
         {
           "addressType": "home",
@@ -9633,8 +9635,25 @@
           "city": "Ahmedabad",
           "state": "Gujarat",
           "postalcode": "951357"
+        },
+        {
+          "addressType": "dukan",
+          "Name": "Yatri ",
+          "Email": "vypatel@gmail.com",
+          "Number": "1532465498",
+          "street": "malgodown road ",
+          "city": "Mehsana",
+          "state": "Gujarat",
+          "postalcode": "31005"
         }
       ]
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "Admin@1234",
+      "addresses": [],
+      "role": "admin",
+      "id": 3
     }
   ],
   "cart": [
@@ -9704,388 +9723,6 @@
     {
       "products": [
         {
-          "title": "House Showpiece Plant",
-          "description": "The House Showpiece Plant is an artificial plant that brings a touch of nature to your home without the need for maintenance. It adds greenery and style to any space.",
-          "category": "home-decoration",
-          "price": 39.99,
-          "discountPercentage": 19.45,
-          "rating": 3.61,
-          "stock": 89,
-          "tags": [
-            "home decor",
-            "artificial plants"
-          ],
-          "sku": "LLNHNIFU",
-          "weight": 9,
-          "dimensions": {
-            "width": 27.15,
-            "height": 14.43,
-            "depth": 10.05
-          },
-          "warrantyInformation": "5 year warranty",
-          "shippingInformation": "Ships in 1 week",
-          "availabilityStatus": "In Stock",
-          "reviews": [
-            {
-              "rating": 5,
-              "comment": "Great value for money!",
-              "date": "2024-05-23T08:56:21.621Z",
-              "reviewerName": "Olivia Anderson",
-              "reviewerEmail": "olivia.anderson@x.dummyjson.com"
-            },
-            {
-              "rating": 2,
-              "comment": "Very unhappy with my purchase!",
-              "date": "2024-05-23T08:56:21.621Z",
-              "reviewerName": "Grace Perry",
-              "reviewerEmail": "grace.perry@x.dummyjson.com"
-            },
-            {
-              "rating": 5,
-              "comment": "Highly recommended!",
-              "date": "2024-05-23T08:56:21.621Z",
-              "reviewerName": "Emma Wilson",
-              "reviewerEmail": "emma.wilson@x.dummyjson.com"
-            }
-          ],
-          "returnPolicy": "7 days return policy",
-          "minimumOrderQuantity": 7,
-          "meta": {
-            "createdAt": "2024-05-23T08:56:21.621Z",
-            "updatedAt": "2024-05-23T08:56:21.621Z",
-            "barcode": "1895440764997",
-            "qrCode": "https://dummyjson.com/public/qr-code.png"
-          },
-          "images": [
-            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/1.png",
-            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/2.png",
-            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/3.png"
-          ],
-          "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/thumbnail.png",
-          "quantity": 1,
-          "user": 1,
-          "id": 1
-        }
-      ],
-      "user": {
-        "email": "test1@gmail.com",
-        "password": "Test@pass1234",
-        "addresses": [
-          {
-            "addressType": "home",
-            "Name": "Vrushik",
-            "Email": "test1@gmail.com",
-            "Number": "8469786095",
-            "street": "12-Amikunj Society",
-            "city": "Mehsana",
-            "state": "Gujarat",
-            "postalcode": "384002"
-          },
-          {
-            "addressType": "hostel",
-            "Name": "Kota",
-            "Email": "kota@gmail.com",
-            "Number": "84697812345",
-            "street": "IIIT-kota",
-            "city": "Ranpur",
-            "state": "Rajasthan",
-            "postalcode": "31005"
-          }
-        ],
-        "id": 1
-      },
-      "PaymentMethod": "UPI",
-      "selectedAddress": {
-        "addressType": "home",
-        "Name": "Vrushik",
-        "Email": "test1@gmail.com",
-        "Number": "8469786095",
-        "street": "12-Amikunj Society",
-        "city": "Mehsana",
-        "state": "Gujarat",
-        "postalcode": "384002"
-      },
-      "totalAmount": 39.99,
-      "totalItems": 1,
-      "status": "Order-Placed",
-      "id": 1
-    },
-    {
-      "products": [
-        {
-          "title": "Asus Zenbook Pro Dual Screen Laptop",
-          "description": "The Asus Zenbook Pro Dual Screen Laptop is a high-performance device with dual screens, providing productivity and versatility for creative professionals.",
-          "category": "laptops",
-          "price": 1799.99,
-          "discountPercentage": 9.21,
-          "rating": 3.14,
-          "stock": 38,
-          "tags": [
-            "laptops"
-          ],
-          "brand": "Asus",
-          "sku": "4A9KFMBG",
-          "weight": 8,
-          "dimensions": {
-            "width": 19.67,
-            "height": 11.05,
-            "depth": 14.32
-          },
-          "warrantyInformation": "No warranty",
-          "shippingInformation": "Ships in 3-5 business days",
-          "availabilityStatus": "In Stock",
-          "reviews": [
-            {
-              "rating": 5,
-              "comment": "Very satisfied!",
-              "date": "2024-05-23T08:56:21.622Z",
-              "reviewerName": "Jack Ward",
-              "reviewerEmail": "jack.ward@x.dummyjson.com"
-            },
-            {
-              "rating": 1,
-              "comment": "Very disappointed!",
-              "date": "2024-05-23T08:56:21.622Z",
-              "reviewerName": "Ava Harris",
-              "reviewerEmail": "ava.harris@x.dummyjson.com"
-            },
-            {
-              "rating": 5,
-              "comment": "Great value for money!",
-              "date": "2024-05-23T08:56:21.622Z",
-              "reviewerName": "Brayden Fleming",
-              "reviewerEmail": "brayden.fleming@x.dummyjson.com"
-            }
-          ],
-          "returnPolicy": "No return policy",
-          "minimumOrderQuantity": 1,
-          "meta": {
-            "createdAt": "2024-05-23T08:56:21.622Z",
-            "updatedAt": "2024-05-23T08:56:21.622Z",
-            "barcode": "2899455033799",
-            "qrCode": "https://dummyjson.com/public/qr-code.png"
-          },
-          "images": [
-            "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/1.png",
-            "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/2.png",
-            "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/3.png"
-          ],
-          "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/thumbnail.png",
-          "quantity": 1,
-          "user": 2,
-          "id": 1
-        }
-      ],
-      "user": {
-        "email": "test2@gmail.com",
-        "password": "Test@pass1234",
-        "id": 2,
-        "addresses": [
-          {
-            "addressType": "home",
-            "Name": "test2",
-            "Email": "test2@gmail.com",
-            "Number": "123456789",
-            "street": "test-streent Gift City",
-            "city": "Ahmedabad",
-            "state": "Gujarat",
-            "postalcode": "951357"
-          }
-        ]
-      },
-      "PaymentMethod": "UPI",
-      "selectedAddress": {
-        "addressType": "home",
-        "Name": "test2",
-        "Email": "test2@gmail.com",
-        "Number": "123456789",
-        "street": "test-streent Gift City",
-        "city": "Ahmedabad",
-        "state": "Gujarat",
-        "postalcode": "951357"
-      },
-      "totalAmount": 1799.99,
-      "totalItems": 1,
-      "status": "Order-Placed",
-      "id": 2
-    },
-    {
-      "products": [
-        {
-          "title": "House Showpiece Plant",
-          "description": "The House Showpiece Plant is an artificial plant that brings a touch of nature to your home without the need for maintenance. It adds greenery and style to any space.",
-          "category": "home-decoration",
-          "price": 39.99,
-          "discountPercentage": 19.45,
-          "rating": 3.61,
-          "stock": 89,
-          "tags": [
-            "home decor",
-            "artificial plants"
-          ],
-          "sku": "LLNHNIFU",
-          "weight": 9,
-          "dimensions": {
-            "width": 27.15,
-            "height": 14.43,
-            "depth": 10.05
-          },
-          "warrantyInformation": "5 year warranty",
-          "shippingInformation": "Ships in 1 week",
-          "availabilityStatus": "In Stock",
-          "reviews": [
-            {
-              "rating": 5,
-              "comment": "Great value for money!",
-              "date": "2024-05-23T08:56:21.621Z",
-              "reviewerName": "Olivia Anderson",
-              "reviewerEmail": "olivia.anderson@x.dummyjson.com"
-            },
-            {
-              "rating": 2,
-              "comment": "Very unhappy with my purchase!",
-              "date": "2024-05-23T08:56:21.621Z",
-              "reviewerName": "Grace Perry",
-              "reviewerEmail": "grace.perry@x.dummyjson.com"
-            },
-            {
-              "rating": 5,
-              "comment": "Highly recommended!",
-              "date": "2024-05-23T08:56:21.621Z",
-              "reviewerName": "Emma Wilson",
-              "reviewerEmail": "emma.wilson@x.dummyjson.com"
-            }
-          ],
-          "returnPolicy": "7 days return policy",
-          "minimumOrderQuantity": 7,
-          "meta": {
-            "createdAt": "2024-05-23T08:56:21.621Z",
-            "updatedAt": "2024-05-23T08:56:21.621Z",
-            "barcode": "1895440764997",
-            "qrCode": "https://dummyjson.com/public/qr-code.png"
-          },
-          "images": [
-            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/1.png",
-            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/2.png",
-            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/3.png"
-          ],
-          "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/thumbnail.png",
-          "quantity": 1,
-          "user": 1,
-          "id": 1
-        },
-        {
-          "title": "Nike Baseball Cleats",
-          "description": "Nike Baseball Cleats are designed for maximum traction and performance on the baseball field. They provide stability and support for players during games and practices.",
-          "category": "mens-shoes",
-          "price": 79.99,
-          "discountPercentage": 11.4,
-          "rating": 4.01,
-          "stock": 14,
-          "tags": [
-            "footwear",
-            "sports cleats"
-          ],
-          "brand": "Nike",
-          "sku": "81LRTRP5",
-          "weight": 7,
-          "dimensions": {
-            "width": 14.83,
-            "height": 19.16,
-            "depth": 28.98
-          },
-          "warrantyInformation": "No warranty",
-          "shippingInformation": "Ships overnight",
-          "availabilityStatus": "In Stock",
-          "reviews": [
-            {
-              "rating": 5,
-              "comment": "Very happy with my purchase!",
-              "date": "2024-05-23T08:56:21.623Z",
-              "reviewerName": "William Gonzalez",
-              "reviewerEmail": "william.gonzalez@x.dummyjson.com"
-            },
-            {
-              "rating": 2,
-              "comment": "Not worth the price!",
-              "date": "2024-05-23T08:56:21.623Z",
-              "reviewerName": "Sophia Brown",
-              "reviewerEmail": "sophia.brown@x.dummyjson.com"
-            },
-            {
-              "rating": 4,
-              "comment": "Very satisfied!",
-              "date": "2024-05-23T08:56:21.623Z",
-              "reviewerName": "Gabriel Mitchell",
-              "reviewerEmail": "gabriel.mitchell@x.dummyjson.com"
-            }
-          ],
-          "returnPolicy": "7 days return policy",
-          "minimumOrderQuantity": 3,
-          "meta": {
-            "createdAt": "2024-05-23T08:56:21.623Z",
-            "updatedAt": "2024-05-23T08:56:21.623Z",
-            "barcode": "0517654748946",
-            "qrCode": "https://dummyjson.com/public/qr-code.png"
-          },
-          "images": [
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/1.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/2.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/3.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/4.png"
-          ],
-          "thumbnail": "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/thumbnail.png",
-          "quantity": 1,
-          "user": 1,
-          "id": 2
-        }
-      ],
-      "user": {
-        "email": "test1@gmail.com",
-        "password": "Test@pass1234",
-        "addresses": [
-          {
-            "addressType": "home",
-            "Name": "Vrushik",
-            "Email": "test1@gmail.com",
-            "Number": "8469786095",
-            "street": "12-Amikunj Society",
-            "city": "Mehsana",
-            "state": "Gujarat",
-            "postalcode": "384002"
-          },
-          {
-            "addressType": "hostel",
-            "Name": "Kota",
-            "Email": "kota@gmail.com",
-            "Number": "84697812345",
-            "street": "IIIT-kota",
-            "city": "Ranpur",
-            "state": "Rajasthan",
-            "postalcode": "31005"
-          }
-        ],
-        "id": 1
-      },
-      "PaymentMethod": "cash",
-      "selectedAddress": {
-        "addressType": "home",
-        "Name": "Vrushik",
-        "Email": "test1@gmail.com",
-        "Number": "8469786095",
-        "street": "12-Amikunj Society",
-        "city": "Mehsana",
-        "state": "Gujarat",
-        "postalcode": "384002"
-      },
-      "totalAmount": 119.97999999999999,
-      "totalItems": 2,
-      "status": "Order-Received",
-      "id": 3
-    },
-    {
-      "products": [
-        {
           "title": "Annibale Colombo Sofa",
           "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
           "category": "furniture",
@@ -10146,324 +9783,189 @@
           ],
           "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png",
           "quantity": 1,
-          "user": 1,
-          "id": 1
+          "user": 2,
+          "id": 3,
+          "status": "Order-Delivered"
         }
       ],
       "user": {
-        "email": "test1@gmail.com",
+        "email": "test2@gmail.com",
         "password": "Test@pass1234",
+        "id": 2,
+        "role": "user",
         "addresses": [
           {
             "addressType": "home",
-            "Name": "Vrushik",
-            "Email": "test1@gmail.com",
-            "Number": "8469786095",
-            "street": "12-Amikunj Society",
-            "city": "Mehsana",
+            "Name": "test2",
+            "Email": "test2@gmail.com",
+            "Number": "123456789",
+            "street": "test-streent Gift City",
+            "city": "Ahmedabad",
             "state": "Gujarat",
-            "postalcode": "384002"
+            "postalcode": "951357"
           },
           {
-            "addressType": "hostel",
-            "Name": "Kota",
-            "Email": "kota@gmail.com",
-            "Number": "84697812345",
-            "street": "IIIT-kota",
-            "city": "Ranpur",
-            "state": "Rajasthan",
+            "addressType": "dukan",
+            "Name": "Yatri ",
+            "Email": "vypatel@gmail.com",
+            "Number": "1532465498",
+            "street": "malgodown road ",
+            "city": "Mehsana",
+            "state": "Gujarat",
             "postalcode": "31005"
           }
-        ],
-        "id": 1
+        ]
       },
-      "PaymentMethod": "UPI",
+      "PaymentMethod": "cash",
       "selectedAddress": {
-        "addressType": "hostel",
-        "Name": "Kota",
-        "Email": "kota@gmail.com",
-        "Number": "84697812345",
-        "street": "IIIT-kota",
-        "city": "Ranpur",
-        "state": "Rajasthan",
+        "addressType": "dukan",
+        "Name": "Yatri ",
+        "Email": "vypatel@gmail.com",
+        "Number": "1532465498",
+        "street": "malgodown road ",
+        "city": "Mehsana",
+        "state": "Gujarat",
         "postalcode": "31005"
       },
       "totalAmount": 2499.99,
       "totalItems": 1,
-      "status": "Order-Received",
-      "id": 4
+      "id": 1
     },
     {
       "products": [
         {
-          "title": "iPhone 13 Pro",
-          "description": "The iPhone 13 Pro is a cutting-edge smartphone with a powerful camera system, high-performance chip, and stunning display. It offers advanced features for users who demand top-notch technology.",
-          "category": "smartphones",
-          "price": 1099.99,
-          "discountPercentage": 18.3,
-          "rating": 3.42,
-          "stock": 26,
+          "title": "Plant Pot",
+          "description": "The Plant Pot is a stylish container for your favorite plants. With a sleek design, it complements your indoor or outdoor garden, adding a modern touch to your plant display.",
+          "category": "home-decoration",
+          "price": 14.99,
+          "discountPercentage": 0.19,
+          "rating": 3.33,
+          "stock": 70,
           "tags": [
-            "smartphones",
-            "apple"
+            "home decor",
+            "plant accessories"
           ],
-          "brand": "Apple",
-          "sku": "YGQKHPGK",
+          "sku": "M8IWE8MF",
           "weight": 8,
           "dimensions": {
-            "width": 22.39,
-            "height": 9.77,
-            "depth": 19.6
-          },
-          "warrantyInformation": "1 year warranty",
-          "shippingInformation": "Ships in 2 weeks",
-          "availabilityStatus": "In Stock",
-          "reviews": [
-            {
-              "rating": 5,
-              "comment": "Highly impressed!",
-              "date": "2024-05-23T08:56:21.625Z",
-              "reviewerName": "Aria Roberts",
-              "reviewerEmail": "aria.roberts@x.dummyjson.com"
-            },
-            {
-              "rating": 4,
-              "comment": "Great product!",
-              "date": "2024-05-23T08:56:21.625Z",
-              "reviewerName": "Ryan Graham",
-              "reviewerEmail": "ryan.graham@x.dummyjson.com"
-            },
-            {
-              "rating": 2,
-              "comment": "Poor quality!",
-              "date": "2024-05-23T08:56:21.625Z",
-              "reviewerName": "Mason Wright",
-              "reviewerEmail": "mason.wright@x.dummyjson.com"
-            }
-          ],
-          "returnPolicy": "7 days return policy",
-          "minimumOrderQuantity": 1,
-          "meta": {
-            "createdAt": "2024-05-23T08:56:21.625Z",
-            "updatedAt": "2024-05-23T08:56:21.625Z",
-            "barcode": "2986724589988",
-            "qrCode": "https://dummyjson.com/public/qr-code.png"
-          },
-          "images": [
-            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/1.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/2.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/3.png"
-          ],
-          "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/thumbnail.png",
-          "quantity": 1,
-          "user": 2,
-          "id": 1
-        }
-      ],
-      "user": {
-        "email": "test2@gmail.com",
-        "password": "Test@pass1234",
-        "id": 2,
-        "addresses": [
-          {
-            "addressType": "home",
-            "Name": "test2",
-            "Email": "test2@gmail.com",
-            "Number": "123456789",
-            "street": "test-streent Gift City",
-            "city": "Ahmedabad",
-            "state": "Gujarat",
-            "postalcode": "951357"
-          }
-        ]
-      },
-      "PaymentMethod": "cash",
-      "selectedAddress": {
-        "addressType": "home",
-        "Name": "test2",
-        "Email": "test2@gmail.com",
-        "Number": "123456789",
-        "street": "test-streent Gift City",
-        "city": "Ahmedabad",
-        "state": "Gujarat",
-        "postalcode": "951357"
-      },
-      "totalAmount": 1099.99,
-      "totalItems": 1,
-      "status": "Order-Received",
-      "id": 5
-    },
-    {
-      "products": [
-        {
-          "title": "Annibale Colombo Bed",
-          "description": "The Annibale Colombo Bed is a luxurious and elegant bed frame, crafted with high-quality materials for a comfortable and stylish bedroom.",
-          "category": "furniture",
-          "price": 1899.99,
-          "discountPercentage": 0.29,
-          "rating": 4.14,
-          "stock": 47,
-          "tags": [
-            "furniture",
-            "beds"
-          ],
-          "brand": "Annibale Colombo",
-          "sku": "4KMDTZWF",
-          "weight": 3,
-          "dimensions": {
-            "width": 28.75,
-            "height": 26.88,
-            "depth": 24.47
+            "width": 16.28,
+            "height": 8.72,
+            "depth": 18.47
           },
           "warrantyInformation": "2 year warranty",
-          "shippingInformation": "Ships overnight",
+          "shippingInformation": "Ships in 1-2 business days",
           "availabilityStatus": "In Stock",
           "reviews": [
             {
               "rating": 4,
-              "comment": "Great value for money!",
-              "date": "2024-05-23T08:56:21.620Z",
-              "reviewerName": "Julian Newton",
-              "reviewerEmail": "julian.newton@x.dummyjson.com"
+              "comment": "Fast shipping!",
+              "date": "2024-05-23T08:56:21.621Z",
+              "reviewerName": "Harper Turner",
+              "reviewerEmail": "harper.turner@x.dummyjson.com"
             },
             {
               "rating": 5,
-              "comment": "Would buy again!",
-              "date": "2024-05-23T08:56:21.620Z",
-              "reviewerName": "Madison Collins",
-              "reviewerEmail": "madison.collins@x.dummyjson.com"
-            },
-            {
-              "rating": 4,
-              "comment": "Would buy again!",
-              "date": "2024-05-23T08:56:21.620Z",
-              "reviewerName": "Clara Berry",
-              "reviewerEmail": "clara.berry@x.dummyjson.com"
-            }
-          ],
-          "returnPolicy": "7 days return policy",
-          "minimumOrderQuantity": 1,
-          "meta": {
-            "createdAt": "2024-05-23T08:56:21.620Z",
-            "updatedAt": "2024-05-23T08:56:21.620Z",
-            "barcode": "7113807059215",
-            "qrCode": "https://dummyjson.com/public/qr-code.png"
-          },
-          "images": [
-            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/1.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/2.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/3.png"
-          ],
-          "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/thumbnail.png",
-          "quantity": 1,
-          "user": 2,
-          "id": 1
-        }
-      ],
-      "user": {
-        "email": "test2@gmail.com",
-        "password": "Test@pass1234",
-        "id": 2,
-        "addresses": [
-          {
-            "addressType": "home",
-            "Name": "test2",
-            "Email": "test2@gmail.com",
-            "Number": "123456789",
-            "street": "test-streent Gift City",
-            "city": "Ahmedabad",
-            "state": "Gujarat",
-            "postalcode": "951357"
-          }
-        ]
-      },
-      "PaymentMethod": "cash",
-      "selectedAddress": {
-        "addressType": "home",
-        "Name": "test2",
-        "Email": "test2@gmail.com",
-        "Number": "123456789",
-        "street": "test-streent Gift City",
-        "city": "Ahmedabad",
-        "state": "Gujarat",
-        "postalcode": "951357"
-      },
-      "totalAmount": 1899.99,
-      "totalItems": 1,
-      "status": "Order-Received",
-      "id": 6
-    },
-    {
-      "products": [
-        {
-          "title": "Knoll Saarinen Executive Conference Chair",
-          "description": "The Knoll Saarinen Executive Conference Chair is a modern and ergonomic chair, perfect for your office or conference room with its timeless design.",
-          "category": "furniture",
-          "price": 499.99,
-          "discountPercentage": 15.23,
-          "rating": 4.11,
-          "stock": 47,
-          "tags": [
-            "furniture",
-            "office chairs"
-          ],
-          "brand": "Knoll",
-          "sku": "RKHVJ4FE",
-          "weight": 3,
-          "dimensions": {
-            "width": 16.59,
-            "height": 21.46,
-            "depth": 29.07
-          },
-          "warrantyInformation": "Lifetime warranty",
-          "shippingInformation": "Ships in 3-5 business days",
-          "availabilityStatus": "In Stock",
-          "reviews": [
-            {
-              "rating": 4,
-              "comment": "Very happy with my purchase!",
-              "date": "2024-05-23T08:56:21.620Z",
+              "comment": "Awesome product!",
+              "date": "2024-05-23T08:56:21.621Z",
               "reviewerName": "Leah Gutierrez",
               "reviewerEmail": "leah.gutierrez@x.dummyjson.com"
             },
             {
               "rating": 4,
-              "comment": "Would buy again!",
-              "date": "2024-05-23T08:56:21.620Z",
-              "reviewerName": "Nolan Gonzalez",
-              "reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
-            },
-            {
-              "rating": 2,
-              "comment": "Waste of money!",
-              "date": "2024-05-23T08:56:21.620Z",
-              "reviewerName": "Stella Morris",
-              "reviewerEmail": "stella.morris@x.dummyjson.com"
+              "comment": "Highly recommended!",
+              "date": "2024-05-23T08:56:21.621Z",
+              "reviewerName": "Sadie Morales",
+              "reviewerEmail": "sadie.morales@x.dummyjson.com"
             }
           ],
-          "returnPolicy": "30 days return policy",
-          "minimumOrderQuantity": 5,
+          "returnPolicy": "90 days return policy",
+          "minimumOrderQuantity": 44,
           "meta": {
-            "createdAt": "2024-05-23T08:56:21.620Z",
-            "updatedAt": "2024-05-23T08:56:21.620Z",
-            "barcode": "0726316339746",
+            "createdAt": "2024-05-23T08:56:21.621Z",
+            "updatedAt": "2024-05-23T08:56:21.621Z",
+            "barcode": "4265754153251",
             "qrCode": "https://dummyjson.com/public/qr-code.png"
           },
           "images": [
-            "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/1.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/2.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/3.png"
+            "https://cdn.dummyjson.com/products/images/home-decoration/Plant%20Pot/1.png",
+            "https://cdn.dummyjson.com/products/images/home-decoration/Plant%20Pot/2.png",
+            "https://cdn.dummyjson.com/products/images/home-decoration/Plant%20Pot/3.png",
+            "https://cdn.dummyjson.com/products/images/home-decoration/Plant%20Pot/4.png"
           ],
-          "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/thumbnail.png",
+          "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/Plant%20Pot/thumbnail.png",
           "quantity": 1,
           "user": 2,
-          "id": 3
+          "id": 3,
+          "status": "Order-Accepted"
+        },
+        {
+          "title": "Family Tree Photo Frame",
+          "description": "The Family Tree Photo Frame is a sentimental and stylish way to display your cherished family memories. With multiple photo slots, it tells the story of your loved ones.",
+          "category": "home-decoration",
+          "price": 29.99,
+          "discountPercentage": 1.53,
+          "rating": 3.84,
+          "stock": 34,
+          "tags": [
+            "home decor",
+            "photo frame"
+          ],
+          "sku": "EZOJC792",
+          "weight": 4,
+          "dimensions": {
+            "width": 15.46,
+            "height": 26.32,
+            "depth": 17.1
+          },
+          "warrantyInformation": "6 months warranty",
+          "shippingInformation": "Ships in 1 month",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 1,
+              "comment": "Disappointing product!",
+              "date": "2024-05-23T08:56:21.621Z",
+              "reviewerName": "Logan Torres",
+              "reviewerEmail": "logan.torres@x.dummyjson.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Very pleased!",
+              "date": "2024-05-23T08:56:21.621Z",
+              "reviewerName": "William Gonzalez",
+              "reviewerEmail": "william.gonzalez@x.dummyjson.com"
+            },
+            {
+              "rating": 3,
+              "comment": "Disappointing product!",
+              "date": "2024-05-23T08:56:21.621Z",
+              "reviewerName": "Amelia Perez",
+              "reviewerEmail": "amelia.perez@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "90 days return policy",
+          "minimumOrderQuantity": 16,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.621Z",
+            "updatedAt": "2024-05-23T08:56:21.621Z",
+            "barcode": "9462569143093",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/home-decoration/Family%20Tree%20Photo%20Frame/1.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/Family%20Tree%20Photo%20Frame/thumbnail.png",
+          "quantity": 1,
+          "user": 2,
+          "id": 4,
+          "status": "Order-Accepted"
         }
       ],
       "user": {
         "email": "test2@gmail.com",
         "password": "Test@pass1234",
         "id": 2,
+        "role": "user",
         "addresses": [
           {
             "addressType": "home",
@@ -10474,10 +9976,20 @@
             "city": "Ahmedabad",
             "state": "Gujarat",
             "postalcode": "951357"
+          },
+          {
+            "addressType": "dukan",
+            "Name": "Yatri ",
+            "Email": "vypatel@gmail.com",
+            "Number": "1532465498",
+            "street": "malgodown road ",
+            "city": "Mehsana",
+            "state": "Gujarat",
+            "postalcode": "31005"
           }
         ]
       },
-      "PaymentMethod": "UPI",
+      "PaymentMethod": "cash",
       "selectedAddress": {
         "addressType": "home",
         "Name": "test2",
@@ -10488,10 +10000,9 @@
         "state": "Gujarat",
         "postalcode": "951357"
       },
-      "totalAmount": 499.99,
-      "totalItems": 1,
-      "status": "Order-Received",
-      "id": 7
+      "totalAmount": 44.98,
+      "totalItems": 2,
+      "id": 2
     }
   ]
 }

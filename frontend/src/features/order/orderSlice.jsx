@@ -1,10 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 // import { fetchCount } from './orderApi';
-import {createOrder} from './orderApi';
+import {createOrder,updateStatus,fetchAllOrders} from './orderApi';
 const initialState = {
   orders:[],
   status: 'idle',
   currentOrder:null,
+  allorders:[]
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -37,7 +38,22 @@ export const createOrderAsync = createAsyncThunk(
 //     return response.data;
 //   }
 // );
+export const updateStatusAsync=createAsyncThunk(
+  'order/updateStatus',
+  async (update)=>{
+    const response =await updateStatus(update);
 
+    return response.data;
+  }
+)
+export const fetchAllOrdersAsync=createAsyncThunk(
+  'order/fetchAllOrders',
+  async()=>{
+    const response=await fetchAllOrders();
+    const finalData=response.data;
+    return finalData;
+  }
+)
 export const counterSlice = createSlice({
   name: 'order',
   initialState,
@@ -65,7 +81,25 @@ export const counterSlice = createSlice({
         state.status = 'idle';
         state.orders.push(action.payload);
         state.currentOrder=action.payload;
+      })
+      .addCase(updateStatusAsync.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(updateStatusAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        const index=state.orders.findIndex(order=>order.id===action.payload.id);
+        state.orders[index]=action.payload;
+        
+      })
+      .addCase(fetchAllOrdersAsync.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchAllOrdersAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.allorders=action.payload;
+        // console.log(state.products);
       });
+      
   },
 });
 
@@ -74,4 +108,5 @@ export const { resetOrder} = counterSlice.actions;
 
 export const selectCount = (state) => state.counter.value;
 export const selectCurrentOrder=(state)=>state.order.currentOrder;
+export const selectAllOrders=(state)=>state.order.allorders;
 export default counterSlice.reducer;

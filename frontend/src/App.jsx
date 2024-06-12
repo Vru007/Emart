@@ -9,10 +9,17 @@ import  CartPage  from './features/cart/cart';
 import CheckoutPage from './pages/checkoutPage';
 import AllOrders from './features/user/components/UserOrders';
 import NotFound from './pages/404';
+import LogoutPage from'./features/auth/components/Logout';
+import ForgotPassword from './features/auth/components/ForgotPassword';
+import AdminProductListPage from './pages/AdminProductListPage';
 import UserProfilePage from './pages/UserProfilePage';
 import SuccessOrder from './pages/SuccessOrders';
 import { useDispatch } from 'react-redux';
 import ProductDetailPage from './pages/productDetails';
+import AdminProtected from './features/auth/components/ProtectedAdmin';
+import AdminProductDetail from './features/admin/components/AdminProductDetail';
+import AddProduct from './features/admin/components/AddProduct';
+import AllorderedProducts from './features/admin/components/AllorderedProducts';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -23,6 +30,7 @@ import Protected from './features/auth/components/Protected';
 import { fetchItemsByUserIdAsync } from './features/cart/cartListSlice';
 import { selectUserInfo } from './features/auth/authSlice';
 import { useSelector } from 'react-redux';
+//TODO: Add alerts and loaders using react-alert library
 const router = createBrowserRouter([
   {
     path: "/",
@@ -60,7 +68,30 @@ const router = createBrowserRouter([
     path:"/profile",
     element:(<Protected><UserProfilePage/></Protected>)
   },
-  
+  {
+    path:"/logout",
+    element:(<LogoutPage/>)
+  },
+  {
+    path:"/forgotpassword",
+    element:(<ForgotPassword/>)
+  },
+  {
+    path:"/admin/products",
+    element:(<AdminProtected><AdminProductListPage/></AdminProtected>)
+  },
+  {
+    path:"/admin/addproduct",
+    element:(<AdminProtected><AddProduct/></AdminProtected>)
+  },
+  {
+    path:"/admin/edit/:id",
+    element:(<AdminProtected><AdminProductDetail/></AdminProtected>)
+  },
+  {
+    path:"/admin/orders/",
+    element:(<AdminProtected><AllorderedProducts/></AdminProtected>)
+  },
   {
 
     path:"*",

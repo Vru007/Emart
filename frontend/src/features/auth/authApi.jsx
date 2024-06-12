@@ -53,3 +53,10 @@ export function createUser(userData) {
       resolve({data});
     })
   }
+
+  export function signOut(userId){
+    return new Promise(async(resolve)=>{
+       
+      resolve({data :'Succces'});
+    });
+  }

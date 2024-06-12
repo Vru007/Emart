@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchAllProducts, fetchAllCategories,fetchAllBrands} from './productListsAPI';
-import { fetchProductsByFilters,fetchProductById,fetchProductByIdNull} from './productListsAPI';
+import { fetchProductsByFilters,fetchProductById,fetchProductByIdNull,addProduct} from './productListsAPI';
+import AllOrders from '../user/components/UserOrders';
 // import { fetchFromSorting } from './productListsAPI';
 const initialState = {
   products:[],
@@ -70,6 +71,7 @@ export const fetchProductByIdAsync = createAsyncThunk(
     return finalData;
   }
 );
+
 export const fetchProductByIdNullAsync = createAsyncThunk(
   'product/fetchProductByIdNull',
   async (id) => {
@@ -81,6 +83,20 @@ export const fetchProductByIdNullAsync = createAsyncThunk(
     return finalData;
   }
 );
+export const addProductAsync = createAsyncThunk(
+  'product/addProductAsync',
+  async (newProduct) => {
+    const response = await addProduct(newProduct);
+    // The value we return becomes the `fulfilled` action payload
+    // console.log("inside fetchAsync",response.data.products);
+    const finalData=response.data
+    // console.log("finalData",finalData);
+    return finalData;
+  }
+);
+
+
+
 
 
 export const productSlice = createSlice({
@@ -153,7 +169,19 @@ export const productSlice = createSlice({
         state.status = 'idle';
         state.selectedProduct=action.payload;
         // console.log(state.products);
+      }).addCase(addProductAsync.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(addProductAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.products.push(action.product);
+        // console.log(state.products);
       });
+      
+      
+
+      
+      
      
   },
 });
@@ -167,4 +195,5 @@ export const selectAllCategories=(state)=>state.product.categories;
 export const selectAllBrands=(state)=>state.product.brands;
 export const selectedProducts=(state)=>state.product.selectedProduct;
 export const selectProductByIdNullAsync=(state)=>state.product.selectedProduct;
+
 export default productSlice.reducer;

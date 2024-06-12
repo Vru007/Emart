@@ -19,3 +19,22 @@ export function fetchOrder(orderId){
     resolve({data});
   })
 }
+export function updateStatus(updateItem){
+
+  return new Promise (async (resolve)=>{
+    const response =await fetch('http://localhost:3000/orders/'+updateItem.id,{
+    method:'PATCH',
+    body:JSON.stringify(updateItem),
+    headers:{'content-type':'application/json'},
+    });
+    const data=await response.json();
+    resolve({data});
+  })
+}
+export function fetchAllOrders(){
+  return new Promise(async (resolve)=>{
+    const response=await fetch('http://localhost:3000/orders');
+    const data=await response.json();
+    resolve({data});
+  })
+}

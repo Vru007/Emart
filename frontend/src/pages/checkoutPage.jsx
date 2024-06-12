@@ -43,20 +43,20 @@ export default function CheckoutPage() {
   const [PaymentMethod,setPaymentMethod] =useState(null);
   const navigate=useNavigate();
   const dispatch=useDispatch();
-  const products=useSelector(selectItems);
+  const prod=useSelector(selectItems);
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset
   } = useForm();
-  if(!products.length)(
+  if(!prod.length)(
     navigate('/')
   )
  
   const user=useSelector(selectUserInfo);
-  const totalAmount=products.reduce((amount,item)=>item.price*item.quantity +amount,0);
-  const totalItems=products.reduce((total,item)=>item.quantity+total,0);
+  const totalAmount=prod.reduce((amount,item)=>item.price*item.quantity +amount,0);
+  const totalItems=prod.reduce((total,item)=>item.quantity+total,0);
   const handleRemove=(e,itemId)=>{
     // console.log("remove: ",itemId);
     dispatch(deleteItemFromCartAsync(itemId));
@@ -77,9 +77,13 @@ export default function CheckoutPage() {
   //  useEffect(()=>{
   //   // console.log("inside useEffect:",PaymentMethod);
   //  },[PaymentMethod]);
- const handleOrder=(e)=>{
+ const handleOrder=async(e)=>{
   if(selectedAddress!==null && PaymentMethod!==null){
-  const order={products,user,PaymentMethod,selectedAddress,totalAmount,totalItems,status:'Order-Received'}
+  
+  const products=await prod.map(product=>({...product,status:'Order-Received'}));
+
+  const order={products,user,PaymentMethod,selectedAddress,totalAmount,totalItems}
+   
   dispatch(
   createOrderAsync(order))
   navigate('/ordersummary')
@@ -90,7 +94,7 @@ export default function CheckoutPage() {
  }
   return (
     <>
-    {!products.length && <Navigate to="/" replace={true}></Navigate>}
+    {!prod.length && <Navigate to="/" replace={true}></Navigate>}
     <div className="mt-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
         <div className="lg:col-span-3">
@@ -365,7 +369,7 @@ export default function CheckoutPage() {
                 <div className="mt-8">
                   <div className="flow-root">
                     <ul role="list" className="-my-6 divide-y divide-gray-200">
-                      {products.map((product) => (
+                      {prod.map((product) => (
                         <li key={product.id} className="flex py-6">
                           <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                             <img

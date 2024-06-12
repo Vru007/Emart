@@ -7,6 +7,7 @@ function Protected({children}){
     if(!user){
       return <Navigate to="/login"> </Navigate>;
     }
+    
 
     return children;
 }

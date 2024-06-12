@@ -1,25 +1,27 @@
 // A mock function to mimic making an async request for data
+import axios from'axios';
 export function fetchAllProducts() {
    
   return new Promise(async (resolve)=>{
-    const response=await fetch('http://localhost:3000/products');
-    const data=await response.json();
+    const response=await axios.get('http://localhost:8080/products');
+    const data=await response.data;
+    console.log("products from backend: ",data)
     resolve({data});
   })
 }
 export function fetchAllCategories() {
    
   return new Promise(async (resolve)=>{
-    const response=await fetch('http://localhost:3000/categories');
-    const data=await response.json();
+    const response=await axios.get('http://localhost:8080/category');
+    const data=await response.data;
     resolve({data});
   })
 }
 export function fetchAllBrands() {
    
   return new Promise(async (resolve)=>{
-    const response=await fetch('http://localhost:3000/brands');
-    const data=await response.json();
+    const response=await axios.get('http://localhost:8080/brand');
+    const data=await response.data;
     resolve({data});
   })
 }
@@ -44,10 +46,10 @@ export function fetchProductsByFilters(filter,sort,pagination) {
     for(let key in pagination){
         string+=`${key}=${pagination[key]}&`;
     }
-  
+  console.log("string:",string);
   return new Promise(async (resolve)=>{
-    const response=await fetch('http://localhost:3000/products?'+string);
-    const data=await response.json();
+    const response=await axios.get('http://localhost:8080/products?'+string);
+    const data=await response.data;
     const totalItems= await response.headers.get('X-Total-Count');
     resolve({data:{products:data,totalItems:totalItems}});
   })
@@ -56,8 +58,8 @@ export function fetchProductsByFilters(filter,sort,pagination) {
 export function fetchProductById(id) {
    
   return new Promise(async (resolve)=>{
-    const response=await fetch('http://localhost:3000/products/'+id);
-    const data=await response.json();
+    const response=await axios.get('http://localhost:8080/products/'+id);
+    const data=await response.data;
     resolve({data});
   })
 }
@@ -69,3 +71,18 @@ export function fetchProductByIdNull() {
     resolve({data});
   })
 }
+export function addProduct(newProduct) {
+   
+  return new Promise(async (resolve)=>{
+    const response=await axios.get('http://localhost:8080/products',{
+      method:'POST',
+      body:JSON.stringify(newProduct),
+      headers: {'content-type':'application/json'},
+    });
+    const data=await response.data;
+    resolve({data});
+  })
+}
+
+
+
