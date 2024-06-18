@@ -1,10 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchOrders } from './userAPI';
+import { fetchOrders,updateUser,fetchUserForUpdate } from './userAPI';
 const initialState = {
   value: 0,
   status: 'idle',
   orders:[],
   edit:null,
+  loggedInUser:null
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -22,6 +23,26 @@ export const fetchOrderAsync = createAsyncThunk(
   }
 );
 
+export const fetchUserForUpdateAsync=createAsyncThunk(
+   'user/fetchUserForUpdate',
+   async(userId)=>{
+    console.log("userID in fecthIUseL ",userId);
+    const response = await fetchUserForUpdate(userId);
+    return response.data;
+   }
+);
+export const updateUserAsync = createAsyncThunk(
+  'user/updateUser',
+  async (update) => {
+    // console.log("userData",userData);
+    console.log("update: ",update);
+    const response = await updateUser(update);
+    // console.log("updateData: ",update);
+    // The value we return becomes the `fulfilled` action payload
+    // console.log("returen response: ",response.data);
+    return response.data;
+  }
+);
 
 export const counterSlice = createSlice({
   name: 'user',
@@ -51,12 +72,27 @@ export const counterSlice = createSlice({
         state.status = 'idle';
         state.orders = action.payload;
       })
+      .addCase(updateUserAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.loggedInUser = action.payload;
+      })
+      .addCase(updateUserAsync.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchUserForUpdateAsync.pending,(state,action)=>{
+        state.status='loading';
+      })
+      .addCase(fetchUserForUpdateAsync.fulfilled,(state,action)=>{
+        state.status='idle';
+        state.loggedInUser=action.payload;
+      })
       
       
   },
 });
 
 // export const { resetOrder}= counterSlice.actions;
+export const selectUpdateUser=(state)=>state.user.loggedInUser
 export const selectAllOrders =(state)=>state.user.orders;
 export const selectEditAddress = (state) => state.user.edit;
 

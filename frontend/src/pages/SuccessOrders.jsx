@@ -13,8 +13,8 @@ export default function SuccessOrder() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   useEffect(() => {
-    console.log("userId: ", user.id);
-    dispatch(resetCartAsync(user.id));
+    console.log("user: ", user);
+    dispatch(resetCartAsync(user._id));
     // dispatch(resetOrder());
   }, [[dispatch, user.id]]);
   return (
@@ -130,7 +130,7 @@ export default function SuccessOrder() {
 
     
   </div>
-  </div>;
+  </div>
   <div className="mt-10 flex items-center justify-center gap-x-6">
                   <Link to="/"
                     
@@ -147,5 +147,5 @@ export default function SuccessOrder() {
         navigate("/*")
       )}
     </>
-  );
+  )
 }

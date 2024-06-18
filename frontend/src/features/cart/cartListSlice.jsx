@@ -89,11 +89,13 @@ export const counterSlice = createSlice({
       })
       .addCase(updateItemsAsync.pending, (state) => {
         state.status = 'loading';
+        console.log("in loading update");
       })
       .addCase(updateItemsAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         const index=state.items.findIndex(item=>item.id===action.payload.id);
-        state.items[index]=action.payload;
+        state.items[index].quantity=action.payload.quantity;
+        console.log("in fulfilled state in update");
         // state.items=action.payload;
       })
       .addCase(deleteItemFromCartAsync.pending, (state) => {

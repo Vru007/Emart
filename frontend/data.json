@@ -9717,6 +9717,1591 @@
       "quantity": 1,
       "user": 1,
       "id": 2
+    },
+    {
+      "title": "Bedside Table African Cherry",
+      "description": "The Bedside Table in African Cherry is a stylish and functional addition to your bedroom, providing convenient storage space and a touch of elegance.",
+      "category": "furniture",
+      "price": 299.99,
+      "discountPercentage": 9.58,
+      "rating": 4.48,
+      "stock": 16,
+      "tags": [
+        "furniture",
+        "bedside tables"
+      ],
+      "brand": "Furniture Co.",
+      "sku": "OWPLTZYX",
+      "weight": 10,
+      "dimensions": {
+        "width": 25.43,
+        "height": 20.2,
+        "depth": 24.95
+      },
+      "warrantyInformation": "6 months warranty",
+      "shippingInformation": "Ships in 1-2 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Very happy with my purchase!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "John Doe",
+          "reviewerEmail": "john.doe@x.dummyjson.com"
+        },
+        {
+          "rating": 4,
+          "comment": "Highly recommended!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Avery Carter",
+          "reviewerEmail": "avery.carter@x.dummyjson.com"
+        },
+        {
+          "rating": 4,
+          "comment": "Very pleased!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Evelyn Sanchez",
+          "reviewerEmail": "evelyn.sanchez@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "No return policy",
+      "minimumOrderQuantity": 5,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.620Z",
+        "updatedAt": "2024-05-23T08:56:21.620Z",
+        "barcode": "2913244159666",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/1.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/2.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/thumbnail.png",
+      "quantity": 1,
+      "user": "666a99c74cfbfba559b097c2",
+      "id": 3
+    },
+    {
+      "title": "Bedside Table African Cherry",
+      "description": "The Bedside Table in African Cherry is a stylish and functional addition to your bedroom, providing convenient storage space and a touch of elegance.",
+      "category": "furniture",
+      "price": 299.99,
+      "discountPercentage": 9.58,
+      "rating": 4.48,
+      "stock": 16,
+      "tags": [
+        "furniture",
+        "bedside tables"
+      ],
+      "brand": "Furniture Co.",
+      "sku": "OWPLTZYX",
+      "weight": 10,
+      "dimensions": {
+        "width": 25.43,
+        "height": 20.2,
+        "depth": 24.95
+      },
+      "warrantyInformation": "6 months warranty",
+      "shippingInformation": "Ships in 1-2 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Very happy with my purchase!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "John Doe",
+          "reviewerEmail": "john.doe@x.dummyjson.com"
+        },
+        {
+          "rating": 4,
+          "comment": "Highly recommended!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Avery Carter",
+          "reviewerEmail": "avery.carter@x.dummyjson.com"
+        },
+        {
+          "rating": 4,
+          "comment": "Very pleased!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Evelyn Sanchez",
+          "reviewerEmail": "evelyn.sanchez@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "No return policy",
+      "minimumOrderQuantity": 5,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.620Z",
+        "updatedAt": "2024-05-23T08:56:21.620Z",
+        "barcode": "2913244159666",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/1.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/2.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/thumbnail.png",
+      "quantity": 1,
+      "user": "666a99c74cfbfba559b097c2",
+      "id": 4
+    },
+    {
+      "title": "Bedside Table African Cherry",
+      "description": "The Bedside Table in African Cherry is a stylish and functional addition to your bedroom, providing convenient storage space and a touch of elegance.",
+      "category": "furniture",
+      "price": 299.99,
+      "discountPercentage": 9.58,
+      "rating": 4.48,
+      "stock": 16,
+      "tags": [
+        "furniture",
+        "bedside tables"
+      ],
+      "brand": "Furniture Co.",
+      "sku": "OWPLTZYX",
+      "weight": 10,
+      "dimensions": {
+        "width": 25.43,
+        "height": 20.2,
+        "depth": 24.95
+      },
+      "warrantyInformation": "6 months warranty",
+      "shippingInformation": "Ships in 1-2 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Very happy with my purchase!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "John Doe",
+          "reviewerEmail": "john.doe@x.dummyjson.com"
+        },
+        {
+          "rating": 4,
+          "comment": "Highly recommended!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Avery Carter",
+          "reviewerEmail": "avery.carter@x.dummyjson.com"
+        },
+        {
+          "rating": 4,
+          "comment": "Very pleased!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Evelyn Sanchez",
+          "reviewerEmail": "evelyn.sanchez@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "No return policy",
+      "minimumOrderQuantity": 5,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.620Z",
+        "updatedAt": "2024-05-23T08:56:21.620Z",
+        "barcode": "2913244159666",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/1.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/2.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/thumbnail.png",
+      "quantity": 1,
+      "user": "666a99c74cfbfba559b097c2",
+      "id": 5
+    },
+    {
+      "title": "Bedside Table African Cherry",
+      "description": "The Bedside Table in African Cherry is a stylish and functional addition to your bedroom, providing convenient storage space and a touch of elegance.",
+      "category": "furniture",
+      "price": 299.99,
+      "discountPercentage": 9.58,
+      "rating": 4.48,
+      "stock": 16,
+      "tags": [
+        "furniture",
+        "bedside tables"
+      ],
+      "brand": "Furniture Co.",
+      "sku": "OWPLTZYX",
+      "weight": 10,
+      "dimensions": {
+        "width": 25.43,
+        "height": 20.2,
+        "depth": 24.95
+      },
+      "warrantyInformation": "6 months warranty",
+      "shippingInformation": "Ships in 1-2 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Very happy with my purchase!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "John Doe",
+          "reviewerEmail": "john.doe@x.dummyjson.com"
+        },
+        {
+          "rating": 4,
+          "comment": "Highly recommended!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Avery Carter",
+          "reviewerEmail": "avery.carter@x.dummyjson.com"
+        },
+        {
+          "rating": 4,
+          "comment": "Very pleased!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Evelyn Sanchez",
+          "reviewerEmail": "evelyn.sanchez@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "No return policy",
+      "minimumOrderQuantity": 5,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.620Z",
+        "updatedAt": "2024-05-23T08:56:21.620Z",
+        "barcode": "2913244159666",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/1.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/2.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/thumbnail.png",
+      "quantity": 1,
+      "user": "666a99c74cfbfba559b097c2",
+      "id": 6
+    },
+    {
+      "title": "Annibale Colombo Sofa",
+      "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
+      "category": "furniture",
+      "price": 2499.99,
+      "discountPercentage": 18.54,
+      "rating": 3.08,
+      "stock": 16,
+      "tags": [
+        "furniture",
+        "sofas"
+      ],
+      "brand": "Annibale Colombo",
+      "sku": "LUU95CQP",
+      "weight": 3,
+      "dimensions": {
+        "width": 20.97,
+        "height": 19.11,
+        "depth": 25.81
+      },
+      "warrantyInformation": "1 month warranty",
+      "shippingInformation": "Ships overnight",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Very satisfied!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Tyler Davis",
+          "reviewerEmail": "tyler.davis@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Excellent quality!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Hannah Robinson",
+          "reviewerEmail": "hannah.robinson@x.dummyjson.com"
+        },
+        {
+          "rating": 3,
+          "comment": "Waste of money!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Madison Collins",
+          "reviewerEmail": "madison.collins@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "7 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.620Z",
+        "updatedAt": "2024-05-23T08:56:21.620Z",
+        "barcode": "0426785817074",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/1.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/2.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png",
+      "quantity": 1,
+      "id": 7
+    },
+    {
+      "title": "Annibale Colombo Sofa",
+      "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
+      "category": "furniture",
+      "price": 2499.99,
+      "discountPercentage": 18.54,
+      "rating": 3.08,
+      "stock": 16,
+      "tags": [
+        "furniture",
+        "sofas"
+      ],
+      "brand": "Annibale Colombo",
+      "sku": "LUU95CQP",
+      "weight": 3,
+      "dimensions": {
+        "width": 20.97,
+        "height": 19.11,
+        "depth": 25.81
+      },
+      "warrantyInformation": "1 month warranty",
+      "shippingInformation": "Ships overnight",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Very satisfied!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Tyler Davis",
+          "reviewerEmail": "tyler.davis@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Excellent quality!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Hannah Robinson",
+          "reviewerEmail": "hannah.robinson@x.dummyjson.com"
+        },
+        {
+          "rating": 3,
+          "comment": "Waste of money!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Madison Collins",
+          "reviewerEmail": "madison.collins@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "7 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.620Z",
+        "updatedAt": "2024-05-23T08:56:21.620Z",
+        "barcode": "0426785817074",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/1.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/2.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png",
+      "quantity": 1,
+      "user": "666a99c74cfbfba559b097c2",
+      "id": 8
+    },
+    {
+      "title": "Annibale Colombo Sofa",
+      "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
+      "category": "furniture",
+      "price": 2499.99,
+      "discountPercentage": 18.54,
+      "rating": 3.08,
+      "stock": 16,
+      "tags": [
+        "furniture",
+        "sofas"
+      ],
+      "brand": "Annibale Colombo",
+      "sku": "LUU95CQP",
+      "weight": 3,
+      "dimensions": {
+        "width": 20.97,
+        "height": 19.11,
+        "depth": 25.81
+      },
+      "warrantyInformation": "1 month warranty",
+      "shippingInformation": "Ships overnight",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Very satisfied!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Tyler Davis",
+          "reviewerEmail": "tyler.davis@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Excellent quality!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Hannah Robinson",
+          "reviewerEmail": "hannah.robinson@x.dummyjson.com"
+        },
+        {
+          "rating": 3,
+          "comment": "Waste of money!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Madison Collins",
+          "reviewerEmail": "madison.collins@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "7 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.620Z",
+        "updatedAt": "2024-05-23T08:56:21.620Z",
+        "barcode": "0426785817074",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/1.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/2.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png",
+      "quantity": 1,
+      "user": "666a99c74cfbfba559b097c2",
+      "id": 9
+    },
+    {
+      "title": "Decoration Swing",
+      "description": "The Decoration Swing is a charming addition to your home decor. Crafted with intricate details, it adds a touch of elegance and whimsy to any room.",
+      "category": "home-decoration",
+      "price": 59.99,
+      "discountPercentage": 0.65,
+      "rating": 3.56,
+      "stock": 62,
+      "tags": [
+        "home decor",
+        "swing"
+      ],
+      "sku": "MBEK52ST",
+      "weight": 8,
+      "dimensions": {
+        "width": 20.75,
+        "height": 11.18,
+        "depth": 7.92
+      },
+      "warrantyInformation": "Lifetime warranty",
+      "shippingInformation": "Ships in 2 weeks",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Highly recommended!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Highly impressed!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Caleb Perkins",
+          "reviewerEmail": "caleb.perkins@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Great product!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 2,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.621Z",
+        "updatedAt": "2024-05-23T08:56:21.621Z",
+        "barcode": "6434699988216",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/1.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/2.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/thumbnail.png",
+      "quantity": 1,
+      "user": "666a99c74cfbfba559b097c2",
+      "id": 10
+    },
+    {
+      "title": "Annibale Colombo Sofa",
+      "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
+      "category": "furniture",
+      "price": 2499.99,
+      "discountPercentage": 18.54,
+      "rating": 3.08,
+      "stock": 16,
+      "tags": [
+        "furniture",
+        "sofas"
+      ],
+      "brand": "Annibale Colombo",
+      "sku": "LUU95CQP",
+      "weight": 3,
+      "dimensions": {
+        "width": 20.97,
+        "height": 19.11,
+        "depth": 25.81
+      },
+      "warrantyInformation": "1 month warranty",
+      "shippingInformation": "Ships overnight",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Very satisfied!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Tyler Davis",
+          "reviewerEmail": "tyler.davis@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Excellent quality!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Hannah Robinson",
+          "reviewerEmail": "hannah.robinson@x.dummyjson.com"
+        },
+        {
+          "rating": 3,
+          "comment": "Waste of money!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Madison Collins",
+          "reviewerEmail": "madison.collins@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "7 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.620Z",
+        "updatedAt": "2024-05-23T08:56:21.620Z",
+        "barcode": "0426785817074",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/1.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/2.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png",
+      "quantity": 1,
+      "user": "666a99c74cfbfba559b097c2",
+      "id": 11
+    },
+    {
+      "title": "Annibale Colombo Sofa",
+      "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
+      "category": "furniture",
+      "price": 2499.99,
+      "discountPercentage": 18.54,
+      "rating": 3.08,
+      "stock": 16,
+      "tags": [
+        "furniture",
+        "sofas"
+      ],
+      "brand": "Annibale Colombo",
+      "sku": "LUU95CQP",
+      "weight": 3,
+      "dimensions": {
+        "width": 20.97,
+        "height": 19.11,
+        "depth": 25.81
+      },
+      "warrantyInformation": "1 month warranty",
+      "shippingInformation": "Ships overnight",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Very satisfied!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Tyler Davis",
+          "reviewerEmail": "tyler.davis@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Excellent quality!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Hannah Robinson",
+          "reviewerEmail": "hannah.robinson@x.dummyjson.com"
+        },
+        {
+          "rating": 3,
+          "comment": "Waste of money!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Madison Collins",
+          "reviewerEmail": "madison.collins@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "7 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.620Z",
+        "updatedAt": "2024-05-23T08:56:21.620Z",
+        "barcode": "0426785817074",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/1.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/2.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png",
+      "quantity": 1,
+      "user": "666a99c74cfbfba559b097c2",
+      "id": 12
+    },
+    {
+      "title": "Decoration Swing",
+      "description": "The Decoration Swing is a charming addition to your home decor. Crafted with intricate details, it adds a touch of elegance and whimsy to any room.",
+      "category": "home-decoration",
+      "price": 59.99,
+      "discountPercentage": 0.65,
+      "rating": 3.56,
+      "stock": 62,
+      "tags": [
+        "home decor",
+        "swing"
+      ],
+      "sku": "MBEK52ST",
+      "weight": 8,
+      "dimensions": {
+        "width": 20.75,
+        "height": 11.18,
+        "depth": 7.92
+      },
+      "warrantyInformation": "Lifetime warranty",
+      "shippingInformation": "Ships in 2 weeks",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Highly recommended!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Highly impressed!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Caleb Perkins",
+          "reviewerEmail": "caleb.perkins@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Great product!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 2,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.621Z",
+        "updatedAt": "2024-05-23T08:56:21.621Z",
+        "barcode": "6434699988216",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/1.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/2.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/thumbnail.png",
+      "quantity": 1,
+      "user": "666a99c74cfbfba559b097c2",
+      "id": 13
+    },
+    {
+      "title": "House Showpiece Plant",
+      "description": "The House Showpiece Plant is an artificial plant that brings a touch of nature to your home without the need for maintenance. It adds greenery and style to any space.",
+      "category": "home-decoration",
+      "price": 39.99,
+      "discountPercentage": 19.45,
+      "rating": 3.61,
+      "stock": 89,
+      "tags": [
+        "home decor",
+        "artificial plants"
+      ],
+      "sku": "LLNHNIFU",
+      "weight": 9,
+      "dimensions": {
+        "width": 27.15,
+        "height": 14.43,
+        "depth": 10.05
+      },
+      "warrantyInformation": "5 year warranty",
+      "shippingInformation": "Ships in 1 week",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Great value for money!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Olivia Anderson",
+          "reviewerEmail": "olivia.anderson@x.dummyjson.com"
+        },
+        {
+          "rating": 2,
+          "comment": "Very unhappy with my purchase!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Grace Perry",
+          "reviewerEmail": "grace.perry@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Highly recommended!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Emma Wilson",
+          "reviewerEmail": "emma.wilson@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "7 days return policy",
+      "minimumOrderQuantity": 7,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.621Z",
+        "updatedAt": "2024-05-23T08:56:21.621Z",
+        "barcode": "1895440764997",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/1.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/2.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/thumbnail.png",
+      "quantity": 1,
+      "user": "6669e022da266cdb5be1b2ef",
+      "id": 14
+    },
+    {
+      "title": "Decoration Swing",
+      "description": "The Decoration Swing is a charming addition to your home decor. Crafted with intricate details, it adds a touch of elegance and whimsy to any room.",
+      "category": "home-decoration",
+      "price": 59.99,
+      "discountPercentage": 0.65,
+      "rating": 3.56,
+      "stock": 62,
+      "tags": [
+        "home decor",
+        "swing"
+      ],
+      "sku": "MBEK52ST",
+      "weight": 8,
+      "dimensions": {
+        "width": 20.75,
+        "height": 11.18,
+        "depth": 7.92
+      },
+      "warrantyInformation": "Lifetime warranty",
+      "shippingInformation": "Ships in 2 weeks",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Highly recommended!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Highly impressed!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Caleb Perkins",
+          "reviewerEmail": "caleb.perkins@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Great product!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 2,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.621Z",
+        "updatedAt": "2024-05-23T08:56:21.621Z",
+        "barcode": "6434699988216",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/1.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/2.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/thumbnail.png",
+      "quantity": 1,
+      "user": "6669e022da266cdb5be1b2ef",
+      "id": 15
+    },
+    {
+      "title": "Family Tree Photo Frame",
+      "description": "The Family Tree Photo Frame is a sentimental and stylish way to display your cherished family memories. With multiple photo slots, it tells the story of your loved ones.",
+      "category": "home-decoration",
+      "price": 29.99,
+      "discountPercentage": 1.53,
+      "rating": 3.84,
+      "stock": 34,
+      "tags": [
+        "home decor",
+        "photo frame"
+      ],
+      "sku": "EZOJC792",
+      "weight": 4,
+      "dimensions": {
+        "width": 15.46,
+        "height": 26.32,
+        "depth": 17.1
+      },
+      "warrantyInformation": "6 months warranty",
+      "shippingInformation": "Ships in 1 month",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 1,
+          "comment": "Disappointing product!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Logan Torres",
+          "reviewerEmail": "logan.torres@x.dummyjson.com"
+        },
+        {
+          "rating": 4,
+          "comment": "Very pleased!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "William Gonzalez",
+          "reviewerEmail": "william.gonzalez@x.dummyjson.com"
+        },
+        {
+          "rating": 3,
+          "comment": "Disappointing product!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Amelia Perez",
+          "reviewerEmail": "amelia.perez@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "90 days return policy",
+      "minimumOrderQuantity": 16,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.621Z",
+        "updatedAt": "2024-05-23T08:56:21.621Z",
+        "barcode": "9462569143093",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/home-decoration/Family%20Tree%20Photo%20Frame/1.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/Family%20Tree%20Photo%20Frame/thumbnail.png",
+      "quantity": 1,
+      "user": "6669e022da266cdb5be1b2ef",
+      "id": 16
+    },
+    {
+      "title": "Decoration Swing",
+      "description": "The Decoration Swing is a charming addition to your home decor. Crafted with intricate details, it adds a touch of elegance and whimsy to any room.",
+      "category": "home-decoration",
+      "price": 59.99,
+      "discountPercentage": 0.65,
+      "rating": 3.56,
+      "stock": 62,
+      "tags": [
+        "home decor",
+        "swing"
+      ],
+      "sku": "MBEK52ST",
+      "weight": 8,
+      "dimensions": {
+        "width": 20.75,
+        "height": 11.18,
+        "depth": 7.92
+      },
+      "warrantyInformation": "Lifetime warranty",
+      "shippingInformation": "Ships in 2 weeks",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Highly recommended!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Highly impressed!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Caleb Perkins",
+          "reviewerEmail": "caleb.perkins@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Great product!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 2,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.621Z",
+        "updatedAt": "2024-05-23T08:56:21.621Z",
+        "barcode": "6434699988216",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/1.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/2.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/thumbnail.png",
+      "quantity": 1,
+      "user": "6669e022da266cdb5be1b2ef",
+      "id": 17
+    },
+    {
+      "title": "Decoration Swing",
+      "description": "The Decoration Swing is a charming addition to your home decor. Crafted with intricate details, it adds a touch of elegance and whimsy to any room.",
+      "category": "home-decoration",
+      "price": 59.99,
+      "discountPercentage": 0.65,
+      "rating": 3.56,
+      "stock": 62,
+      "tags": [
+        "home decor",
+        "swing"
+      ],
+      "sku": "MBEK52ST",
+      "weight": 8,
+      "dimensions": {
+        "width": 20.75,
+        "height": 11.18,
+        "depth": 7.92
+      },
+      "warrantyInformation": "Lifetime warranty",
+      "shippingInformation": "Ships in 2 weeks",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Highly recommended!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Highly impressed!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Caleb Perkins",
+          "reviewerEmail": "caleb.perkins@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Great product!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 2,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.621Z",
+        "updatedAt": "2024-05-23T08:56:21.621Z",
+        "barcode": "6434699988216",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/1.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/2.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/thumbnail.png",
+      "quantity": 1,
+      "user": "6669e022da266cdb5be1b2ef",
+      "id": 18
+    },
+    {
+      "title": "Decoration Swing",
+      "description": "The Decoration Swing is a charming addition to your home decor. Crafted with intricate details, it adds a touch of elegance and whimsy to any room.",
+      "category": "home-decoration",
+      "price": 59.99,
+      "discountPercentage": 0.65,
+      "rating": 3.56,
+      "stock": 62,
+      "tags": [
+        "home decor",
+        "swing"
+      ],
+      "sku": "MBEK52ST",
+      "weight": 8,
+      "dimensions": {
+        "width": 20.75,
+        "height": 11.18,
+        "depth": 7.92
+      },
+      "warrantyInformation": "Lifetime warranty",
+      "shippingInformation": "Ships in 2 weeks",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Highly recommended!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Highly impressed!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Caleb Perkins",
+          "reviewerEmail": "caleb.perkins@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Great product!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 2,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.621Z",
+        "updatedAt": "2024-05-23T08:56:21.621Z",
+        "barcode": "6434699988216",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/1.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/2.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/thumbnail.png",
+      "quantity": 1,
+      "user": "6669e022da266cdb5be1b2ef",
+      "id": 19
+    },
+    {
+      "title": "Knoll Saarinen Executive Conference Chair",
+      "description": "The Knoll Saarinen Executive Conference Chair is a modern and ergonomic chair, perfect for your office or conference room with its timeless design.",
+      "category": "furniture",
+      "price": 499.99,
+      "discountPercentage": 15.23,
+      "rating": 4.11,
+      "stock": 47,
+      "tags": [
+        "furniture",
+        "office chairs"
+      ],
+      "brand": "Knoll",
+      "sku": "RKHVJ4FE",
+      "weight": 3,
+      "dimensions": {
+        "width": 16.59,
+        "height": 21.46,
+        "depth": 29.07
+      },
+      "warrantyInformation": "Lifetime warranty",
+      "shippingInformation": "Ships in 3-5 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Very happy with my purchase!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Leah Gutierrez",
+          "reviewerEmail": "leah.gutierrez@x.dummyjson.com"
+        },
+        {
+          "rating": 4,
+          "comment": "Would buy again!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Nolan Gonzalez",
+          "reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+        },
+        {
+          "rating": 2,
+          "comment": "Waste of money!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Stella Morris",
+          "reviewerEmail": "stella.morris@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 5,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.620Z",
+        "updatedAt": "2024-05-23T08:56:21.620Z",
+        "barcode": "0726316339746",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/1.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/2.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/thumbnail.png",
+      "quantity": 1,
+      "user": "6669e022da266cdb5be1b2ef",
+      "id": 20
+    },
+    {
+      "title": "Decoration Swing",
+      "description": "The Decoration Swing is a charming addition to your home decor. Crafted with intricate details, it adds a touch of elegance and whimsy to any room.",
+      "category": "home-decoration",
+      "price": 59.99,
+      "discountPercentage": 0.65,
+      "rating": 3.56,
+      "stock": 62,
+      "tags": [
+        "home decor",
+        "swing"
+      ],
+      "sku": "MBEK52ST",
+      "weight": 8,
+      "dimensions": {
+        "width": 20.75,
+        "height": 11.18,
+        "depth": 7.92
+      },
+      "warrantyInformation": "Lifetime warranty",
+      "shippingInformation": "Ships in 2 weeks",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Highly recommended!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Highly impressed!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Caleb Perkins",
+          "reviewerEmail": "caleb.perkins@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Great product!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 2,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.621Z",
+        "updatedAt": "2024-05-23T08:56:21.621Z",
+        "barcode": "6434699988216",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/1.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/2.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/thumbnail.png",
+      "quantity": 1,
+      "user": "6669e022da266cdb5be1b2ef",
+      "id": 21
+    },
+    {
+      "title": "Annibale Colombo Sofa",
+      "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
+      "category": "furniture",
+      "price": 2499.99,
+      "discountPercentage": 18.54,
+      "rating": 3.08,
+      "stock": 16,
+      "tags": [
+        "furniture",
+        "sofas"
+      ],
+      "brand": "Annibale Colombo",
+      "sku": "LUU95CQP",
+      "weight": 3,
+      "dimensions": {
+        "width": 20.97,
+        "height": 19.11,
+        "depth": 25.81
+      },
+      "warrantyInformation": "1 month warranty",
+      "shippingInformation": "Ships overnight",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Very satisfied!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Tyler Davis",
+          "reviewerEmail": "tyler.davis@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Excellent quality!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Hannah Robinson",
+          "reviewerEmail": "hannah.robinson@x.dummyjson.com"
+        },
+        {
+          "rating": 3,
+          "comment": "Waste of money!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Madison Collins",
+          "reviewerEmail": "madison.collins@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "7 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.620Z",
+        "updatedAt": "2024-05-23T08:56:21.620Z",
+        "barcode": "0426785817074",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/1.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/2.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png",
+      "quantity": 1,
+      "user": "6669e022da266cdb5be1b2ef",
+      "id": 22
+    },
+    {
+      "title": "Decoration Swing",
+      "description": "The Decoration Swing is a charming addition to your home decor. Crafted with intricate details, it adds a touch of elegance and whimsy to any room.",
+      "category": "home-decoration",
+      "price": 59.99,
+      "discountPercentage": 0.65,
+      "rating": 3.56,
+      "stock": 62,
+      "tags": [
+        "home decor",
+        "swing"
+      ],
+      "sku": "MBEK52ST",
+      "weight": 8,
+      "dimensions": {
+        "width": 20.75,
+        "height": 11.18,
+        "depth": 7.92
+      },
+      "warrantyInformation": "Lifetime warranty",
+      "shippingInformation": "Ships in 2 weeks",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Highly recommended!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Highly impressed!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Caleb Perkins",
+          "reviewerEmail": "caleb.perkins@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Great product!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 2,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.621Z",
+        "updatedAt": "2024-05-23T08:56:21.621Z",
+        "barcode": "6434699988216",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/1.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/2.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/thumbnail.png",
+      "quantity": 1,
+      "user": "6669e022da266cdb5be1b2ef",
+      "id": 23
+    },
+    {
+      "title": "Plant Pot",
+      "description": "The Plant Pot is a stylish container for your favorite plants. With a sleek design, it complements your indoor or outdoor garden, adding a modern touch to your plant display.",
+      "category": "home-decoration",
+      "price": 14.99,
+      "discountPercentage": 0.19,
+      "rating": 3.33,
+      "stock": 70,
+      "tags": [
+        "home decor",
+        "plant accessories"
+      ],
+      "sku": "M8IWE8MF",
+      "weight": 8,
+      "dimensions": {
+        "width": 16.28,
+        "height": 8.72,
+        "depth": 18.47
+      },
+      "warrantyInformation": "2 year warranty",
+      "shippingInformation": "Ships in 1-2 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Fast shipping!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Harper Turner",
+          "reviewerEmail": "harper.turner@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Awesome product!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Leah Gutierrez",
+          "reviewerEmail": "leah.gutierrez@x.dummyjson.com"
+        },
+        {
+          "rating": 4,
+          "comment": "Highly recommended!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Sadie Morales",
+          "reviewerEmail": "sadie.morales@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "90 days return policy",
+      "minimumOrderQuantity": 44,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.621Z",
+        "updatedAt": "2024-05-23T08:56:21.621Z",
+        "barcode": "4265754153251",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/home-decoration/Plant%20Pot/1.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Plant%20Pot/2.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Plant%20Pot/3.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Plant%20Pot/4.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/Plant%20Pot/thumbnail.png",
+      "quantity": 1,
+      "user": "6669e022da266cdb5be1b2ef",
+      "id": 24
+    },
+    {
+      "title": "Decoration Swing",
+      "description": "The Decoration Swing is a charming addition to your home decor. Crafted with intricate details, it adds a touch of elegance and whimsy to any room.",
+      "category": "home-decoration",
+      "price": 59.99,
+      "discountPercentage": 0.65,
+      "rating": 3.56,
+      "stock": 62,
+      "tags": [
+        "home decor",
+        "swing"
+      ],
+      "sku": "MBEK52ST",
+      "weight": 8,
+      "dimensions": {
+        "width": 20.75,
+        "height": 11.18,
+        "depth": 7.92
+      },
+      "warrantyInformation": "Lifetime warranty",
+      "shippingInformation": "Ships in 2 weeks",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Highly recommended!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Highly impressed!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Caleb Perkins",
+          "reviewerEmail": "caleb.perkins@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Great product!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Aria Roberts",
+          "reviewerEmail": "aria.roberts@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 2,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.621Z",
+        "updatedAt": "2024-05-23T08:56:21.621Z",
+        "barcode": "6434699988216",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/1.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/2.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/thumbnail.png",
+      "quantity": 1,
+      "user": "6669e022da266cdb5be1b2ef",
+      "id": 25
+    },
+    {
+      "title": "House Showpiece Plant",
+      "description": "The House Showpiece Plant is an artificial plant that brings a touch of nature to your home without the need for maintenance. It adds greenery and style to any space.",
+      "category": "home-decoration",
+      "price": 39.99,
+      "discountPercentage": 19.45,
+      "rating": 3.61,
+      "stock": 89,
+      "tags": [
+        "home decor",
+        "artificial plants"
+      ],
+      "sku": "LLNHNIFU",
+      "weight": 9,
+      "dimensions": {
+        "width": 27.15,
+        "height": 14.43,
+        "depth": 10.05
+      },
+      "warrantyInformation": "5 year warranty",
+      "shippingInformation": "Ships in 1 week",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Great value for money!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Olivia Anderson",
+          "reviewerEmail": "olivia.anderson@x.dummyjson.com"
+        },
+        {
+          "rating": 2,
+          "comment": "Very unhappy with my purchase!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Grace Perry",
+          "reviewerEmail": "grace.perry@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Highly recommended!",
+          "date": "2024-05-23T08:56:21.621Z",
+          "reviewerName": "Emma Wilson",
+          "reviewerEmail": "emma.wilson@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "7 days return policy",
+      "minimumOrderQuantity": 7,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.621Z",
+        "updatedAt": "2024-05-23T08:56:21.621Z",
+        "barcode": "1895440764997",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/1.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/2.png",
+        "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/thumbnail.png",
+      "quantity": 1,
+      "user": "6669e022da266cdb5be1b2ef",
+      "id": 26
+    },
+    {
+      "title": "Knoll Saarinen Executive Conference Chair",
+      "description": "The Knoll Saarinen Executive Conference Chair is a modern and ergonomic chair, perfect for your office or conference room with its timeless design.",
+      "category": "furniture",
+      "price": 499.99,
+      "discountPercentage": 15.23,
+      "rating": 4.11,
+      "stock": 47,
+      "tags": [
+        "furniture",
+        "office chairs"
+      ],
+      "brand": "Knoll",
+      "sku": "RKHVJ4FE",
+      "weight": 3,
+      "dimensions": {
+        "width": 16.59,
+        "height": 21.46,
+        "depth": 29.07
+      },
+      "warrantyInformation": "Lifetime warranty",
+      "shippingInformation": "Ships in 3-5 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Very happy with my purchase!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Leah Gutierrez",
+          "reviewerEmail": "leah.gutierrez@x.dummyjson.com"
+        },
+        {
+          "rating": 4,
+          "comment": "Would buy again!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Nolan Gonzalez",
+          "reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+        },
+        {
+          "rating": 2,
+          "comment": "Waste of money!",
+          "date": "2024-05-23T08:56:21.620Z",
+          "reviewerName": "Stella Morris",
+          "reviewerEmail": "stella.morris@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 5,
+      "meta": {
+        "createdAt": "2024-05-23T08:56:21.620Z",
+        "updatedAt": "2024-05-23T08:56:21.620Z",
+        "barcode": "0726316339746",
+        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/1.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/2.png",
+        "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/3.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/thumbnail.png",
+      "quantity": 1,
+      "user": "6669e022da266cdb5be1b2ef",
+      "id": 27
     }
   ],
   "orders": [

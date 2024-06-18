@@ -74,9 +74,7 @@ export function fetchProductByIdNull() {
 export function addProduct(newProduct) {
    
   return new Promise(async (resolve)=>{
-    const response=await axios.get('http://localhost:8080/products',{
-      method:'POST',
-      body:JSON.stringify(newProduct),
+    const response=await axios.post('http://localhost:8080/products',newProduct,{
       headers: {'content-type':'application/json'},
     });
     const data=await response.data;

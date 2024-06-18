@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { selectAllOrders } from '../userSlice';
+import { selectUserOrders } from '../../order/orderSlice';
 import { selectUserInfo } from '../../auth/authSlice';
-import { fetchOrderAsync } from '../userSlice';
+// import { fetchOrderAsync } from '../userSlice';
+import { fetchOrderByIdAsync } from '../../order/orderSlice';
 import { Link } from 'react-router-dom';
 // import styles from './Counter.module.css';
 
-export default function AllOrders() {
+export function AllOrders() {
 //   const count = useSelector(selectCount);
   const dispatch = useDispatch();
   const user=useSelector(selectUserInfo);
-  const orders = useSelector(selectAllOrders);
+  const orders = useSelector(selectUserOrders);
+  console.log("orders: ",orders);
   const or=[...orders].reverse();
   useEffect(()=>{
-    dispatch(fetchOrderAsync(user.id))
+    dispatch(fetchOrderByIdAsync(user._id))
     // console.log("order id:",orders[0].id)
     console.log(or);
   },[]);
@@ -36,12 +38,12 @@ export default function AllOrders() {
               <div className="w-full ">
                 <img
                   className="w-full hidden md:block"
-                  src={product.thumbnail}
+                  src={product.product.thumbnail}
                   alt="dress"
                 />
                 <img
                   className="w-full md:hidden "
-                  src={product.thumbnail}
+                  src={product.product.thumbnail}
                   alt="dress"
                 />
               </div>
@@ -67,7 +69,7 @@ export default function AllOrders() {
                       Price
                     </p>
                     <p className="font-medium text-sm leading-6 whitespace-nowrap py-0.5 rounded-full lg:mt-3 ">
-                    ₹{product.price}
+                    ₹{product.product.price}
                     </p>
                     </div>
                     <div className="flex gap-3  lg:block ">
@@ -83,7 +85,7 @@ export default function AllOrders() {
                       Status
                     </p>
                     <p className="font-medium text-sm leading-6 whitespace-nowrap py-0.5 rounded-full lg:mt-3">
-                    {product.price * product.quantity}
+                    {product.product.price * product.quantity}
                     </p>
                     </div>
                
@@ -133,9 +135,9 @@ export default function AllOrders() {
               Delivery Address
             </p>
             <div className="text-base dark:text-gray-300 leading-4 text-gray-600">
-              <div className="pb-0.5">{order.selectedAddress.street}</div>
-              <div className="pb-0.5">{order.selectedAddress.city}</div>
-              <div className="pb-0.5">{order.selectedAddress.postalcode}</div>
+              <div className="pb-0.5">{order.selectedAddress[0].street}</div>
+              <div className="pb-0.5">{order.selectedAddress[0].city}</div>
+              <div className="pb-0.5">{order.selectedAddress[0].postalcode}</div>
             </div>
           </div>
           <div className="flex justify-between items-center w-full">
@@ -153,7 +155,7 @@ export default function AllOrders() {
 
     
   </div>
-  </div>)};
+  </div>)}
   </div>
 )}
 

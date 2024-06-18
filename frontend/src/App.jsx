@@ -7,7 +7,8 @@ import LoginPage from './pages/loginPage';
 import SignupPage from './pages/signupPage';
 import  CartPage  from './features/cart/cart';
 import CheckoutPage from './pages/checkoutPage';
-import AllOrders from './features/user/components/UserOrders';
+// import AllOrders from './features/user/components/UserOrders';
+import UserOrderPage from'./pages/UserOrdersPage';
 import NotFound from './pages/404';
 import LogoutPage from'./features/auth/components/Logout';
 import ForgotPassword from './features/auth/components/ForgotPassword';
@@ -62,7 +63,7 @@ const router = createBrowserRouter([
   },
   {
     path:"/allorders",
-    element:(<Protected><AllOrders/></Protected>)
+    element:(<Protected><UserOrderPage/></Protected>)
   },
   {
     path:"/profile",
@@ -104,7 +105,7 @@ function App() {
   const dispatch =useDispatch();
   useEffect(()=>{
     if(user){
-    dispatch(fetchItemsByUserIdAsync(user.id));
+    dispatch(fetchItemsByUserIdAsync(user._id));
     }
   },[dispatch,user])
   return (

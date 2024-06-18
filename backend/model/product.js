@@ -11,8 +11,8 @@ const productSchema=new Schema({
     category:{type:String,required:true},
     brand:{type:String,required:true},
     thumbnail:{type:String,required:true},
-    images:{type:[String],required:true}
-
+    images:{type:[String],required:true},
+    status:{type:String}
 })
 const virtual =productSchema.virtual('id');
 virtual.get(function(){

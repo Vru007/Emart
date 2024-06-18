@@ -1,21 +1,22 @@
 // A mock function to mimic making an async request for data
-export function createOrder(order) {
+import axios from "axios";
+export function createOrder(update) {
    
   return new Promise(async (resolve)=>{
-    const response=await fetch('http://localhost:3000/orders',{
-      method: 'POST',
-      body:JSON.stringify(order),
+    const response=await axios.post('http://localhost:8080/orders',update,{
       headers: {'content-type': 'application/json'}
     });
-    const data=await response.json();
+    const data=await response.data;
     resolve({data});
   })
 }
 
-export function fetchOrder(orderId){
+export function fetchOrder(userId){
   return new Promise(async(resolve)=>{
-    const response =await fetch('http://localhost:3000/orders?user.id='+orderId)
-    const data=await response.json();
+    const response =await axios.get('http://localhost:8080/orders/allorders?user='+userId,{
+      headers: {'content-type': 'application/json'}
+    })
+    const data=await response.data;
     resolve({data});
   })
 }

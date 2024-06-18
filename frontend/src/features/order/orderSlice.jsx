@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 // import { fetchCount } from './orderApi';
-import {createOrder,updateStatus,fetchAllOrders} from './orderApi';
+import {createOrder,updateStatus,fetchAllOrders,fetchOrder} from './orderApi';
 const initialState = {
   orders:[],
   status: 'idle',
   currentOrder:null,
-  allorders:[]
+  allorders:[],
+  userorders:[],
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -23,21 +24,22 @@ export const incrementAsync = createAsyncThunk(
 );
 export const createOrderAsync = createAsyncThunk(
   'order/createOrder',
-  async (order) => {
-    const response = await createOrder(order);
+  async (update) => {
+    const response = await createOrder(update);
     // The value we return becomes the `fulfilled` action payload
     return response.data;
   }
 );
 
-// export const fetchOrderByIdAsync = createAsyncThunk(
-//   'order/fetchOrder',
-//   async (orderId) => {
-//     const response = await fetchOrder(orderId);
-//     // The value we return becomes the `fulfilled` action payload
-//     return response.data;
-//   }
-// );
+export const fetchOrderByIdAsync = createAsyncThunk(
+  'order/fetchOrder',
+  async (orderId) => {
+    const response = await fetchOrder(orderId);
+    // The value we return becomes the `fulfilled` action payload
+    return response.data;
+  }
+);
+
 export const updateStatusAsync=createAsyncThunk(
   'order/updateStatus',
   async (update)=>{
@@ -98,7 +100,17 @@ export const counterSlice = createSlice({
         state.status = 'idle';
         state.allorders=action.payload;
         // console.log(state.products);
-      });
+      })
+      .addCase(fetchOrderByIdAsync.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchOrderByIdAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.userorders=action.payload;
+        // console.log(state.products);
+      })
+      
+      ;
       
   },
 });
@@ -109,4 +121,5 @@ export const { resetOrder} = counterSlice.actions;
 export const selectCount = (state) => state.counter.value;
 export const selectCurrentOrder=(state)=>state.order.currentOrder;
 export const selectAllOrders=(state)=>state.order.allorders;
+export const selectUserOrders=(state)=>state.order.userorders
 export default counterSlice.reducer;

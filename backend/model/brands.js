@@ -13,7 +13,7 @@ virtual.get(function(){
 })
 
 brandSchema.set('toJSON',{
-    virtual:true,
+    virtuals:true,
     versionKey: false,
     transform:function(doc,ret){delete ret._id}
 })

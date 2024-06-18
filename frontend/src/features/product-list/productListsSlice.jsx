@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchAllProducts, fetchAllCategories,fetchAllBrands} from './productListsAPI';
 import { fetchProductsByFilters,fetchProductById,fetchProductByIdNull,addProduct} from './productListsAPI';
-import AllOrders from '../user/components/UserOrders';
+
 // import { fetchFromSorting } from './productListsAPI';
 const initialState = {
   products:[],

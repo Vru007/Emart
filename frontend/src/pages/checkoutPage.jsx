@@ -8,6 +8,7 @@ import { deleteItemFromCartAsync} from "../features/cart/cartListSlice";
 import { useDispatch } from "react-redux";
 import { useState ,useEffect } from "react";
 
+
 // import { Navigate } from "react-router-dom";
 const addresses = [
   {
@@ -36,7 +37,8 @@ const addresses = [
   },
 ];
 import { useForm } from "react-hook-form";
-import { selectUserInfo, updateUserAsync } from "../features/auth/authSlice";
+import { selectUserInfo } from "../features/auth/authSlice";
+import { selectUpdateUser, updateUserAsync } from "../features/user/userSlice.jsx";
 import { createOrderAsync } from "../features/order/orderSlice.jsx";
 export default function CheckoutPage() {
   const [selectedAddress,setSelectedAddress]=useState(null);
@@ -54,8 +56,10 @@ export default function CheckoutPage() {
     navigate('/')
   )
  
-  const user=useSelector(selectUserInfo);
-  const totalAmount=prod.reduce((amount,item)=>item.price*item.quantity +amount,0);
+  // const user=useSelector(selectUpdateUser);
+const user =useSelector(selectUpdateUser);
+   
+  const totalAmount=prod.reduce((amount,item)=>item.product.price*item.quantity +amount,0);
   const totalItems=prod.reduce((total,item)=>item.quantity+total,0);
   const handleRemove=(e,itemId)=>{
     // console.log("remove: ",itemId);
@@ -70,6 +74,7 @@ export default function CheckoutPage() {
     // console.log(e.target.value);
     setPaymentMethod(e.target.value);
    }
+   
   //  useEffect(()=>{
   //     // console.log(selectedAddress);
   //  },[selectedAddress]);
@@ -81,13 +86,14 @@ export default function CheckoutPage() {
   if(selectedAddress!==null && PaymentMethod!==null){
   
   const products=await prod.map(product=>({...product,status:'Order-Received'}));
-
-  const order={products,user,PaymentMethod,selectedAddress,totalAmount,totalItems}
-   
+  const userId=user.id;
+  const order={products,userId,PaymentMethod,selectedAddress,totalAmount,totalItems}
+  // const userId=user._id;
   dispatch(
   createOrderAsync(order))
   navigate('/ordersummary')
   }
+  
   //TODO: REdirect after succes o order (done)
   //Clear cart after sucessful order
   // on server change the stock available in inventory
@@ -99,10 +105,14 @@ export default function CheckoutPage() {
       <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
         <div className="lg:col-span-3">
           <form onSubmit={handleSubmit((data)=>{
-            
+            console.log({data});
             dispatch(
-            updateUserAsync({...user,addresses:[...user.addresses,data]}));
+              updateUserAsync({
+                ...user,
+                addresses: [...user.addresses, data],
+              }));
             reset();
+      
           })}>
             <div className="space-y-12">
               <div className="border-b border-gray-900/10 pb-5">
@@ -275,7 +285,7 @@ export default function CheckoutPage() {
                   Select from the saved addresses
                 </h2>
                 <ul role="list" className="divide-y divide-gray-100">
-                  {user.addresses.map((address,index) => (
+                  {user.addresses && user.addresses.map((address,index) => (
                     <li key={index} className="flex gap-x-6 py-5">
                       <input
                         onClick={(e)=>handleAddresses(e)}
@@ -370,11 +380,11 @@ export default function CheckoutPage() {
                   <div className="flow-root">
                     <ul role="list" className="-my-6 divide-y divide-gray-200">
                       {prod.map((product) => (
-                        <li key={product.id} className="flex py-6">
+                        <li key={product.product.id} className="flex py-6">
                           <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                             <img
-                              src={product.thumbnail}
-                              alt={product.imageAlt}
+                              src={product.product.thumbnail}
+                              alt={product.product.imageAlt}
                               className="h-full w-full object-cover object-center"
                             />
                           </div>
