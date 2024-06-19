@@ -7,6 +7,7 @@ const initialState = {
   currentOrder:null,
   allorders:[],
   userorders:[],
+  totalOrders:null,
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -50,8 +51,8 @@ export const updateStatusAsync=createAsyncThunk(
 )
 export const fetchAllOrdersAsync=createAsyncThunk(
   'order/fetchAllOrders',
-  async()=>{
-    const response=await fetchAllOrders();
+  async({pagination})=>{
+    const response=await fetchAllOrders(pagination);
     const finalData=response.data;
     return finalData;
   }
@@ -98,7 +99,8 @@ export const counterSlice = createSlice({
       })
       .addCase(fetchAllOrdersAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.allorders=action.payload;
+        state.allorders=action.payload.orders;
+        state.totalOrders=action.payload.totalOrders;
         // console.log(state.products);
       })
       .addCase(fetchOrderByIdAsync.pending, (state) => {
@@ -121,5 +123,6 @@ export const { resetOrder} = counterSlice.actions;
 export const selectCount = (state) => state.counter.value;
 export const selectCurrentOrder=(state)=>state.order.currentOrder;
 export const selectAllOrders=(state)=>state.order.allorders;
-export const selectUserOrders=(state)=>state.order.userorders
+export const selectUserOrders=(state)=>state.order.userorders;
+export const selectTotalOrders=(state)=>state.order.totalOrders;
 export default counterSlice.reducer;

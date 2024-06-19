@@ -13,7 +13,7 @@ export function createOrder(update) {
 
 export function fetchOrder(userId){
   return new Promise(async(resolve)=>{
-    const response =await axios.get('http://localhost:8080/orders/allorders?user='+userId,{
+    const response =await axios.get('http://localhost:8080/orders/orderbyid?user='+userId,{
       headers: {'content-type': 'application/json'}
     })
     const data=await response.data;
@@ -22,20 +22,26 @@ export function fetchOrder(userId){
 }
 export function updateStatus(updateItem){
 
+  console.log("update Item in status api: ",updateItem);
+
   return new Promise (async (resolve)=>{
-    const response =await fetch('http://localhost:3000/orders/'+updateItem.id,{
-    method:'PATCH',
-    body:JSON.stringify(updateItem),
+    const response =await axios.patch('http://localhost:8080/orders/update/'+updateItem.id,updateItem,{
     headers:{'content-type':'application/json'},
     });
     const data=await response.json();
     resolve({data});
+
   })
 }
-export function fetchAllOrders(){
+export function fetchAllOrders(pagination){
+  let string='';
+  for(let key in pagination){
+    string+=`${key}=${pagination[key]}&`;
+}
   return new Promise(async (resolve)=>{
-    const response=await fetch('http://localhost:3000/orders');
+    const response=await fetch('http://localhost:8080/orders/allorders?'+string);
     const data=await response.json();
-    resolve({data});
+    const totalItems=await response.headers.get('Total-Order-Count')
+    resolve({data:{orders:data,totalOrders:totalItems}});
   })
 }

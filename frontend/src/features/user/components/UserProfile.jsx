@@ -36,11 +36,13 @@ console.log("user: ",user);
   const handleEdit=(data,index)=>{
     const newUser={...user,addresses:[...user.addresses]}; //to shallow copy the data to avoid issues
     newUser.addresses.splice(index,1,data);
+    console.log("newUser: ",newUser);
     dispatch(updateUserAsync(newUser));
     setSelectedAddressIndex(-1);
     
   }
   const handleRemove=(e,index)=>{
+    con
       const newUser={...user,addresses:[...user.addresses]};
       newUser.addresses.splice(index,1);
       dispatch(updateUserAsync(newUser),fetch);
@@ -50,6 +52,7 @@ console.log("user: ",user);
   const handleEditForm=(index)=>{
      setSelectedAddressIndex(index);
      const address=user.addresses[index];
+     console.log("address: ",address);
      setValue('Name',address.Name);
      setValue('Email',address.Email);
      setValue('addressType',address.addressType);

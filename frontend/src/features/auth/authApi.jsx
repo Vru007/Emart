@@ -25,7 +25,7 @@ export function createUser(userData) {
         headers:{'content-type':'application/json'}
       });
       const data=await response.data;
-      
+      console.log("data in auth Api: ",data);
       // console.log("status",response.status)
       if(response.status>=200 && response.status<300){
         resolve({data});

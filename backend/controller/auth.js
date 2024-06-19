@@ -21,7 +21,7 @@ exports.checkUser=async(req,res)=>{
     
     const {email,password}=req.body;
     console.log("email in checkUser: ",email);
-    const user=await Users.findOne({email:req.body.email}).select('id email name password addresses orders');
+    const user=await Users.findOne({email:req.body.email}).select('id email name password addresses orders role');
     try{
     if(user){
         if(req.body.password===user.password){

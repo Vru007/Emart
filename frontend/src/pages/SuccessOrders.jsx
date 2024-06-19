@@ -37,19 +37,19 @@ export default function SuccessOrder() {
               <div className="w-full ">
                 <img
                   className="w-full hidden md:block"
-                  src={product.thumbnail}
+                  src={product.product.thumbnail}
                   alt="dress"
                 />
                 <img
                   className="w-full md:hidden "
-                  src={product.thumbnail}
+                  src={product.product.thumbnail}
                   alt="dress"
                 />
               </div>
 
               <div className="w-full flex flex-col justify-start items-start space-y-8">
                 <h3 className="text-xl pl-5 pr-5 dark:text-white xl:text-2xl font-semibold leading-6 text-gray-800">
-                  {product.title}
+                  {product.product.title}
                 </h3>
               </div>
 
@@ -68,7 +68,7 @@ export default function SuccessOrder() {
                       Price
                     </p>
                     <p className="font-medium text-sm leading-6 whitespace-nowrap py-0.5 rounded-full lg:mt-3 ">
-                    ₹{product.price}
+                    ₹{product.product.price}
                     </p>
                     </div>
                     <div className="flex gap-3  lg:block ">
@@ -84,7 +84,7 @@ export default function SuccessOrder() {
                       Total
                     </p>
                     <p className="font-medium text-sm leading-6 whitespace-nowrap py-0.5 rounded-full lg:mt-3">
-                    {product.price * product.quantity}
+                    {product.product.price * product.quantity}
                     </p>
                     </div>
                

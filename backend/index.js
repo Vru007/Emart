@@ -18,7 +18,7 @@ app.use(cors({
    origin: 'http://localhost:5173', // Replace with your frontend's origin
    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
    allowedHeaders: ['Content-Type', 'Authorization'],
-   exposedHeaders:['X-Total-Count']
+   exposedHeaders:['X-Total-Count','Total-Order-Count']
 }));
 app.use('/products',productRouter.router);
 app.use('/category',categoryRouter.router);

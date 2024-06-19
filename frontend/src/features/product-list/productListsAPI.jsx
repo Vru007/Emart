@@ -71,8 +71,12 @@ export function fetchProductByIdNull() {
     resolve({data});
   })
 }
+
+
 export function addProduct(newProduct) {
    
+  console.log("inside add product Api: ", newProduct);
+
   return new Promise(async (resolve)=>{
     const response=await axios.post('http://localhost:8080/products',newProduct,{
       headers: {'content-type':'application/json'},
@@ -82,5 +86,20 @@ export function addProduct(newProduct) {
   })
 }
 
+export function updateProduct(updateItem){
+ 
+  // console.log("updateItem Id: ",updateItem.itemId);
+  // console.log("update Product ",updateItem.product);
+
+  return new Promise (async (resolve)=>{
+    console.log("updateItems", updateItem);  
+    const response =await axios.patch('http://localhost:8080/products/'+updateItem.itemId,updateItem.product,{
+    headers:{'content-type':'application/json'},
+    });
+    const data=await response.data;
+    console.log("inside data: ",data);
+    resolve({data});
+  })  
+}
 
 

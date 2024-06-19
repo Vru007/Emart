@@ -9,6 +9,8 @@ export function Login() {
   const user=useSelector(selectUserInfo);
   const error=useSelector(selectError);
   console.log("error in login jsx: ",error)
+  console.log("user in login: ",user);
+  
   const {
     register,
     handleSubmit,

@@ -19,11 +19,11 @@ export default function AddProduct(){
          delete product['image2'];
          delete product['image3'];
          delete product['image'];
+         product.rating = 0;
          console.log(product);
+         
          dispatch(addProductAsync(product));
          reset();
-
-
                       
 })}>
       <div className="space-y-12">
@@ -144,7 +144,7 @@ export default function AddProduct(){
               <div className="mt-2">
                 <input
                   type="text"
-                  {...register("Price",{required: "Price is required"})}
+                  {...register("price",{required: "Price is required"})}
                 
                   id="Price"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"

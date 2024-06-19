@@ -1,6 +1,7 @@
 const {Product} =require("../model/product");
 exports.createProduct=async(req,res)=>{
     const product=new Product(req.body);
+    console.log("product in backend: ",product);
     try{
     const response=await product.save();
     res.status(200).json(response);
@@ -8,7 +9,8 @@ exports.createProduct=async(req,res)=>{
     }
     catch(err){
         res.status(400).json(err);
-    
+        console.log(err);
+                                               
     }
 }
 

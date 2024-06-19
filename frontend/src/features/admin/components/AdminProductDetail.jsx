@@ -1,294 +1,308 @@
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { StarIcon } from '@heroicons/react/20/solid'
-import { Radio, RadioGroup } from '@headlessui/react'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchProductByIdAsync, selectedProducts } from '../../product-list/productListsSlice'
-import { addToCart } from '../../cart/cartListApi'
-import { addToCartAsync } from '../../cart/cartListSlice'
-import { selectUserInfo } from '../../auth/authSlice'
-const colors= [
-  { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
-  { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
-  { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
-]
-const sizes= [
-  { name: 'XXS', inStock: false },
-  { name: 'XS', inStock: true },
-  { name: 'S', inStock: true },
-  { name: 'M', inStock: true },
-  { name: 'L', inStock: true },
-  { name: 'XL', inStock: true },
-  { name: '2XL', inStock: true },
-  { name: '3XL', inStock: true },
-]
-const highlights= [
-  'Hand cut and sewn locally',
-  'Dyed with our proprietary colors',
-  'Pre-washed & pre-shrunk',
-  'Ultra-soft 100% cotton',
-]
-// const reviews = { href: '#', average: 4, totalCount: 117 }
-//TODOS: add reviews below details, try to add colors and size if not than remove;
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+import React from "react";
+import { useEffect} from "react";
+import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
+import { Link,useParams} from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { addProductAsync, selectAllBrands, selectAllCategories, selectedProducts, updateProductAsync } from "../../product-list/productListsSlice";
+import { fetchProductByIdAsync } from "../../product-list/productListsSlice";
+export default function AddProduct(){
 
-export default function AdminProductDetail() {
-  const [selectedColor, setSelectedColor] = useState(colors[0])
-  const [selectedSize, setSelectedSize] = useState(sizes[2])
-  const product=useSelector(selectedProducts);
   const dispatch=useDispatch();
-  const params= useParams();
-  const user=useSelector(selectUserInfo)
-
-
-
+  const params=useParams();
   useEffect(()=>{
-    dispatch(fetchProductByIdAsync(params.id))
-  },[dispatch,params.id]);
+    window.scrollTo(0, 0);
+  })
+ 
+  const selectedProduct=useSelector(selectedProducts);
 
-  return (
-    <div className="bg-white">
-    {product ?
-      <div className="pt-6">
-        <nav aria-label="Breadcrumb">
-          <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-            {product.breadcrumbs && product.breadcrumbs.map((breadcrumb) => (
-              <li key={breadcrumb.id}>
-                <div className="flex items-center">
-                  <a href={breadcrumb.href} className="mr-2 text-sm font-medium text-gray-900">
-                    {breadcrumb.name}
-                  </a>
-                  <svg
-                    width={16}
-                    height={20}
-                    viewBox="0 0 16 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-4 text-gray-300"
-                  >
-                    <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-                  </svg>
+  // const selectedProductId=product.id;
+  // console.log("sele",selectedProductId);
+    const { register, handleSubmit,reset,setValue, formState: { errors } } = useForm();
+      
+    const brands=useSelector(selectAllBrands);
+    // console.log(brands);
+    const category = useSelector(selectAllCategories);
+    const handleEditForm=()=>{
+      
+      console.log("product selected: ",selectedProduct);
+      setValue('title',selectedProduct.title);
+      setValue('description',selectedProduct.description);
+      setValue('brand',selectedProduct.brand);
+      setValue('category',selectedProduct.category);
+      setValue('Warranty Period',selectedProduct.warrantyInformation);
+      setValue('shippingInformation',selectedProduct.shippingInformation);
+      setValue('price',selectedProduct.price);
+      setValue('discountPercentage',selectedProduct.discountPercentage);
+      setValue('stock',selectedProduct.stock);
+      setValue('thumbnail',selectedProduct.thumbnail);
+      setValue('image1',selectedProduct.images[0]);
+      setValue('image2',selectedProduct.images[1]);
+      setValue('image3',selectedProduct.images[2]);
+   }
+
+
+   const handleDetail=(e)=>{
+      
+    console.log("id: ",e);
+    console.log("clicked on null: ");
+    dispatch(fetchProductByIdNullAsync());
+    navigate(`/admin/edit/${e}`);
+  }
+   const handleClick=(id,index)=>{
+    handleDetail(id);
+    handleEditForm(index);
+  
+  }
+  useEffect(() =>{
+    if(selectedProduct)
+    {
+    handleEditForm();
+    }
+   },[selectedProduct]);
+
+
+    return(
+        <div className="mt-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <form onSubmit={handleSubmit((data)=>{
+         const product={...data};
+         product.images=[product.image1,product.image2,product.image3];
+         delete product['image1'];
+         delete product['image2'];
+         delete product['image3'];
+         delete product['image'];
+         product.rating = 0;
+         console.log("new Update Product: ",product);
+         
+
+         dispatch(updateProductAsync({itemId:selectedProduct.id,product:product}));
+         reset();
+                      
+})}>
+      <div className="space-y-12">
+        <div className="border-b border-gray-900/10 pb-12">
+          <h2 className="text-base font-semibold leading-7 text-gray-900">Profile</h2>
+          <p className="mt-1 text-sm leading-6 text-gray-600">
+            This information will be displayed publicly so be careful what you share.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+            <div className="sm:col-span-4">
+              <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
+                Product Title
+              </label>
+              <div className="mt-2">
+                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                  <input
+                    type="text"
+                    {...register("title",{required: "Title is required"})}
+                    id="title"
+                    // autoComplete="username"
+                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    placeholder="Title"
+                  />
                 </div>
-              </li>
-            ))}
+              </div>
+            </div>
+
+            <div className="col-span-full">
+              <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">
+                Description of Product
+              </label>
+              <div className="mt-2">
+                <textarea
+                  id="description"
+                  {...register("description",{required: "description is required"})}
+                  rows={3}
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  defaultValue={''}
+                />
+              </div>
+              <p className="mt-3 text-sm leading-6 text-gray-600">Write a few sentences about product.</p>
+            </div>
+
+
             
-          </ol>
-        </nav>
+          </div>
+        </div>
 
-        {/* Image gallery */}
+        <div className="border-b border-gray-900/10 pb-12">
 
-        <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-          <div className="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
-            <img
-              src={product.images[0]}
+          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+
+            <div className="sm:col-span-3">
+              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                brand 
+              </label>
+              <select
+                  id="brand"
+                  {...register("brand",{required: "category is required"})}
+                  
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                >
+                  <option value="">--Choose-Brand--</option>
+                  {brands.map((brand)=>(
+                  <option value={brand.value}>{brand.value}</option>
+    ))}
+                </select>
               
-              className="h-full w-full object-cover object-center"
+            </div>
+            <div className="sm:col-span-3">
+            <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+              category
+            </label>
+            <select
+            id="category"
+            {...register("category",{required: "Category is required"})}
+            
+            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+          >
+            <option value="">--Choose-category--</option>
+            {category.map((Cate)=>(
+            <option value={Cate.value}>{Cate.value}</option>
+))}
+          </select>
+          </div>
+          <div className="sm:col-span-3">
+          <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+            Warranty Period
+          </label>
+          <div className="mt-2">
+            <input
+              id="Warranty Period"
+              {...register("Warranty Period",{required: "Warranty Period is required"})}
+              type="text"
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
-          <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-            <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
-              <img
-              src={product.images[1]}
-              
-                className="h-full w-full object-cover object-center"
-              />
-            </div>
-            <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
-              <img
-              src={product.images[2]}
-              
-                className="h-full w-full object-cover object-center"
-              />
-            </div>
-          </div>
-          <div className="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
-          <img
-          src={product.images[0]}
-          
-          className="h-full w-full object-cover object-center"
-        />
-          </div>
         </div>
-
-        {/* Product info */}
-        <div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
-          <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{product.title}</h1>
-          </div>
-
-          {/* Options */}
-          <div className="mt-4 lg:row-span-3 lg:mt-0">
-            <h2 className="sr-only">Product information</h2>
-            <p className="text-3xl tracking-tight text-gray-900">{product.price}</p>
-
-            {/* Reviews */}
-            <div className="mt-6">
-              <h3 className="sr-only"></h3>
-              <div className="flex items-center">
-                <div className="flex items-center">
-                  {[0, 1, 2, 3, 4].map((rating) => (
-                    <StarIcon
-                      key={rating}
-                      className={classNames(
-                        product.rating > rating ? 'text-gray-900' : 'text-gray-200',
-                        'h-5 w-5 flex-shrink-0'
-                      )}
-                      aria-hidden="true"
-                    />
-                  ))}
-                </div>
-                <p className="sr-only">{product.rating} out of 5 stars</p>
-
-                <a href={product.reviews.href} className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
-                  {product.reviews.length} 
-                </a>
-                <div>
-                <h1>Hello Reviews</h1>
-                 </div>                
-              </div>
-            </div>
-
-            <form className="mt-10">
-              {/* Colors */}
-              <div>
-                <h3 className="text-sm font-medium text-gray-900">Color</h3>
-
-                <fieldset aria-label="Choose a color" className="mt-4">
-                  <RadioGroup value={selectedColor} onChange={setSelectedColor} className="flex items-center space-x-3">
-                    {colors && colors.map((color) => (
-                      <Radio
-                        key={color.name}
-                        value={color}
-                        aria-label={color.name}
-                        className={({ focus, checked }) =>
-                          classNames(
-                            color.selectedClass,
-                            focus && checked ? 'ring ring-offset-1' : '',
-                            !focus && checked ? 'ring-2' : '',
-                            'relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none'
-                          )
-                        }
-                      >
-                        <span
-                          aria-hidden="true"
-                          className={classNames(
-                            color.class,
-                            'h-8 w-8 rounded-full border border-black border-opacity-10'
-                          )}
-                        />
-                      </Radio>
-                    ))}
-                  </RadioGroup>
-                </fieldset>
-              </div>
-
-              {/* Sizes */}
-              <div className="mt-10">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-medium text-gray-900">Size</h3>
-                  <a href="#" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
-                    Size guide
-                  </a>
-                </div>
-
-                <fieldset aria-label="Choose a size" className="mt-4">
-                  <RadioGroup
-                    value={selectedSize}
-                    onChange={setSelectedSize}
-                    className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4"
-                  >
-                    {sizes && sizes.map((size) => (
-                      <Radio
-                        key={size.name}
-                        value={size}
-                        disabled={!size.inStock}
-                        className={({ focus }) =>
-                          classNames(
-                            size.inStock
-                              ? 'cursor-pointer bg-white text-gray-900 shadow-sm'
-                              : 'cursor-not-allowed bg-gray-50 text-gray-200',
-                            focus ? 'ring-2 ring-indigo-500' : '',
-                            'group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6'
-                          )
-                        }
-                      >
-                        {({ checked, focus }) => (
-                          <>
-                            <span>{size.name}</span>
-                            {size.inStock ? (
-                              <span
-                                className={classNames(
-                                  checked ? 'border-indigo-500' : 'border-transparent',
-                                  focus ? 'border' : 'border-2',
-                                  'pointer-events-none absolute -inset-px rounded-md'
-                                )}
-                                aria-hidden="true"
-                              />
-                            ) : (
-                              <span
-                                aria-hidden="true"
-                                className="pointer-events-none absolute -inset-px rounded-md border-2 border-gray-200"
-                              >
-                                <svg
-                                  className="absolute inset-0 h-full w-full stroke-2 text-gray-200"
-                                  viewBox="0 0 100 100"
-                                  preserveAspectRatio="none"
-                                  stroke="currentColor"
-                                >
-                                  <line x1={0} y1={100} x2={100} y2={0} vectorEffect="non-scaling-stroke" />
-                                </svg>
-                              </span>
-                            )}
-                          </>
-                        )}
-                      </Radio>
-                    ))}
-                  </RadioGroup>
-                </fieldset>
-              </div>
-
-              
-            </form>
-          </div>
-
-          <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
-            {/* Description and details */}
-            <div>
-              <h3 className="sr-only">Description</h3>
-
-              <div className="space-y-6">
-                <p className="text-base text-gray-900">{product.description}</p>
-              </div>
-            </div>
-
-            <div className="mt-10">
-              <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
-
-              <div className="mt-4">
-                <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-                  {product.highlights && product.highlights.map((highlight) => (
-                    <li key={highlight} className="text-gray-400">
-                      <span className="text-gray-600">{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="mt-10">
-              <h2 className="text-sm font-medium text-gray-900">Details</h2>
-
-              <div className="mt-4 space-y-6">
-                <p className="text-sm text-gray-600">{product.description}</p>
-              </div>
-            </div>
-          </div>
+        <div className="sm:col-span-3">
+        <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+        Shipping Information
+        </label>
+        <div className="mt-2">
+          <input
+            id="shippingInformation"
+            {...register("shippingInformation",{required: "shippingInformation is required"})}
+            type="text"
+            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
         </div>
       </div>
-      : null
-    }
-    </div>
-  )
+           
+            <div className="sm:col-span-2 sm:col-start-1">
+              <label htmlFor="city" className="block text-sm font-medium leading-6 text-gray-900">
+                Price
+              </label>
+              <div className="mt-2">
+                <input
+                  type="text"
+                  {...register("price",{required: "Price is required"})}
+                
+                  id="Price"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+
+            <div className="sm:col-span-2">
+              <label htmlFor="region" className="block text-sm font-medium leading-6 text-gray-900">
+                Discount Percent
+              </label>
+              <div className="mt-2">
+                <input
+                  type="text"
+                  {...register("discountPercentage",{required: "discountPercentage is required"})}
+                  id="discountPercentage"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+
+            <div className="sm:col-span-2">
+              <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
+              stock
+              </label>
+              <div className="mt-2">
+                <input
+                  type="number"
+                  {...register("stock",{required: "stock is required"})}
+                  id="stock"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+            <div className="sm:col-span-4">
+            <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+              Thumbnail Link
+            </label>
+            <div className="mt-2">
+              <input
+                id="thumbnail"
+                {...register("thumbnail",{required: "thumbnail is required"})}
+                type="text"
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div className="sm:col-span-4">
+          <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+            Image Link 1
+          </label>
+          <div className="mt-2">
+            <input
+              id="image1"
+              {...register("image1",{required: "image1 is required"})}
+              type="text"
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+        <div className="sm:col-span-4">
+          <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+            Image Link 2
+          </label>
+          <div className="mt-2">
+            <input
+              id="image2"
+              {...register("image2",{required: "image2 is required"})}
+              type="text"
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+        <div className="sm:col-span-4">
+          <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+            Image Link 3
+          </label>
+          <div className="mt-2">
+            <input
+              id="image3"
+              {...register("image3",{required: "image3 is required"})}
+              type="text"
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+          </div>
+        </div>
+
+        
+      </div>
+
+      <div className="mt-6 flex items-center justify-end gap-x-6">
+        <Link to="/admin/products" type="button" className="text-sm font-semibold leading-6 text-gray-900">
+          Cancel
+        </Link>
+        <button
+          type="submit"
+          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+        </div>
+    )
 }
+

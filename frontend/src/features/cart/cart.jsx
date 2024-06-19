@@ -17,7 +17,8 @@ export default function CartPage() {
   const loggedUser=useSelector(selectUserInfo);
   // console.log("logged user:",loggedUser);
   const products=useSelector(selectItems);
-  // console.log("products: ",products);
+  // console.log("products:",products);
+
   if(!products.length){
     <Navigate to="/" replace={true}></Navigate>
   }
