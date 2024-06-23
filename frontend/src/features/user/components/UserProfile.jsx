@@ -18,8 +18,8 @@ export default function UserProfile() {
   const loggeduser=useSelector(selectUserInfo);
   // console.log("loggeduser: ",loggeduser);
   useEffect(()=>{
-    dispatch(fetchUserForUpdateAsync(loggeduser._id))
-  },[]);
+    dispatch(fetchUserForUpdateAsync())
+  },[])
   
 
   const user=useSelector(selectUpdateUser)
@@ -42,7 +42,7 @@ console.log("user: ",user);
     
   }
   const handleRemove=(e,index)=>{
-    con
+    
       const newUser={...user,addresses:[...user.addresses]};
       newUser.addresses.splice(index,1);
       dispatch(updateUserAsync(newUser),fetch);

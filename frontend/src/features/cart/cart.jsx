@@ -28,7 +28,7 @@ export default function CartPage() {
 const dispatch=useDispatch();
 
 useEffect(()=>{
-  dispatch(fetchUserForUpdateAsync(loggedUser._id))
+  dispatch(fetchUserForUpdateAsync())
 },[]);
 
 // console.log("userForUpdate: ",userForUpdate);

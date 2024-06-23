@@ -58,7 +58,7 @@ export default function CheckoutPage() {
  
   // const user=useSelector(selectUpdateUser);
 const user =useSelector(selectUpdateUser);
-   
+   console.log("user in checkOut",user);
   const totalAmount=prod.reduce((amount,item)=>item.product.price*item.quantity +amount,0);
   const totalItems=prod.reduce((total,item)=>item.quantity+total,0);
   const handleRemove=(e,itemId)=>{
@@ -86,8 +86,10 @@ const user =useSelector(selectUpdateUser);
   if(selectedAddress!==null && PaymentMethod!==null){
   
   const products=await prod.map(product=>({...product,status:'Order-Received'}));
-  const userId=user.id;
-  const order={products,userId,PaymentMethod,selectedAddress,totalAmount,totalItems}
+  
+
+  const order={products,PaymentMethod,selectedAddress,totalAmount,totalItems}
+  
   // const userId=user._id;
   dispatch(
   createOrderAsync(order))

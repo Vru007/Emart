@@ -45,7 +45,7 @@ export default function ProductDetail() {
   e.preventDefault();
   //when same product is put in cart by different users then because of same 
   //product id id clashing takes place hence we will remove the id and the system will give its own id to the cart items
-  const newItem={product:product.id,quantity:1,user:user._id}
+  const newItem={product:product.id,quantity:1}
   delete newItem['id'];
   dispatch(addToCartAsync(newItem))
  }

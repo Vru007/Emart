@@ -1,7 +1,6 @@
 // A mock function to mimic making an async request for data
 import axios from "axios";
 export function createOrder(update) {
-   
   return new Promise(async (resolve)=>{
     const response=await axios.post('http://localhost:8080/orders',update,{
       headers: {'content-type': 'application/json'}
@@ -11,9 +10,9 @@ export function createOrder(update) {
   })
 }
 
-export function fetchOrder(userId){
+export function fetchOrder(){
   return new Promise(async(resolve)=>{
-    const response =await axios.get('http://localhost:8080/orders/orderbyid?user='+userId,{
+    const response =await axios.get('http://localhost:8080/orders/orderbyid',{
       headers: {'content-type': 'application/json'}
     })
     const data=await response.data;
@@ -27,7 +26,7 @@ export function updateStatus(updateItem){
   return new Promise (async (resolve)=>{
     const response =await axios.patch('http://localhost:8080/orders/update/'+updateItem.id,updateItem,{
     headers:{'content-type':'application/json'},
-    });
+  });
     const data=await response.json();
     resolve({data});
 

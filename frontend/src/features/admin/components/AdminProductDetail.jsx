@@ -28,17 +28,17 @@ export default function AddProduct(){
       console.log("product selected: ",selectedProduct);
       setValue('title',selectedProduct.title);
       setValue('description',selectedProduct.description);
-      setValue('brand',selectedProduct.brand);
-      setValue('category',selectedProduct.category);
+      setValue('brand',selectedProduct.brand || null);
+      setValue('category',selectedProduct.category || null);
       setValue('Warranty Period',selectedProduct.warrantyInformation);
       setValue('shippingInformation',selectedProduct.shippingInformation);
       setValue('price',selectedProduct.price);
       setValue('discountPercentage',selectedProduct.discountPercentage);
       setValue('stock',selectedProduct.stock);
       setValue('thumbnail',selectedProduct.thumbnail);
-      setValue('image1',selectedProduct.images[0]);
-      setValue('image2',selectedProduct.images[1]);
-      setValue('image3',selectedProduct.images[2]);
+      setValue('image1',selectedProduct.images && selectedProduct.images[0] ? selectedProduct.images[0] : null);
+      setValue('image2',selectedProduct.images && selectedProduct.images[1] ? selectedProduct.images[1] : null);
+      setValue('image3',selectedProduct.images && selectedProduct.images[2] ? selectedProduct.images[2] : null);
    }
 
 
@@ -66,12 +66,13 @@ export default function AddProduct(){
         <div className="mt-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <form onSubmit={handleSubmit((data)=>{
          const product={...data};
+         product.rating=selectedProduct.rating;
          product.images=[product.image1,product.image2,product.image3];
          delete product['image1'];
          delete product['image2'];
          delete product['image3'];
          delete product['image'];
-         product.rating = 0;
+  
          console.log("new Update Product: ",product);
          
 
@@ -136,7 +137,7 @@ export default function AddProduct(){
               </label>
               <select
                   id="brand"
-                  {...register("brand",{required: "category is required"})}
+                  {...register("brand")}
                   
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
@@ -265,7 +266,7 @@ export default function AddProduct(){
           <div className="mt-2">
             <input
               id="image2"
-              {...register("image2",{required: "image2 is required"})}
+              {...register("image2")}
               type="text"
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
@@ -278,7 +279,7 @@ export default function AddProduct(){
           <div className="mt-2">
             <input
               id="image3"
-              {...register("image3",{required: "image3 is required"})}
+              {...register("image3")}
               type="text"
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />

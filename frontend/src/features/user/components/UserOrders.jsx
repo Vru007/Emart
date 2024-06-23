@@ -16,7 +16,7 @@ export function AllOrders() {
   console.log("orders: ",orders);
   const or=[...orders].reverse();
   useEffect(()=>{
-    dispatch(fetchOrderByIdAsync(user._id))
+    dispatch(fetchOrderByIdAsync())
     // console.log("order id:",orders[0].id)
     console.log(or);
   },[]);

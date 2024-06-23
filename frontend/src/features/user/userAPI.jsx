@@ -18,8 +18,8 @@ export function updateUser(update) {
   return new Promise(async (resolve)=>{
   
     // console.log("update: ",update);
-    const userId=update.id;
-    const response=await axios.patch('http://localhost:8080/user/update/'+userId,update,{
+    
+    const response=await axios.patch('http://localhost:8080/user/update',update,{
       headers:{'content-type':'application/json'}
     });
     const data=await response.data;
@@ -28,21 +28,21 @@ export function updateUser(update) {
   })
 }
 
-export function fetchUserForUpdate(userId){
+export function fetchUserForUpdate(){
   return new Promise(async(resolve)=>{
    
 
    try{
-    const response = await axios.get(`http://localhost:8080/user/${userId}`, {
+    const response = await axios.get('http://localhost:8080/user/own', {
       headers: { 'Content-Type': 'application/json' }
     });
     const data=await response.data;
-    console.log("data :",data);
-    console.log("response: ",response);
+    console.log("data in fetchuser :",data);
+    console.log("response in fetchuser: ",response);
     resolve({data});
    }
    catch(err){
-    console.log(err);
+    console.log("error:",err);
    }
   })
 }

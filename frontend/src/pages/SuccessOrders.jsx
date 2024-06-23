@@ -9,14 +9,17 @@ import { resetOrder } from "../features/order/orderSlice";
 
 export default function SuccessOrder() {
   const order = useSelector(selectCurrentOrder);
+
   const user = useSelector(selectUserInfo);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  console.log("orders in ordersummary: ",order);
   useEffect(() => {
     console.log("user: ", user);
-    dispatch(resetCartAsync(user._id));
+    dispatch(resetCartAsync());
     // dispatch(resetOrder());
-  }, [[dispatch, user.id]]);
+  }, [[dispatch]]);
   return (
     <>
       {order ? (

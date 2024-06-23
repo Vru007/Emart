@@ -4,12 +4,15 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { checkUserAsync, selectError,selectUserInfo} from "../authSlice";
 import { Navigate } from "react-router-dom";
+import { selectUpdateUser } from "../../user/userSlice";
 export function Login() {
   const dispatch =useDispatch();
   const user=useSelector(selectUserInfo);
+  const userInfo=useSelector(selectUpdateUser);
   const error=useSelector(selectError);
   console.log("error in login jsx: ",error)
-  console.log("user in login: ",user);
+  console.log("user in login in loginjsx: ",user);
+  console.log("userinfo: ",userInfo);
   
   const {
     register,
@@ -20,7 +23,7 @@ export function Login() {
   console.log(errors);
   return (
     <div>
-    {user && (user.role==='admin'? <Navigate to='/admin/products'></Navigate>:<Navigate to='/'></Navigate>)}
+    {userInfo && user && (userInfo.role==='admin'? <Navigate to='/admin/products'></Navigate>:<Navigate to='/'></Navigate>)}
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
@@ -35,7 +38,7 @@ export function Login() {
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form onSubmit={handleSubmit((data)=>{
-            // console.log({data});
+            console.log({data});
             dispatch(
             checkUserAsync({email:data.email, password:data.password}));
             

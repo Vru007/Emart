@@ -15,6 +15,7 @@ import {
 import { Bars3Icon,ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from "react-router-dom";
 import { selectUserInfo } from "../auth/authSlice";
+import { selectUpdateUser } from "../user/userSlice";
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
@@ -32,12 +33,14 @@ function classNames(...classes) {
 }
 export function Navbar({children}){
    const user=useSelector(selectUserInfo);
+   const userInfo=useSelector(selectUpdateUser);
    const item=useSelector(selectItems);
   //  const numberofItems=item.length;
   //  console.log("number of items: ",item.length);
   
     return(
-
+<>
+    
     <div className="min-h-full">
         <Disclosure as="nav" className="bg-gray-800">
           {({ open }) => (
@@ -76,7 +79,7 @@ export function Navbar({children}){
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
-                    {(user && user.role!=='admin')?
+                    {(user && userInfo.role!=='admin')?
                       <>
                     <Link to ="/cart">
                       <button
@@ -172,10 +175,10 @@ export function Navbar({children}){
                     {user?
                     <div className="ml-3">
                       
-                      <div className="text-sm font-medium leading-none text-gray-400">{user.Email}</div>
+                      <div className="text-sm font-medium leading-none text-gray-400">{userInfo.Email}</div>
                     </div>
                   :null};
-                  {(user && user.role!="admin")?
+                  {(user && userInfo.role!="admin")?
                     <>
                     <Link to ="/cart">  
                     <button
@@ -221,6 +224,7 @@ export function Navbar({children}){
           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">{children}</div>
         </main>
       </div>
-   
+      
+   </>
     )
 }

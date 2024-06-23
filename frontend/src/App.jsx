@@ -31,11 +31,12 @@ import Protected from './features/auth/components/Protected';
 import { fetchItemsByUserIdAsync } from './features/cart/cartListSlice';
 import { selectUserInfo } from './features/auth/authSlice';
 import { useSelector } from 'react-redux';
+import { fetchUserForUpdateAsync } from './features/user/userSlice';
 //TODO: Add alerts and loaders using react-alert library
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (<HomePage/>),
+    element: (<div><HomePage/></div>),
   },
   {
     path: "/login",
@@ -105,7 +106,8 @@ function App() {
   const dispatch =useDispatch();
   useEffect(()=>{
     if(user){
-    dispatch(fetchItemsByUserIdAsync(user._id));
+    dispatch(fetchItemsByUserIdAsync());
+    dispatch(fetchUserForUpdateAsync());
     }
   },[dispatch,user])
   return (

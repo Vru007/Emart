@@ -1,14 +1,16 @@
 const {Order}=require('../model/order');
 
 exports.createOrder=async(req,res)=>{
+    const {id}=req.user;
     const order= new Order( 
         {products: req.body.products,
-        user: req.body.userId,
+        user:id,
         PaymentMethod: req.body.PaymentMethod,
         selectedAddress: req.body.selectedAddress,
         totalAmount: req.body.totalAmount,
         totalItems: req.body.totalItems});
     
+        console.log("order in createorder:",order);
     try{
         // console.log("new order backend: ",order);
         const response=await order.save();
@@ -22,10 +24,10 @@ exports.createOrder=async(req,res)=>{
 };
 
 exports.fetchOrderByUserId=async(req,res)=>{
-    const user=req.query.user;
-    console.log("userID inside backend: ",user);
+    const {id}=req.user;
+    console.log("id in order:",id);
     try{
-         const orderItems=await Order.find({user:user}).populate('user');
+         const orderItems=await Order.find({user:id});
          console.log("orders : ",orderItems);
          return res.status(200).json(orderItems);
     }

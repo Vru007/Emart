@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { createUser,checkUser } from './authApi';
 import { signOut } from './authApi';
 const initialState = {
-  loggedUser: null,
+  loggedUserToken: null,
   status: 'idle',
   error:null,
   
@@ -70,7 +70,7 @@ export const counterSlice = createSlice({
       })
       .addCase(createUserAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.loggedUser = action.payload;
+        state.loggedUserToken = action.payload;
       })
       .addCase(checkUserAsync.pending, (state) => {
         state.status = 'loading';
@@ -78,8 +78,8 @@ export const counterSlice = createSlice({
       })
       .addCase(checkUserAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.loggedUser = action.payload;
-        console.log("loggedUser: ",state.loggedUser);
+        state.loggedUserToken = action.payload;
+        console.log("loggedUserToken: ",state.loggedUserToken);
       })
       .addCase(checkUserAsync.rejected, (state, action) => {
         state.status = 'idle';
@@ -88,7 +88,7 @@ export const counterSlice = createSlice({
       })
       .addCase(signOutAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.loggedUser = null;
+        state.loggedUserToken = null;
       })
       .addCase(signOutAsync.pending, (state) => {
         state.status = 'loading';
@@ -100,6 +100,7 @@ export const counterSlice = createSlice({
 export const { increment} = counterSlice.actions;
 
 
-export const selectUserInfo = (state) => state.auth.loggedUser;
+export const selectUserInfo = (state) => state.auth.loggedUserToken;
 export const selectError=(state)=>state.auth.error;
 export default counterSlice.reducer;
+

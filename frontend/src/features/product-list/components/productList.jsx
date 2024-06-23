@@ -51,7 +51,8 @@ function classNames(...classes) {
 }
 
 export function ProductList() {
-
+ 
+  console.log("hello world!");
   const navigate=useNavigate();
   const dispatch = useDispatch();
   const categories=useSelector(selectAllCategories);
@@ -139,7 +140,14 @@ export function ProductList() {
     dispatch(fetchAllCategoriesAsync());
     dispatch(fetchAllBrandsAsync());
   },[]);
+
+  
+
+
+
   return (
+    <>
+    
     <div className="bg-white">
       <div>
         {/* Mobile filter dialog */}
@@ -513,5 +521,6 @@ export function ProductList() {
         </main>
       </div>
     </div>
+    </>
   );
 }

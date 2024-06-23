@@ -6,6 +6,8 @@ export function createUser(userData) {
       const d=JSON.stringify(userData)
       const response=await axios.post('http://localhost:8080/auth/signup',d,{
         headers:{'content-type':'application/json'}
+      },{
+        withCredentails:true
       });
       const data=await response.data;
       // console.log(data);
@@ -19,10 +21,14 @@ export function createUser(userData) {
     return new Promise(async (resolve,reject)=>{
       const email =loginInfo.email;
       const password=loginInfo.password;
-      const d=JSON.stringify(loginInfo);
+      console.log(loginInfo);
+      // const d=JSON.stringify(loginInfo);
+      const d={email:email,password:password}
       try{
       const response=await axios.post('http://localhost:8080/auth/login',d,{
         headers:{'content-type':'application/json'}
+      },{
+        withCredentials:true
       });
       const data=await response.data;
       console.log("data in auth Api: ",data);
@@ -49,3 +55,4 @@ export function createUser(userData) {
       resolve({data :'Succces'});
     });
   }
+

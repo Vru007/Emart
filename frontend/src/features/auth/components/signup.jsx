@@ -4,14 +4,17 @@ import LoginPage from "../../../pages/loginPage";
 import { useForm } from "react-hook-form";
 import { useDispatch,useSelector } from "react-redux";
 import { createUserAsync,selectUserInfo } from "../authSlice";
+import { selectUpdateUser } from "../../user/userSlice";
 export function Signup(){
   const { register, handleSubmit, formState: { errors } } = useForm();
   const user= useSelector(selectUserInfo);
+  const userInfo=useSelector(selectUpdateUser);
   // console.log(errors);
  const dispatch=useDispatch();
     return(
       <>
-      {user?.email}
+      {userInfo?.email}
+      console.log("userInfo-email: ",userInfo.email);
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img

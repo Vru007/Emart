@@ -20,7 +20,7 @@ export function fetchAllCategories() {
 export function fetchAllBrands() {
    
   return new Promise(async (resolve)=>{
-    const response=await axios.get('http://localhost:8080/brand');
+    const response=await axios.get('http://localhost:8080/brand', );
     const data=await response.data;
     resolve({data});
   })
@@ -79,7 +79,7 @@ export function addProduct(newProduct) {
 
   return new Promise(async (resolve)=>{
     const response=await axios.post('http://localhost:8080/products',newProduct,{
-      headers: {'content-type':'application/json'},
+      headers: {'content-type':'application/json'}
     });
     const data=await response.data;
     resolve({data});

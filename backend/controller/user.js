@@ -2,7 +2,7 @@ const { request } = require("express");
 const { Users } = require("../model/user");
 
 exports.updateUser=async(req,res)=>{
-    const {id}=req.params;
+    const {id}=req.user;
     console.log("id inside backend: ",id);
 
     try{
@@ -20,10 +20,13 @@ exports.updateUser=async(req,res)=>{
     }
 }
 exports.fetchUser=async(req,res)=>{
-    const {id}=req.params
+
+    console.log("req.user in backend:",req.user)
+    const {id}=req.user;
 
     try{
         const user= await Users.findById(id);
+        
         return res.status(200).json(user);
 
     }

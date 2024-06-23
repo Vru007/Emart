@@ -25,9 +25,8 @@ export const fetchOrderAsync = createAsyncThunk(
 
 export const fetchUserForUpdateAsync=createAsyncThunk(
    'user/fetchUserForUpdate',
-   async(userId)=>{
-    console.log("userID in fecthIUseL ",userId);
-    const response = await fetchUserForUpdate(userId);
+   async()=>{
+    const response = await fetchUserForUpdate();
     return response.data;
    }
 );
