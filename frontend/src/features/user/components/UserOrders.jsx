@@ -13,12 +13,12 @@ export function AllOrders() {
   const dispatch = useDispatch();
   const user=useSelector(selectUserInfo);
   const orders = useSelector(selectUserOrders);
-  console.log("orders: ",orders);
+  // console.log("orders: ",orders);
   const or=[...orders].reverse();
   useEffect(()=>{
     dispatch(fetchOrderByIdAsync())
     // console.log("order id:",orders[0].id)
-    console.log(or);
+    // console.log(or);
   },[]);
   
   return (

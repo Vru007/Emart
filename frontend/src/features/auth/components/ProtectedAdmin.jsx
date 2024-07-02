@@ -4,11 +4,11 @@ import { Navigate } from "react-router-dom";
 import { selectUpdateUser } from "../../user/userSlice";
 function AdminProtected({children}){
     const user=useSelector(selectUserInfo);
-    const userInfo=useSelector(selectUpdateUser);
     if(!user){
       return <Navigate to="/login"> </Navigate>;
     }
-    if(user && userInfo.role==='admin'){
+    console.log("user in protected admin routes: ",user)
+    if(user && user.role==='admin'){
       return children;
     }
 

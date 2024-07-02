@@ -34,7 +34,7 @@ export const updateUserAsync = createAsyncThunk(
   'user/updateUser',
   async (update) => {
     // console.log("userData",userData);
-    console.log("update: ",update);
+    // console.log("update: ",update);
     const response = await updateUser(update);
     // console.log("updateData: ",update);
     // The value we return becomes the `fulfilled` action payload

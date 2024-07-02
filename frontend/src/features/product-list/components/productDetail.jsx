@@ -49,7 +49,14 @@ export default function ProductDetail() {
   delete newItem['id'];
   dispatch(addToCartAsync(newItem))
  }
-
+ 
+ const handleDetail=(e)=>{
+    
+  // console.log("id: ",e);
+  // console.log("clicked on null: ");
+  dispatch(fetchProductByIdNullAsync());
+  navigate(`/details/${e}`);
+}
 
   useEffect(()=>{
     dispatch(fetchProductByIdAsync(params.id))

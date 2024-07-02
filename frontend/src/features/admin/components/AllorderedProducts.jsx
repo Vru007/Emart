@@ -25,15 +25,15 @@ export default function AllorderedProducts(){
           // dispatch(fetchAllOrdersAsync());
           const pagination={_page:page,_limit:limit};
           const fetchedOrders =await dispatch(fetchAllOrdersAsync({pagination}));
-          console.log("fetched orders:",fetchedOrders.payload);
+          // console.log("fetched orders:",fetchedOrders.payload);
           setOrders(fetchedOrders.payload.orders); // Assuming the payload contains orders
         };
     // fetchData();
     useEffect(()=>{
         fetchData();
-    },[]);
+    },[page]);
     // const orders=useSelector(selectAllOrders);
-    console.log("orders",orders);
+    // console.log("orders",orders);
     const handleChange=(e)=>{
         setStatus(e.target.value);
     }

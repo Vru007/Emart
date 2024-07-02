@@ -23,7 +23,7 @@ export default function UserProfile() {
   
 
   const user=useSelector(selectUpdateUser)
-console.log("user: ",user);
+// console.log("user: ",user);
   //  fetchUser();
   const [selectedAddressIndex,setSelectedAddressIndex]=useState(-1);
   const {
@@ -36,7 +36,7 @@ console.log("user: ",user);
   const handleEdit=(data,index)=>{
     const newUser={...user,addresses:[...user.addresses]}; //to shallow copy the data to avoid issues
     newUser.addresses.splice(index,1,data);
-    console.log("newUser: ",newUser);
+    // console.log("newUser: ",newUser);
     dispatch(updateUserAsync(newUser));
     setSelectedAddressIndex(-1);
     
@@ -52,7 +52,7 @@ console.log("user: ",user);
   const handleEditForm=(index)=>{
      setSelectedAddressIndex(index);
      const address=user.addresses[index];
-     console.log("address: ",address);
+    //  console.log("address: ",address);
      setValue('Name',address.Name);
      setValue('Email',address.Email);
      setValue('addressType',address.addressType);

@@ -4,7 +4,8 @@ import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 import { Link,useParams} from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { addProductAsync, selectAllBrands, selectAllCategories, selectedProducts, updateProductAsync } from "../../product-list/productListsSlice";
+import { useState } from "react";
+import { addProductAsync, fetchAllBrandsAsync, fetchAllCategoriesAsync, selectAllBrands, selectAllCategories, selectedProducts, updateProductAsync } from "../../product-list/productListsSlice";
 import { fetchProductByIdAsync } from "../../product-list/productListsSlice";
 export default function AddProduct(){
 
@@ -15,17 +16,16 @@ export default function AddProduct(){
   })
  
   const selectedProduct=useSelector(selectedProducts);
-
+  const [Temp,setTemp]=useState(null);
   // const selectedProductId=product.id;
   // console.log("sele",selectedProductId);
     const { register, handleSubmit,reset,setValue, formState: { errors } } = useForm();
-      
     const brands=useSelector(selectAllBrands);
     // console.log(brands);
     const category = useSelector(selectAllCategories);
     const handleEditForm=()=>{
       
-      console.log("product selected: ",selectedProduct);
+      // console.log("product selected: ",selectedProduct);
       setValue('title',selectedProduct.title);
       setValue('description',selectedProduct.description);
       setValue('brand',selectedProduct.brand || null);
@@ -39,31 +39,33 @@ export default function AddProduct(){
       setValue('image1',selectedProduct.images && selectedProduct.images[0] ? selectedProduct.images[0] : null);
       setValue('image2',selectedProduct.images && selectedProduct.images[1] ? selectedProduct.images[1] : null);
       setValue('image3',selectedProduct.images && selectedProduct.images[2] ? selectedProduct.images[2] : null);
+      
+      
    }
 
+   useEffect(()=>{
+    dispatch(fetchProductByIdAsync(params.id));
+    dispatch(fetchAllBrandsAsync);
+    dispatch(fetchAllCategoriesAsync);
+  },[dispatch,params.id]);
 
-   const handleDetail=(e)=>{
-      
-    console.log("id: ",e);
-    console.log("clicked on null: ");
-    dispatch(fetchProductByIdNullAsync());
-    navigate(`/admin/edit/${e}`);
-  }
-   const handleClick=(id,index)=>{
-    handleDetail(id);
-    handleEditForm(index);
-  
-  }
+
   useEffect(() =>{
     if(selectedProduct)
     {
+      console.log("selected products in admin product detail: ",selectedProduct);
+      console.log("brands: ",brands);
+      console.log("categories: ",category);
     handleEditForm();
+    setTemp(1);
     }
    },[selectedProduct]);
 
 
     return(
-        <div className="mt-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <>
+   {(Temp!==null && brands && category) ? (
+     <div className="mt-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <form onSubmit={handleSubmit((data)=>{
          const product={...data};
          product.rating=selectedProduct.rating;
@@ -73,7 +75,7 @@ export default function AddProduct(){
          delete product['image3'];
          delete product['image'];
   
-         console.log("new Update Product: ",product);
+        //  console.log("new Update Product: ",product);
          
 
          dispatch(updateProductAsync({itemId:selectedProduct.id,product:product}));
@@ -302,8 +304,10 @@ export default function AddProduct(){
           Save
         </button>
       </div>
-    </form>
-        </div>
+         </form>
+      </div>
+    ):null}
+</>
     )
 }
 

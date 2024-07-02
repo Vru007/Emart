@@ -39,8 +39,7 @@ export function Navbar({children}){
   //  console.log("number of items: ",item.length);
   
     return(
-<>
-    
+
     <div className="min-h-full">
         <Disclosure as="nav" className="bg-gray-800">
           {({ open }) => (
@@ -79,9 +78,9 @@ export function Navbar({children}){
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
-                    {(user && userInfo.role!=='admin')?
+                    {(user && (userInfo && userInfo.role && userInfo.role!=='admin'))?
                       <>
-                    <Link to ="/cart">
+                    <Link to ="/owncart">
                       <button
                         type="button"
                         className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -172,15 +171,15 @@ export function Navbar({children}){
                     <div className="flex-shrink-0">
                       <img className="h-10 w-10 rounded-full" src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80' alt="" />
                     </div>
-                    {user?
+                    {(user && userInfo)?
                     <div className="ml-3">
                       
                       <div className="text-sm font-medium leading-none text-gray-400">{userInfo.Email}</div>
                     </div>
                   :null};
-                  {(user && userInfo.role!="admin")?
+                  {(user &&(userInfo && userInfo.role!=='admin'))?
                     <>
-                    <Link to ="/cart">  
+                    <Link to ="/owncart">  
                     <button
                       type="button"
                       className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -224,7 +223,8 @@ export function Navbar({children}){
           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">{children}</div>
         </main>
       </div>
+          )
       
-   </>
-    )
-}
+                  }
+  
+    

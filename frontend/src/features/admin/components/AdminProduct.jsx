@@ -39,6 +39,8 @@ import {
   fetchProductByIdNullAsync
 } from "../../product-list/productListsSlice";
 import { fetchProductByIdAsync } from "../../product-list/productListsSlice";
+import { selectUserInfo } from "../../auth/authSlice";
+import { fetchUserForUpdateAsync } from "../../user/userSlice";
 const sortOptions = [
   { name: "Best Rating", sorts: "rating", order: "desc", current: false },
   { name: "Price: Low to High", sorts: "price", order: "asc", current: false },
@@ -57,7 +59,7 @@ export function AdminProductList() {
   const dispatch = useDispatch();
   const categories=useSelector(selectAllCategories);
   const brands=useSelector(selectAllBrands);
-  
+  const user=useSelector(selectUserInfo);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [filter, setFilters] = useState({});
   const products = useSelector(selectAllProducts) || [];
@@ -80,10 +82,11 @@ export function AdminProductList() {
     },
   ];
   const handleFilter = async (e, section, option) => {
-    console.log(section.id,option.value);
+    // console.log(section.id,option.value);
 
     
     const newFilter = { ...filter };
+
 
     //When we close the filtes the box gets unchecked need to update the checked state of the selected option (pending)
      
@@ -124,13 +127,14 @@ export function AdminProductList() {
   }
   const handleDetail=(e)=>{
     
-    console.log("id: ",e);
-    console.log("clicked on null: ");
+    // console.log("id: ",e);
+    // console.log("clicked on null: ");
     // dispatch(fetchProductByIdNullAsync());
     dispatch(fetchProductByIdAsync(e));
     navigate(`/admin/edit/${e}`);
   }
 
+  console.log("user in asdmin panel:",user);
   useEffect(() => {
     const pagination={_page:page,_limit:limit};
     dispatch(fetchProductsByfilterAsync({filter,sort,pagination}));
@@ -140,8 +144,11 @@ export function AdminProductList() {
   useEffect(()=>{
     dispatch(fetchAllCategoriesAsync());
     dispatch(fetchAllBrandsAsync());
+    dispatch(fetchUserForUpdateAsync());
+    
   },[]);
   return (
+    // {user && user.info==="admin"}
     <div className="bg-white">
       <div>
         {/* Mobile filter dialog */}

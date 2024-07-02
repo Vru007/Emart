@@ -1,6 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+
 // import { fetchCount } from './orderApi';
-import {createOrder,updateStatus,fetchAllOrders,fetchOrder} from './orderApi';
+import {createOrder,updateStatus,fetchAllOrders,fetchOrder, fetchPaymentOrder,fetchOrderByItsId} from './orderApi';
+import { useSelector } from 'react-redux';
+import { selectUpdateUser } from '../user/userSlice';
 const initialState = {
   orders:[],
   status: 'idle',
@@ -8,6 +11,7 @@ const initialState = {
   allorders:[],
   userorders:[],
   totalOrders:null,
+  paymentdetail:null,
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -40,6 +44,13 @@ export const fetchOrderByIdAsync = createAsyncThunk(
     return response.data;
   }
 );
+ export const fetchOrderByItsIdAsync=createAsyncThunk(
+  'order/fetchOrderByItsId',
+   async(id)=>{
+    const response= await fetchOrderByItsId(id);
+    return response.data;
+   }
+ )
 
 export const updateStatusAsync=createAsyncThunk(
   'order/updateStatus',
@@ -57,6 +68,24 @@ export const fetchAllOrdersAsync=createAsyncThunk(
     return finalData;
   }
 )
+
+export const fetchPaymentOrderAsync=createAsyncThunk(
+  'order/fetchPaymentDetail',
+  async(order)=>{
+    console.log("order in fetchPaymentOrderAsync", order);
+    
+  const response=await fetchPaymentOrder(order);
+  return response;
+  
+  }
+);
+
+
+
+
+
+
+
 export const counterSlice = createSlice({
   name: 'order',
   initialState,
@@ -111,6 +140,25 @@ export const counterSlice = createSlice({
         state.userorders=action.payload;
         // console.log(state.products);
       })
+      .addCase(fetchPaymentOrderAsync.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchPaymentOrderAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.paymentdetail=action.payload.data.order;
+      })
+      .addCase(fetchPaymentOrderAsync.rejected, (state, action) => {
+        state.status = 'idle';
+        // console.log(state.products);
+      })
+      .addCase(fetchOrderByItsIdAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.currentOrder=action.payload;
+      })
+      .addCase(fetchOrderByItsIdAsync.rejected, (state, action) => {
+        state.status = 'idle';
+        // console.log(state.products);
+      })
       
       ;
       
@@ -119,8 +167,9 @@ export const counterSlice = createSlice({
 
 export const { resetOrder} = counterSlice.actions;
 
-
+export const selectTempOrder=(state)=>state.order.temporder;
 export const selectCount = (state) => state.counter.value;
+export const selectPaymentDetails=(state)=>state.order.paymentdetail;
 export const selectCurrentOrder=(state)=>state.order.currentOrder;
 export const selectAllOrders=(state)=>state.order.allorders;
 export const selectUserOrders=(state)=>state.order.userorders;

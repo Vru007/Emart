@@ -6,6 +6,7 @@ const initialState = {
   value: 0,
   status: 'idle',
   items:[],
+  cartLoaded:false,
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -49,9 +50,9 @@ export const deleteItemFromCartAsync=createAsyncThunk(
 export const resetCartAsync=createAsyncThunk(
   'cart/resetCart',
   async ()=>{
-    console.log("before: ");
+    // console.log("before: ");
     const response =await resetCart();
-    console.log("inside reset async:");
+    // console.log("inside reset async:");
     return response.data;
   }
 )
@@ -86,16 +87,21 @@ export const counterSlice = createSlice({
       .addCase(fetchItemsByUserIdAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         state.items=action.payload;
+        state.cartLoaded=true;
+      })
+      .addCase(fetchItemsByUserIdAsync.rejected, (state, action) => {
+        state.status = 'idle';
+        state.cartLoaded=true;
       })
       .addCase(updateItemsAsync.pending, (state) => {
         state.status = 'loading';
-        console.log("in loading update");
+        // console.log("in loading update");
       })
       .addCase(updateItemsAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         const index=state.items.findIndex(item=>item.id===action.payload.id);
         state.items[index].quantity=action.payload.quantity;
-        console.log("in fulfilled state in update");
+        // console.log("in fulfilled state in update");
         // state.items=action.payload;
       })
       .addCase(deleteItemFromCartAsync.pending, (state) => {
@@ -120,7 +126,7 @@ export const counterSlice = createSlice({
 
 export const { increment} = counterSlice.actions;
 
-
+export const selectCartStatus=(state)=>state.cart.cartLoaded;
 export const selectItems = (state) => state.cart.items;
 
 export default counterSlice.reducer;

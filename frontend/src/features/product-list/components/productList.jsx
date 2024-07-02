@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { resetCartAsync } from "../../cart/cartListSlice";
 // import { increment, incrementAsync, selectCount } from "../productListsSlice";
 // import styles from './Counter.module.css';
 import { Link, useNavigate } from "react-router-dom";
@@ -52,7 +53,8 @@ function classNames(...classes) {
 
 export function ProductList() {
  
-  console.log("hello world!");
+  // console.log("hello world!");
+  // console.log(window);
   const navigate=useNavigate();
   const dispatch = useDispatch();
   const categories=useSelector(selectAllCategories);
@@ -66,7 +68,6 @@ export function ProductList() {
   
   const [page,setPage]=useState(1);
   const limit=9;
-  
   const sections = [
     {
       id: "brand",
@@ -80,7 +81,7 @@ export function ProductList() {
     },
   ];
   const handleFilter = async (e, section, option) => {
-    console.log(section.id,option.value);
+    // console.log(section.id,option.value);
 
     
     const newFilter = { ...filter };
@@ -124,8 +125,8 @@ export function ProductList() {
   }
   const handleDetail=(e)=>{
     
-    console.log("id: ",e);
-    console.log("clicked on null: ");
+    // console.log("id: ",e);
+    // console.log("clicked on null: ");
     dispatch(fetchProductByIdNullAsync());
     navigate(`/details/${e}`);
   }

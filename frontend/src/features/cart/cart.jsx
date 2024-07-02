@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectItems, updateItemsAsync,deleteItemFromCartAsync } from './cartListSlice';
+import { selectItems, updateItemsAsync,deleteItemFromCartAsync, selectCartStatus, fetchItemsByUserIdAsync } from './cartListSlice';
 // import styles from './Counter.module.css';
 import { Navigate } from 'react-router-dom';
 import { Fragment} from 'react'
@@ -14,21 +14,23 @@ import { fetchUserForUpdateAsync, selectUpdateUser } from '../user/userSlice';
 //Todo: handle same products into cart from different orders 
 export default function CartPage() {
   
+const dispatch=useDispatch();
   const loggedUser=useSelector(selectUserInfo);
   // console.log("logged user:",loggedUser);
   const products=useSelector(selectItems);
-  // console.log("products:",products);
-
-  if(!products.length){
-    <Navigate to="/" replace={true}></Navigate>
-  }
+  console.log("products:",products);
+ const cartLoaded=useSelector(selectCartStatus);
+  // if(!products.length){
+  //   <Navigate to="/" replace={true}></Navigate>
+  // }
   const [open, setOpen] = useState(true)
- const totalAmount=products.reduce((amount,item)=>item.product.price*item.quantity +amount,0);
+ const tentaiveAmount=products.reduce((amount,item)=>item.product.price*item.quantity +amount,0);
+ const totalAmount=Math.ceil(tentaiveAmount);
 //  const totalItems=products.reduce((total,item)=>item.quantity+total);
-const dispatch=useDispatch();
+
 
 useEffect(()=>{
-  dispatch(fetchUserForUpdateAsync())
+  dispatch(fetchUserForUpdateAsync()) //not able to fetch on refresh on cart through app.js hence added here
 },[]);
 
 // console.log("userForUpdate: ",userForUpdate);
@@ -52,6 +54,7 @@ useEffect(()=>{
   return (
     <>
     {!products.length && <Navigate to="/" replace={true}></Navigate>}
+    
     <div  className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
         <div className="flex items-start justify-between">
@@ -134,6 +137,7 @@ useEffect(()=>{
       </div>
     </div>
     </div>
+    
     </>
   )
 }

@@ -7,7 +7,9 @@ import { Navigate } from "react-router-dom";
 import { deleteItemFromCartAsync} from "../features/cart/cartListSlice";
 import { useDispatch } from "react-redux";
 import { useState ,useEffect } from "react";
-
+import { store } from "../app/store.js";
+import axios from "axios";
+import Loader from "./loading.jsx";
 
 // import { Navigate } from "react-router-dom";
 const addresses = [
@@ -39,13 +41,15 @@ const addresses = [
 import { useForm } from "react-hook-form";
 import { selectUserInfo } from "../features/auth/authSlice";
 import { selectUpdateUser, updateUserAsync } from "../features/user/userSlice.jsx";
-import { createOrderAsync } from "../features/order/orderSlice.jsx";
+import { createOrderAsync, fetchPaymentOrderAsync, selectCurrentOrder, selectPaymentDetails } from "../features/order/orderSlice.jsx";
 export default function CheckoutPage() {
   const [selectedAddress,setSelectedAddress]=useState(null);
   const [PaymentMethod,setPaymentMethod] =useState(null);
+  const [loading, setLoading] = useState(false);
   const navigate=useNavigate();
   const dispatch=useDispatch();
   const prod=useSelector(selectItems);
+  const [finalOrder,setfinalOrder] = useState(null);
   const {
     register,
     handleSubmit,
@@ -58,9 +62,13 @@ export default function CheckoutPage() {
  
   // const user=useSelector(selectUpdateUser);
 const user =useSelector(selectUpdateUser);
+
+
    console.log("user in checkOut",user);
-  const totalAmount=prod.reduce((amount,item)=>item.product.price*item.quantity +amount,0);
+  const totalAmount=Math.ceil(prod.reduce((amount,item)=>item.product.price*item.quantity +amount,0));
   const totalItems=prod.reduce((total,item)=>item.quantity+total,0);
+  const recentOrder=useSelector(selectCurrentOrder)
+  const paymentOrder = useSelector(selectPaymentDetails);
   const handleRemove=(e,itemId)=>{
     // console.log("remove: ",itemId);
     dispatch(deleteItemFromCartAsync(itemId));
@@ -82,32 +90,108 @@ const user =useSelector(selectUpdateUser);
   //  useEffect(()=>{
   //   // console.log("inside useEffect:",PaymentMethod);
   //  },[PaymentMethod]);
- const handleOrder=async(e)=>{
-  if(selectedAddress!==null && PaymentMethod!==null){
-  
-  const products=await prod.map(product=>({...product,status:'Order-Received'}));
-  
+  useEffect(() => {
+    console.log("paymentOrder:",paymentOrder);
+    if (PaymentMethod === "paynow" && paymentOrder) {
+      console.log("useEffect is called");
+      handleRazorpay(paymentOrder);
+    }
+  }, [paymentOrder]);
 
-  const order={products,PaymentMethod,selectedAddress,totalAmount,totalItems}
+  const handleOrder = async (e) => {
+    e.preventDefault();
+
+    if (selectedAddress !== null && PaymentMethod !== null) {
+      setLoading(true);
+
+      const products = prod.map(product => ({ ...product, status: 'Order-Received' }));
+      const order = { products, PaymentMethod, selectedAddress, totalAmount, totalItems };
+        
+      await setfinalOrder(order);
+      console.log("finalOrder: ",finalOrder)
+
+      
+      if (PaymentMethod === "cash") {
+        setLoading(false);
+        dispatch(createOrderAsync(order));
+        navigate('/ordersummary');
+      }
+
+      if (PaymentMethod === "paynow") {
+        console.log("inside paynow: ");
+        
+        await dispatch(fetchPaymentOrderAsync(order));
+      }
+    }
+  };
   
-  // const userId=user._id;
-  dispatch(
-  createOrderAsync(order))
-  navigate('/ordersummary')
-  }
+  
+  const handleRazorpay = async (currentPaymentOrder) => {
+    console.log("inside handleRazorPay");
+    const checkPaymentOrder = setInterval(async () => {
+     // Adjust your slice name accordingly
+      
+      if (finalOrder) {
+        clearInterval(checkPaymentOrder);
+        console.log("payment Order currentpayment: ", currentPaymentOrder);
+        console.log("recentorder: ", finalOrder);
+        const orderData = encodeURIComponent(JSON.stringify(finalOrder));
+        // const orderId=recentOrder.id;
+        setLoading(false);
+        const { data: { key } } = await axios.get('http://localhost:8080/payment/getkey');
+        console.log("key: ", key);
+        
+        const options = {
+          key: key, // Enter the Key ID generated from the Dashboard
+          amount: currentPaymentOrder.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+          currency: "INR",
+          name: "E-Mart Corp",
+          description: "Test Transaction",
+          image: "https://example.com/your_logo",
+          order_id: currentPaymentOrder.id, // This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+          callback_url: `http://localhost:8080/payment/verification?order=${orderData}`,
+          prefill: {
+            email: user.email,
+            contact: "8469786095"
+          },
+          notes: {
+            address: "Razorpay Corporate Office"
+          },
+          theme: {
+            color: "#3399cc"
+          }
+        };
+        const razor = new window.Razorpay(options);
+        razor.open()
+        
+      }
+    }, 100);
+
+    setTimeout(() => {
+      clearInterval(checkPaymentOrder);
+      if (!finalOrder) {
+        console.error("Payment order fetching timed out");
+        setLoading(false);
+      }
+    }, 5000);
+  };
+ 
+  
   
   //TODO: REdirect after succes o order (done)
   //Clear cart after sucessful order
   // on server change the stock available in inventory
- }
+ 
   return (
     <>
     {!prod.length && <Navigate to="/" replace={true}></Navigate>}
+    {loading && <Loader />}
+    { user && !loading &&
     <div className="mt-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
         <div className="lg:col-span-3">
           <form onSubmit={handleSubmit((data)=>{
-            console.log({data});
+            // console.log({data});
             dispatch(
               updateUserAsync({
                 ...user,
@@ -335,10 +419,10 @@ const user =useSelector(selectUpdateUser);
                       </div>
                       <div className="flex items-center gap-x-3">
                         <input
-                          id="UPI"
+                          id="paynow"
                           name="payments"
                           type="radio"
-                          value="UPI"
+                          value="paynow"
                           onClick={(e)=>handlePayment(e)}
                           className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                         />
@@ -346,25 +430,10 @@ const user =useSelector(selectUpdateUser);
                           htmlFor="push-email"
                           className="block text-sm font-medium leading-6 text-gray-900"
                         >
-                          UPI
+                          Pay Now
                         </label>
                       </div>
-                      <div className="flex items-center gap-x-3">
-                        <input
-                          id="Card"
-                          name="payments"
-                          type="radio"
-                          value="card"
-                          onClick={(e)=>handlePayment(e)}
-                          className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                        />
-                        <label
-                          htmlFor="push-nothing"
-                          className="block text-sm font-medium leading-6 text-gray-900"
-                        >
-                          Card
-                        </label>
-                      </div>
+                      
                     </div>
                   </fieldset>
                 </div>
@@ -397,7 +466,7 @@ const user =useSelector(selectUpdateUser);
                                 <h3>
                                   <a href={product.href}>{product.name}</a>
                                 </h3>
-                                <p className="ml-4 justify-between">₹{product.price}</p>
+                                <p className="ml-4 justify-between">₹{product.product.price}</p>
                               </div>
                               <p className="mt-1 text-sm text-gray-500">
                                 {product.color}
@@ -464,6 +533,7 @@ const user =useSelector(selectUpdateUser);
         </div>
       </div>
     </div>
+                    }
     </>
   );
   

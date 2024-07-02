@@ -4,15 +4,17 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { checkUserAsync, selectError,selectUserInfo} from "../authSlice";
 import { Navigate } from "react-router-dom";
-import { selectUpdateUser } from "../../user/userSlice";
+import { fetchUserForUpdateAsync, selectUpdateUser } from "../../user/userSlice";
 export function Login() {
   const dispatch =useDispatch();
   const user=useSelector(selectUserInfo);
   const userInfo=useSelector(selectUpdateUser);
   const error=useSelector(selectError);
-  console.log("error in login jsx: ",error)
-  console.log("user in login in loginjsx: ",user);
-  console.log("userinfo: ",userInfo);
+
+  dispatch(fetchUserForUpdateAsync());
+  // console.log("error in login jsx: ",error)
+  // console.log("user in login in loginjsx: ",user);
+  // console.log("userinfo: ",userInfo);
   
   const {
     register,
@@ -20,7 +22,7 @@ export function Login() {
     formState: { errors },
   } = useForm();
   // const onSubmit = (data) => console.log(data);
-  console.log(errors);
+  // console.log(errors);
   return (
     <div>
     {userInfo && user && (userInfo.role==='admin'? <Navigate to='/admin/products'></Navigate>:<Navigate to='/'></Navigate>)}
@@ -38,7 +40,6 @@ export function Login() {
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form onSubmit={handleSubmit((data)=>{
-            console.log({data});
             dispatch(
             checkUserAsync({email:data.email, password:data.password}));
             
@@ -77,12 +78,12 @@ export function Login() {
                   Password
                 </label>
                 <div className="text-sm">
-                  <a
-                    href="#"
+                  <Link to="/forgotpassword"
+                    
                     className="font-semibold text-indigo-600 hover:text-indigo-500"
                   >
                     Forgot password?
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="mt-2">

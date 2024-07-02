@@ -186,13 +186,13 @@ export const productSlice = createSlice({
       })
       .addCase(updateProductAsync.pending, (state) => {
         state.status = 'loading';
-        console.log("in loading update");
+        // console.log("in loading update");
       })
       .addCase(updateProductAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         const index=state.products.findIndex(item=>item.id===action.payload.id);
         state.products[index]=action.payload;
-        console.log("in fulfilled state in update");
+        // console.log("in fulfilled state in update");
         // state.items=action.payload;
       });
       

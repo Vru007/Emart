@@ -1,8 +1,10 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { resetPasswordRequestAsync, selectMailSent,selectError, selectMailError} from "../authSlice";
 export default function ForgotPassword() {
-
 
     const dispatch = useDispatch()
     const {
@@ -10,16 +12,23 @@ export default function ForgotPassword() {
       handleSubmit,
       formState: { errors },
     } = useForm();
+  const mailSent=useSelector(selectMailSent);
+  const mailError=useSelector(selectMailError);
+  const [flag,setFlag]=useState(false);
+  useEffect(()=>{
+    if(mailSent){
+      setFlag(false);
+    }
+    if(mailError) {
+      setFlag(true);
+    }
+  },[mailError,mailSent]);
 
+  
   return (
     
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img
-            className="mx-auto h-10 w-auto"
-            src="/ecommerce.png"
-            alt="Your Company"
-          />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Enter email to reset password
           </h2>
@@ -28,7 +37,11 @@ export default function ForgotPassword() {
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form
             noValidate
-            
+            onSubmit={handleSubmit((data)=>{
+              console.log("data in forgot password: ",data);
+              dispatch(resetPasswordRequestAsync(data.email));
+              setFlag(true);
+            })}
             className="space-y-6"
           >
             <div>
@@ -51,10 +64,15 @@ export default function ForgotPassword() {
                   type="email"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
+
                 {errors.email && (
+                  
                   <p className="text-red-500">{errors.email.message}</p>
+                  
+                 
                 )}
-                {mailSent && <p className="text-green-500">Mail Sent</p>}
+                {mailSent ? <p className="text-green-500">Mail Sent</p> :null}
+                {(mailError && flag) ? (<p className="text-red-500">Email not sent (check the mail)</p>):null}
               </div>
             </div>
 

@@ -20,7 +20,7 @@ export default function AddProduct(){
          delete product['image3'];
          delete product['image'];
          product.rating = 0;
-         console.log(product);
+        //  console.log(product);
          
          dispatch(addProductAsync(product));
          reset();

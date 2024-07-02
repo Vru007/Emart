@@ -16,7 +16,7 @@ export default function SuccessOrder() {
 
   console.log("orders in ordersummary: ",order);
   useEffect(() => {
-    console.log("user: ", user);
+    // console.log("user: ", user);
     dispatch(resetCartAsync());
     // dispatch(resetOrder());
   }, [[dispatch]]);

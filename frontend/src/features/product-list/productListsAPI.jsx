@@ -5,7 +5,7 @@ export function fetchAllProducts() {
   return new Promise(async (resolve)=>{
     const response=await axios.get('http://localhost:8080/products');
     const data=await response.data;
-    console.log("products from backend: ",data)
+    // console.log("products from backend: ",data)
     resolve({data});
   })
 }
@@ -46,7 +46,7 @@ export function fetchProductsByFilters(filter,sort,pagination) {
     for(let key in pagination){
         string+=`${key}=${pagination[key]}&`;
     }
-  console.log("string:",string);
+  // console.log("string:",string);
   return new Promise(async (resolve)=>{
     const response=await axios.get('http://localhost:8080/products?'+string);
     const data=await response.data;
@@ -75,7 +75,7 @@ export function fetchProductByIdNull() {
 
 export function addProduct(newProduct) {
    
-  console.log("inside add product Api: ", newProduct);
+  // console.log("inside add product Api: ", newProduct);
 
   return new Promise(async (resolve)=>{
     const response=await axios.post('http://localhost:8080/products',newProduct,{
@@ -92,12 +92,12 @@ export function updateProduct(updateItem){
   // console.log("update Product ",updateItem.product);
 
   return new Promise (async (resolve)=>{
-    console.log("updateItems", updateItem);  
+    // console.log("updateItems", updateItem);  
     const response =await axios.patch('http://localhost:8080/products/'+updateItem.itemId,updateItem.product,{
     headers:{'content-type':'application/json'},
     });
     const data=await response.data;
-    console.log("inside data: ",data);
+    // console.log("inside data: ",data);
     resolve({data});
   })  
 }
