@@ -33,10 +33,14 @@ export default function UserProfile() {
     setValue,
     reset
   } = useForm();
+
+
+
   const handleEdit=(data,index)=>{
+    
     const newUser={...user,addresses:[...user.addresses]}; //to shallow copy the data to avoid issues
     newUser.addresses.splice(index,1,data);
-    // console.log("newUser: ",newUser);
+    console.log("newUser: ",newUser);
     dispatch(updateUserAsync(newUser));
     setSelectedAddressIndex(-1);
     
@@ -56,7 +60,7 @@ export default function UserProfile() {
      setValue('Name',address.Name);
      setValue('Email',address.Email);
      setValue('addressType',address.addressType);
-     setValue('Number',address.Number);
+     setValue('phoneNumber',address.phoneNumber);
      setValue('street',address.street);
      setValue('city',address.city);
      setValue('state',address.state);
@@ -84,6 +88,7 @@ export default function UserProfile() {
        <div>
        { selectedAddressIndex===index?
        <form onSubmit={handleSubmit((data)=>{
+        console.log("data in edit user profile: ",data);
          handleEdit(data,index);
          reset();
        })}>
@@ -159,7 +164,7 @@ export default function UserProfile() {
                  <div className="mt-2">
                    <input
                      id="phone"
-                     {...register("Number", { required:"Phone number is required"})} 
+                     {...register("phoneNumber", { required:"Phone number is required"})} 
                      type="tel"
                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                    />

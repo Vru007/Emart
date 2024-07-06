@@ -40,12 +40,12 @@ function ResetPasswordPage(){
             className="space-y-6"
           >
           <div>
-          <div className="flex items-center justify-between">
+             <div className="flex items-center justify-between">
             <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
               New Password
             </label>
-          </div>
-          <div className="mt-2">
+             </div>
+             <div className="mt-2">
             <input
               id="password"
               autoComplete="password"
@@ -53,15 +53,15 @@ function ResetPasswordPage(){
               type="password"
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
-          </div>
-          {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+             </div>
+              {errors.password && <p className="text-red-500">{errors.password.message}</p>}
        
-          <div className="flex items-center justify-between">
+             <div className="flex items-center justify-between">
             <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
               Confirm-New-Password
             </label>
-          </div>
-          <div className="mt-2">
+             </div>
+             <div className="mt-2">
             <input
               id="confirmPassword"
               autoComplete="confirmPassword"
@@ -71,9 +71,9 @@ function ResetPasswordPage(){
               type="password"
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
-          </div>
-          {errors.confirmPassword && <p className="text-red-500">{errors.confirmPassword.message}</p>}
-        </div>
+             </div>
+            {errors.confirmPassword && <p className="text-red-500">{errors.confirmPassword.message}</p>}
+         </div>
         {resetPass ? <p className="text-green-500">Reset successfully</p> :null}
         {error ? <p className="text-red-500">{error.message}</p>:null}
             <div>

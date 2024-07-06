@@ -13,7 +13,7 @@ export default function SuccessOrder() {
   const user = useSelector(selectUserInfo);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  
   console.log("orders in ordersummary: ",order);
   useEffect(() => {
     // console.log("user: ", user);

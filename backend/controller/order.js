@@ -1,4 +1,6 @@
 const {Order}=require('../model/order');
+const { Users } = require('../model/user');
+const { sendMail, invoiceTemplate } = require('../services/common');
 
 exports.createOrder=async(req,res)=>{
     const {id}=req.user;
@@ -14,6 +16,8 @@ exports.createOrder=async(req,res)=>{
     try{
         // console.log("new order backend: ",order);
         const response=await order.save();
+        const user=await Users.findById(id);
+        sendMail({to:user.email,html:invoiceTemplate(order),subject:"Order-Summary",text:"Your resent order on E-mart"});
         res.status(200).json(response);
         
     }
