@@ -17,13 +17,14 @@ exports.createProduct=async(req,res)=>{
 exports.fetchAllProducts=async(req,res)=>{
     let str=Product.find({});
     let totalCount=Product.find({});
+    // console.log("query category:",req.query.category);
     if(req.query.category){
-        str=str.find({category:req.query.category});
-        totalCount=totalCount.find({category:req.query.category});
+        str=str.find({category:{$in:req.query.category.split(',')}});
+        totalCount=totalCount.find({category:{$in:req.query.category.split(',')}});
     }
     if(req.query.brand){
-        str=str.find({brand:req.query.brand});
-        totalCount=totalCount.find({brand:req.query.brand});
+        str=str.find({brand:{$in:req.query.brand.split(',')}});
+        totalCount=totalCount.find({brand:{$in:req.query.brand.split(',')}});
     }
     if(req.query._sort && req.query._order){
         str=str.sort({[req.query._sort]:req.query._order});
@@ -38,7 +39,7 @@ exports.fetchAllProducts=async(req,res)=>{
     }
 
     try{
-        console.log("str: ",str);
+        
         const docs=await str.exec();
         res.set('X-Total-Count',totalDocs);
         res.status(200).json(docs);
