@@ -10,7 +10,7 @@ import { useState ,useEffect } from "react";
 import { store } from "../app/store.js";
 import axios from "axios";
 import Loader from "./loading.jsx";
-
+import { toast } from "react-toastify";
 // import { Navigate } from "react-router-dom";
 const addresses = [
   {
@@ -192,12 +192,13 @@ const user =useSelector(selectUpdateUser);
         <div className="lg:col-span-3">
           <form onSubmit={handleSubmit((data)=>{
             console.log({data});
-            // dispatch(
-            //   updateUserAsync({
-            //     ...user,
-            //     addresses: [...user.addresses, data],
-            //   }));
-            // reset();
+            dispatch(
+              updateUserAsync({
+                ...user,
+                addresses: [...user.addresses, data],
+              }));
+            reset();
+           
       
           })}>
             <div className="space-y-12">
@@ -355,9 +356,11 @@ const user =useSelector(selectUpdateUser);
               <div className= "flex items-center justify-end gap-x-6">
                 <button
                   type="button"
+                  onClick={()=>{reset();}}
                   className="text-sm font-semibold leading-6 text-gray-900"
                 >
                   Cancel
+                  
                 </button>
                 <button
                   type="submit"

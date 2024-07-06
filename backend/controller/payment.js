@@ -1,7 +1,10 @@
 const { validatePaymentVerification } = require('razorpay/dist/utils/razorpay-utils');
-const {instance} =require('../services/common');
+const {instance, sendMail} =require('../services/common');
 const { deleteOrder } = require('./order');
 const {Order}=require('../model/order');
+const {Users}=require('../model/user');
+const {Product}=require('../model/product');
+const { invoiceTemplate } = require('../services/common');
 require('dotenv').config();
 exports.checkOut =async (req,res)=>{
     
@@ -41,7 +44,9 @@ exports.paymentVerification=async(req,res)=>{
     // const id=req.query.orderid;
     console.log(req.body);
     const {id}=req.user;
-    // console.log("id:",id);
+    // const fid=id;
+    console.log("id:",id);
+    // console.log("fid:",fid);
   const {razorpay_payment_id,razorpay_order_id,razorpay_signature}=req.body;
     try{
         const secret=process.env.RAZOR_PAY_KEY_SECRET
@@ -62,11 +67,20 @@ exports.paymentVerification=async(req,res)=>{
                     selectedAddress: order.selectedAddress,
                     totalAmount: order.totalAmount,
                     totalItems: order.totalItems});
+/// completion of final order//////////////////////////////////////
+                    for(let item of finalorder.products){
+                        let product = await Product.findById(item.product.id);
+                        product.$inc('stock',-1*item.quantity);
+                        await product.save();
+                        // console.log("updated product in create order:",product);
+                    }
 
                     const temp=await finalorder.save();
                // Send JSON response with redirect URL
                if(temp){
                 // console.log("temp: ",temp);
+                const user=await Users.findById(id);
+        sendMail({to:user.email,html:invoiceTemplate(finalorder),subject:"Order-Summary",text:"Your resent order on E-mart"});
                 res.redirect('http://localhost:8080/temporder/'+temp.id);
                }
         }

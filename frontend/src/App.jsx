@@ -36,6 +36,8 @@ import { fetchItemsByUserIdAsync } from './features/cart/cartListSlice';
 import { checkAuthAsync, selectUserChecked, selectUserInfo } from './features/auth/authSlice';
 import { useSelector } from 'react-redux';
 import { fetchUserForUpdateAsync } from './features/user/userSlice';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 //TODO: Add alerts and loaders using react-alert library
 const router = createBrowserRouter([
   {
@@ -134,12 +136,14 @@ function App() {
     dispatch(fetchUserForUpdateAsync());
     }
   },[dispatch,user])
+
   return (
     <>
     <div className='App'>
       {userCheck && 
      <RouterProvider router={router} />
       }
+      <ToastContainer />
     </div>
     </>
   )

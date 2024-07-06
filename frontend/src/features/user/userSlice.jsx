@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchOrders,updateUser,fetchUserForUpdate } from './userAPI';
+import { toast } from 'react-toastify';
 const initialState = {
   value: 0,
   status: 'idle',
@@ -36,6 +37,9 @@ export const updateUserAsync = createAsyncThunk(
     // console.log("userData",userData);
     // console.log("update: ",update);
     const response = await updateUser(update);
+    toast.success("Address Added successfully",{
+      position:"top-left"
+      });
     // console.log("updateData: ",update);
     // The value we return becomes the `fulfilled` action payload
     // console.log("returen response: ",response.data);

@@ -5,6 +5,7 @@ import { selectUserInfo} from '../../auth/authSlice';
 import { selectUpdateUser, updateUserAsync } from '../userSlice';
 import { fetchUserForUpdateAsync } from '../userSlice';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 // import styles from './Counter.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 export default function UserProfile() {
@@ -41,18 +42,69 @@ export default function UserProfile() {
     const newUser={...user,addresses:[...user.addresses]}; //to shallow copy the data to avoid issues
     newUser.addresses.splice(index,1,data);
     console.log("newUser: ",newUser);
+    toast.success("Address updated successfully!",{
+      position:"top-left"
+      });
     dispatch(updateUserAsync(newUser));
     setSelectedAddressIndex(-1);
     
   }
-  const handleRemove=(e,index)=>{
+  
+  
+  const handleRemove=(index)=>{
     
       const newUser={...user,addresses:[...user.addresses]};
       newUser.addresses.splice(index,1);
+      toast.dismiss();
       dispatch(updateUserAsync(newUser),fetch);
 
       // fetchUser();
   }
+  const handleRemoveToast=(e,index)=>{
+    // console.log("remove: ",itemId);
+    // console.log(itemId);
+    toast(
+      <div
+          id="toast-interactive"
+          className="w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:bg-gray-800 dark:text-gray-400"
+          role="alert"
+        >
+          <div className="flex">
+            <div className="ms-3 text-sm font-normal">
+              <span className="mb-1 text-sm font-semibold text-gray-900 dark:text-white">
+                Are You sure you want to remove the address ?
+              </span>
+  
+              <div className="grid grid-cols-2 gap-2">
+                <div>
+                  <button 
+                  onClick={()=>{handleRemove(index)}}
+                    className="inline-flex justify-center w-full px-2 py-1.5 text-xs font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-600 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700"
+                  >
+                    Yes
+                  </button>
+                </div>
+                <div>
+                  <button
+                  onClick={() => {
+                    toast.dismiss();
+                  }}
+                    className="inline-flex justify-center w-full px-2 py-1.5 text-xs font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+                  >
+                    No
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>,
+      {
+        autoClose: false,
+        position: "top-center",
+      }
+    );
+  }
+
   const handleEditForm=(index)=>{
      setSelectedAddressIndex(index);
      const address=user.addresses[index];
@@ -282,7 +334,7 @@ export default function UserProfile() {
                      
                      Edit
                    </button>
-                   <button onClick={(e)=>handleRemove(e,index)} className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                   <button onClick={(e)=>handleRemoveToast(e,index)} className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                    >
  
                      Remove

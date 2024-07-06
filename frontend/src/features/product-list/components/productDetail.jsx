@@ -7,6 +7,7 @@ import { fetchProductByIdAsync, selectedProducts } from '../productListsSlice'
 import { addToCart } from '../../cart/cartListApi'
 import { addToCartAsync } from '../../cart/cartListSlice'
 import { selectUserInfo } from '../../auth/authSlice'
+import { toast } from 'react-toastify'
 const colors= [
   { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
   { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
@@ -49,7 +50,12 @@ export default function ProductDetail() {
   delete newItem['id'];
   dispatch(addToCartAsync(newItem))
  }
- 
+ const handleAddToCartToast=()=>(
+                 
+  toast.success("Item Added to cart!",{
+  position:"top-left"
+  }
+))
  const handleDetail=(e)=>{
     
   // console.log("id: ",e);
@@ -57,7 +63,11 @@ export default function ProductDetail() {
   dispatch(fetchProductByIdNullAsync());
   navigate(`/details/${e}`);
 }
-
+const handleSubmit=(e)=>{
+  e.preventDefault();
+  handleCart(e);
+  handleAddToCartToast();
+}
   useEffect(()=>{
     dispatch(fetchProductByIdAsync(params.id))
   },[dispatch,params.id]);
@@ -66,30 +76,7 @@ export default function ProductDetail() {
     <div className="bg-white">
     {product ?
       <div className="pt-6">
-        <nav aria-label="Breadcrumb">
-          <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-            {product.breadcrumbs && product.breadcrumbs.map((breadcrumb) => (
-              <li key={breadcrumb.id}>
-                <div className="flex items-center">
-                  <a href={breadcrumb.href} className="mr-2 text-sm font-medium text-gray-900">
-                    {breadcrumb.name}
-                  </a>
-                  <svg
-                    width={16}
-                    height={20}
-                    viewBox="0 0 16 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-4 text-gray-300"
-                  >
-                    <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-                  </svg>
-                </div>
-              </li>
-            ))}
-            
-          </ol>
-        </nav>
+       
 
         {/* Image gallery */}
 
@@ -258,14 +245,18 @@ export default function ProductDetail() {
                   </RadioGroup>
                 </fieldset>
               </div>
-
+              {}
               <button
                 type="submit"
-                onClick={handleCart}
+                
+                onClick={handleSubmit}
+                
                 className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 Add to cart
+
               </button>
+              
             </form>
           </div>
 

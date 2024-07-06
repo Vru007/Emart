@@ -151,7 +151,7 @@ app.use('/auth',authRouter.router);
 app.use('/user',isAuth(),userRouter.router);
 app.use('/cart',isAuth(),cartRouter.router);
 app.use('/orders',isAuth(),orderRouter.router);
-app.use('/payment',paymentRouter.router);
+app.use('/payment',isAuth(),paymentRouter.router);
 
 // Use CORS middleware with specified options
 app.get('*', (req, res) => {

@@ -1,4 +1,5 @@
 const {Order}=require('../model/order');
+const {Product} =require("../model/product");
 const { Users } = require('../model/user');
 const { sendMail, invoiceTemplate } = require('../services/common');
 
@@ -12,9 +13,15 @@ exports.createOrder=async(req,res)=>{
         totalAmount: req.body.totalAmount,
         totalItems: req.body.totalItems});
     
-        console.log("order in createorder:",order);
+        // console.log("order in createorder:",order);
     try{
         // console.log("new order backend: ",order);
+        for(let item of order.products){
+            let product = await Product.findById(item.product.id);
+            product.$inc('stock',-1*item.quantity);
+            await product.save();
+            console.log("updated product in create order:",product);
+        }
         const response=await order.save();
         const user=await Users.findById(id);
         sendMail({to:user.email,html:invoiceTemplate(order),subject:"Order-Summary",text:"Your resent order on E-mart"});
@@ -77,7 +84,7 @@ exports.fetchAllOrders=async(req,res)=>{
     }
 
     try{
-        console.log("str: ",str);
+        // console.log("str: ",str);
         const docs=await str.exec();
         res.set('Total-Order-Count',totalDocs);
         res.status(200).json(docs);

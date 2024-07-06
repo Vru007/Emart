@@ -10,6 +10,8 @@ import { XMarkIcon,PlusIcon,MinusIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom';
 import { selectUserInfo } from '../auth/authSlice';
 import { fetchUserForUpdateAsync, selectUpdateUser } from '../user/userSlice';
+import { toast } from 'react-toastify';
+
 
 //Todo: handle same products into cart from different orders 
 export default function CartPage() {
@@ -44,11 +46,55 @@ useEffect(()=>{
   dispatch(updateItemsAsync({itemId:product.id,quantity:product.quantity-1}))
  }
 }
+ const handleRemove=(itemId)=>{
+  toast.dismiss();
+  dispatch(deleteItemFromCartAsync(itemId));
+ }
 
- const handleRemove=(e,itemId)=>{
+ const handleToast=(e,itemId)=>{
   // console.log("remove: ",itemId);
   // console.log(itemId);
-  dispatch(deleteItemFromCartAsync(itemId));
+  toast(
+    <div
+        id="toast-interactive"
+        className="w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:bg-gray-800 dark:text-gray-400"
+        role="alert"
+      >
+        <div className="flex">
+          <div className="ms-3 text-sm font-normal">
+            <span className="mb-1 text-sm font-semibold text-gray-900 dark:text-white">
+              Are You sure you want to remove the item
+            </span>
+
+            <div className="grid grid-cols-2 gap-2">
+              <div>
+                <button 
+                onClick={()=>{handleRemove(itemId)}}
+                  className="inline-flex justify-center w-full px-2 py-1.5 text-xs font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-600 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700"
+                >
+                  Yes
+                </button>
+              </div>
+              <div>
+                <button
+                onClick={() => {
+                  toast.dismiss();
+                }}
+                  className="inline-flex justify-center w-full px-2 py-1.5 text-xs font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+                >
+                  No
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>,
+    {
+      autoClose: false,
+      position: "top-center",
+    }
+  );
+  
   
  }
   return (
@@ -88,7 +134,7 @@ useEffect(()=>{
                     <button onClick={(e)=>handleQuantityMinus(e,product)} className='flex w-3 '><MinusIcon/></button> <p className="text-gray-500">Qty {product.quantity} </p><button onClick={(e)=>handleQuantity(e,product)} className='flex w-3 '><PlusIcon/></button>
 
                       <div className="flex">
-                        <button onClick={(e)=>handleRemove(e,product.id)}
+                        <button onClick={(e)=>handleToast(e,product.id)}
                           type="button"
                           
                           className="font-medium text-indigo-600 hover:text-indigo-500"
